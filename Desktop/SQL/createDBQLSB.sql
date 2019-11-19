@@ -106,5 +106,81 @@ CONSTRAINT fk_SAN_CHITIETDATSAN
    FOREIGN KEY (maSan)
    REFERENCES tblSAN (maSan)
 ) ON [PRIMARY]
-
-
+/*N'TẠO BẢNG THAM SỐ'*/
+CREATE TABLE [dbo].[tblTHAMSO](
+	[luongnhanvien] [nvarchar](20) NOT NULL,
+	[tiengiuxe] [nvarchar](20) ,
+	[giasanngay] [nvarchar](20) NOT NULL,
+	[giasandem] [nvarchar](20) NOT NULL,
+	[sotiencoc] [nvarchar](20) )
+/*N'TẠO BẢNG CSVC'*/
+CREATE TABLE [dbo].[tblCSVC](
+	[maCSVC] [nvarchar](5) NOT NULL,
+	[maNhanVien] [nvarchar](5) NOT NULL,
+	[tencsvc] [nvarchar](20) NOT NULL,
+	[soluongnhap] [nvarchar](10) NOT NULL,
+	[dongianhap] [nvarchar](20) NOT NULL,
+	[tinhtrangcsvc] [nvarchar](10) ,
+	CONSTRAINT [PK_tblCSVC] PRIMARY KEY CLUSTERED 
+(
+	[maCSVC] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY],
+CONSTRAINT fk_NHANVIEN_CSVC
+   FOREIGN KEY (maNhanVien)
+   REFERENCES tblNHANVIEN (maNhanVien)
+) ON [PRIMARY]
+/*N'TẠO BẢNG ĐỒ UỐNG'*/
+CREATE TABLE [dbo].[tblDOUONG](
+	[maDoUong] [nvarchar](5) NOT NULL,
+	[tendouong] [nvarchar](10) NOT NULL,
+	[soluongconlai] [nvarchar](10) NOT NULL,
+	[dongianhap] [nvarchar](10) NOT NULL,
+	[dongiaxuat] [nvarchar](10) NOT NULL,
+	[ngaytaohoadon] [smalldatetime] NOT NULL,
+CONSTRAINT [PK_tblDOUONG] PRIMARY KEY CLUSTERED 
+(
+	[maDouong] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY],
+) ON [PRIMARY]
+/*N'TẠO BẢNG HÓA ĐƠN'*/
+CREATE TABLE [dbo].[tblHOADON](
+	[maHoaDon] [nvarchar](5) NOT NULL,
+	[maNhanvien] [nvarchar](5) NOT NULL,
+	[maKH] [nvarchar](5) NOT NULL,
+	[ngaytaohoadon] [smalldatetime] NOT NULL,
+CONSTRAINT [PK_tblHOADON] PRIMARY KEY CLUSTERED 
+(
+	[maHoaDon] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY],
+CONSTRAINT fk_NHANVIEN_HOADON
+   FOREIGN KEY (maNhanVien)
+   REFERENCES tblNHANVIEN (maNhanVien),
+CONSTRAINT fk_KHACHHANG_HOADON
+   FOREIGN KEY (maKH)
+   REFERENCES tblKHACHHANG (maKH)
+) ON [PRIMARY]	
+/*N'TẠO BẢNG LOẠI HÓA ĐƠN'*/
+CREATE TABLE [dbo].[tblLOAIHOADON](
+	[maLoaiHoaDon] [nvarchar](5) NOT NULL,
+	[loaihoadon] [nvarchar](10) NOT NULL,
+CONSTRAINT [PK_tblLOAIHOADON] PRIMARY KEY CLUSTERED 
+(
+	[maLoaiHoaDon] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY],
+) ON [PRIMARY]
+/*N'TẠO BẢNG CHI TIẾT HÓA ĐƠN'*/
+CREATE TABLE [dbo].[tblCHITIETHOADON](
+	[maLoaiHoaDon] [nvarchar](5) NOT NULL,
+	[maHoaDon] [nvarchar](5) NOT NULL,
+	[trigiahoadon] [nvarchar](20) NOT NULL,
+CONSTRAINT [PK_tblCHITIETHOADON] PRIMARY KEY CLUSTERED 
+(
+	[maLoaiHoaDon] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY],
+CONSTRAINT fk_HOADON_CHITIETHOADON
+   FOREIGN KEY (maHoaDon)
+   REFERENCES tblHOADON (maHoaDon),
+CONSTRAINT fk_LOAIHOADON_CHITIETHOADON
+   FOREIGN KEY (maLoaiHoaDon)
+   REFERENCES tblLOAIHOADON (maLoaiHoaDon),
+) ON [PRIMARY]
