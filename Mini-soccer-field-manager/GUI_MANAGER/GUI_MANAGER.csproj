@@ -45,11 +45,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmFieldSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFieldSchedule.Designer.cs">
+      <DependentUpon>frmFieldSchedule.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainNVQLSanBanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainNVQLSanBanh.Designer.cs">
+      <DependentUpon>frmMainNVQLSanBanh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRingTheBell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRingTheBell.Designer.cs">
+      <DependentUpon>frmRingTheBell.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -60,8 +78,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmFieldSchedule.resx">
+      <DependentUpon>frmFieldSchedule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainNVQLSanBanh.resx">
+      <DependentUpon>frmMainNVQLSanBanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRingTheBell.resx">
+      <DependentUpon>frmRingTheBell.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
