@@ -45,18 +45,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmFacilitiesCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFacilitiesCheck.Designer.cs">
+      <DependentUpon>frmFacilitiesCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFacilitiesUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFacilitiesUpdate.Designer.cs">
+      <DependentUpon>frmFacilitiesUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmStatistic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStatistic.Designer.cs">
+      <DependentUpon>frmStatistic.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmFacilitiesCheck.resx">
+      <DependentUpon>frmFacilitiesCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFacilitiesUpdate.resx">
+      <DependentUpon>frmFacilitiesUpdate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStatistic.resx">
+      <DependentUpon>frmStatistic.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
