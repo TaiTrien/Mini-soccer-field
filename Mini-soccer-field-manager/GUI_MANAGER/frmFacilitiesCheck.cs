@@ -9,17 +9,11 @@ using System.Windows.Forms;
 
 namespace GUI_MANAGER
 {
-    public partial class frmLogin : Form
+    public partial class frmFacilitiesCheck : Form
     {
-        public frmLogin()
+        public frmFacilitiesCheck()
         {
             InitializeComponent();
-        }
-
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            frmMainNVQLSanBanh frmMain = new frmMainNVQLSanBanh();
-            frmMain.Show();
         }
     }
 }
