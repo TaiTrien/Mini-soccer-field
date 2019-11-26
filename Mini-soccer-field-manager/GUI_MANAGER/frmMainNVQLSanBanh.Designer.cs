@@ -36,6 +36,8 @@
             this.lbFieldSchedule = new System.Windows.Forms.Label();
             this.lbRingTheBell = new System.Windows.Forms.Label();
             this.lbPay = new System.Windows.Forms.Label();
+            this.lbImportDrinks = new System.Windows.Forms.Label();
+            this.btnImportDrinks = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnFieldSchedule
@@ -43,7 +45,7 @@
             this.btnFieldSchedule.BackColor = System.Drawing.SystemColors.Control;
             this.btnFieldSchedule.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFieldSchedule.Image = ((System.Drawing.Image)(resources.GetObject("btnFieldSchedule.Image")));
-            this.btnFieldSchedule.Location = new System.Drawing.Point(26, 94);
+            this.btnFieldSchedule.Location = new System.Drawing.Point(40, 94);
             this.btnFieldSchedule.Name = "btnFieldSchedule";
             this.btnFieldSchedule.Size = new System.Drawing.Size(203, 171);
             this.btnFieldSchedule.TabIndex = 0;
@@ -53,7 +55,7 @@
             // btnRingTheBell
             // 
             this.btnRingTheBell.Image = ((System.Drawing.Image)(resources.GetObject("btnRingTheBell.Image")));
-            this.btnRingTheBell.Location = new System.Drawing.Point(286, 94);
+            this.btnRingTheBell.Location = new System.Drawing.Point(365, 94);
             this.btnRingTheBell.Name = "btnRingTheBell";
             this.btnRingTheBell.Size = new System.Drawing.Size(203, 171);
             this.btnRingTheBell.TabIndex = 1;
@@ -63,7 +65,7 @@
             // btnPay
             // 
             this.btnPay.Image = ((System.Drawing.Image)(resources.GetObject("btnPay.Image")));
-            this.btnPay.Location = new System.Drawing.Point(555, 94);
+            this.btnPay.Location = new System.Drawing.Point(365, 328);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(203, 171);
             this.btnPay.TabIndex = 2;
@@ -74,7 +76,7 @@
             // 
             this.lbMain.AutoSize = true;
             this.lbMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMain.Location = new System.Drawing.Point(268, 9);
+            this.lbMain.Location = new System.Drawing.Point(185, 30);
             this.lbMain.Name = "lbMain";
             this.lbMain.Size = new System.Drawing.Size(246, 32);
             this.lbMain.TabIndex = 3;
@@ -84,7 +86,7 @@
             // 
             this.lbFieldSchedule.AutoSize = true;
             this.lbFieldSchedule.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFieldSchedule.Location = new System.Drawing.Point(60, 278);
+            this.lbFieldSchedule.Location = new System.Drawing.Point(74, 278);
             this.lbFieldSchedule.Name = "lbFieldSchedule";
             this.lbFieldSchedule.Size = new System.Drawing.Size(121, 32);
             this.lbFieldSchedule.TabIndex = 4;
@@ -94,7 +96,7 @@
             // 
             this.lbRingTheBell.AutoSize = true;
             this.lbRingTheBell.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRingTheBell.Location = new System.Drawing.Point(300, 278);
+            this.lbRingTheBell.Location = new System.Drawing.Point(379, 278);
             this.lbRingTheBell.Name = "lbRingTheBell";
             this.lbRingTheBell.Size = new System.Drawing.Size(174, 32);
             this.lbRingTheBell.TabIndex = 5;
@@ -104,17 +106,38 @@
             // 
             this.lbPay.AutoSize = true;
             this.lbPay.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPay.Location = new System.Drawing.Point(578, 278);
+            this.lbPay.Location = new System.Drawing.Point(388, 512);
             this.lbPay.Name = "lbPay";
             this.lbPay.Size = new System.Drawing.Size(159, 32);
             this.lbPay.TabIndex = 6;
             this.lbPay.Text = "Thanh toán";
             // 
+            // lbImportDrinks
+            // 
+            this.lbImportDrinks.AutoSize = true;
+            this.lbImportDrinks.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbImportDrinks.Location = new System.Drawing.Point(63, 512);
+            this.lbImportDrinks.Name = "lbImportDrinks";
+            this.lbImportDrinks.Size = new System.Drawing.Size(152, 32);
+            this.lbImportDrinks.TabIndex = 8;
+            this.lbImportDrinks.Text = "Nhập nước";
+            // 
+            // btnImportDrinks
+            // 
+            this.btnImportDrinks.Image = ((System.Drawing.Image)(resources.GetObject("btnImportDrinks.Image")));
+            this.btnImportDrinks.Location = new System.Drawing.Point(40, 328);
+            this.btnImportDrinks.Name = "btnImportDrinks";
+            this.btnImportDrinks.Size = new System.Drawing.Size(203, 171);
+            this.btnImportDrinks.TabIndex = 7;
+            this.btnImportDrinks.UseVisualStyleBackColor = true;
+            // 
             // frmMainNVQLSanBanh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 365);
+            this.ClientSize = new System.Drawing.Size(610, 562);
+            this.Controls.Add(this.lbImportDrinks);
+            this.Controls.Add(this.btnImportDrinks);
             this.Controls.Add(this.lbPay);
             this.Controls.Add(this.lbRingTheBell);
             this.Controls.Add(this.lbFieldSchedule);
@@ -139,5 +162,7 @@
         private System.Windows.Forms.Label lbFieldSchedule;
         private System.Windows.Forms.Label lbRingTheBell;
         private System.Windows.Forms.Label lbPay;
+        private System.Windows.Forms.Label lbImportDrinks;
+        private System.Windows.Forms.Button btnImportDrinks;
     }
 }

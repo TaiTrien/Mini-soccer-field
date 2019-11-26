@@ -18,7 +18,8 @@ namespace GUI_MANAGER
 
         private void btnFieldSchedule_Click(object sender, EventArgs e)
         {
-
+            frmFieldSchedule frmFieldSchedule = new frmFieldSchedule();
+            frmFieldSchedule.Show();
         }
 
         private void btnRingTheBell_Click(object sender, EventArgs e)
