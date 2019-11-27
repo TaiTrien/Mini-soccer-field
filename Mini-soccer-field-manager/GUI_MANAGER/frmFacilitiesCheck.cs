@@ -15,5 +15,10 @@ namespace GUI_MANAGER
         {
             InitializeComponent();
         }
+
+        private void LbUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
