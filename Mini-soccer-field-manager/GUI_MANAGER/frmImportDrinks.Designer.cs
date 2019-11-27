@@ -185,7 +185,7 @@
             // lbBack
             // 
             this.lbBack.AutoSize = true;
-            this.lbBack.Location = new System.Drawing.Point(3, 45);
+            this.lbBack.Location = new System.Drawing.Point(9, 45);
             this.lbBack.Name = "lbBack";
             this.lbBack.Size = new System.Drawing.Size(60, 17);
             this.lbBack.TabIndex = 16;
@@ -196,7 +196,7 @@
             this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
             this.btnBack.Location = new System.Drawing.Point(12, 12);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(37, 30);
+            this.btnBack.Size = new System.Drawing.Size(52, 30);
             this.btnBack.TabIndex = 17;
             this.btnBack.UseVisualStyleBackColor = true;
             // 
@@ -205,8 +205,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(863, 486);
-            this.Controls.Add(this.lbBack);
             this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.lbBack);
             this.Controls.Add(this.btnImportDrinks);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.numericUpDown2);
