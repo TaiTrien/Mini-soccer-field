@@ -39,15 +39,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnBack = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbBack = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnBack = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -156,19 +156,20 @@
             this.panel2.Size = new System.Drawing.Size(579, 226);
             this.panel2.TabIndex = 3;
             // 
-            // btnBack
+            // dataGridView1
             // 
-            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
-            this.btnBack.Location = new System.Drawing.Point(16, 9);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(37, 30);
-            this.btnBack.TabIndex = 6;
-            this.btnBack.UseVisualStyleBackColor = true;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 4);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(573, 219);
+            this.dataGridView1.TabIndex = 0;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.lbBack);
             this.panel3.Controls.Add(this.btnBack);
+            this.panel3.Controls.Add(this.lbBack);
             this.panel3.Location = new System.Drawing.Point(31, 25);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(70, 64);
@@ -183,15 +184,14 @@
             this.lbBack.TabIndex = 5;
             this.lbBack.Text = "Quay lại";
             // 
-            // dataGridView1
+            // btnBack
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(573, 219);
-            this.dataGridView1.TabIndex = 0;
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+            this.btnBack.Location = new System.Drawing.Point(10, 9);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(52, 30);
+            this.btnBack.TabIndex = 18;
+            this.btnBack.UseVisualStyleBackColor = true;
             // 
             // frmFacilitiesUpdate
             // 
@@ -207,9 +207,9 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -225,9 +225,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lbBack;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnBack;
     }
 }
