@@ -28,32 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPayment));
             this.lbTitle = new System.Windows.Forms.Label();
             this.lbCustomer = new System.Windows.Forms.Label();
             this.lbTotalTime = new System.Windows.Forms.Label();
             this.gbDrinks = new System.Windows.Forms.GroupBox();
+            this.nUDRevieDrink = new System.Windows.Forms.NumericUpDown();
+            this.nUDWaterDrink = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.lbRevieDrink = new System.Windows.Forms.Label();
             this.btnPay = new System.Windows.Forms.Button();
             this.tbCustomer = new System.Windows.Forms.TextBox();
             this.tbTotalTime = new System.Windows.Forms.TextBox();
-            this.nUDWaterDrink = new System.Windows.Forms.NumericUpDown();
-            this.nUDRevieDrink = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.lbTotalMoney = new System.Windows.Forms.Label();
             this.lbDiscount = new System.Windows.Forms.Label();
             this.tbDiscountMoney = new System.Windows.Forms.TextBox();
             this.tbTotalMoney = new System.Windows.Forms.TextBox();
+            this.lbBack = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             this.gbDrinks.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nUDWaterDrink)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDRevieDrink)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nUDWaterDrink)).BeginInit();
             this.SuspendLayout();
             // 
             // lbTitle
             // 
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.Location = new System.Drawing.Point(131, 9);
+            this.lbTitle.Location = new System.Drawing.Point(149, 9);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(169, 32);
             this.lbTitle.TabIndex = 0;
@@ -92,6 +95,22 @@
             this.gbDrinks.TabIndex = 3;
             this.gbDrinks.TabStop = false;
             this.gbDrinks.Text = "Nước uống";
+            // 
+            // nUDRevieDrink
+            // 
+            this.nUDRevieDrink.Location = new System.Drawing.Point(211, 89);
+            this.nUDRevieDrink.Name = "nUDRevieDrink";
+            this.nUDRevieDrink.Size = new System.Drawing.Size(120, 27);
+            this.nUDRevieDrink.TabIndex = 7;
+            this.nUDRevieDrink.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // nUDWaterDrink
+            // 
+            this.nUDWaterDrink.Location = new System.Drawing.Point(211, 44);
+            this.nUDWaterDrink.Name = "nUDWaterDrink";
+            this.nUDWaterDrink.Size = new System.Drawing.Size(120, 27);
+            this.nUDWaterDrink.TabIndex = 6;
+            this.nUDWaterDrink.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label1
             // 
@@ -144,22 +163,6 @@
             this.tbTotalTime.Size = new System.Drawing.Size(217, 27);
             this.tbTotalTime.TabIndex = 8;
             // 
-            // nUDWaterDrink
-            // 
-            this.nUDWaterDrink.Location = new System.Drawing.Point(211, 44);
-            this.nUDWaterDrink.Name = "nUDWaterDrink";
-            this.nUDWaterDrink.Size = new System.Drawing.Size(120, 27);
-            this.nUDWaterDrink.TabIndex = 6;
-            this.nUDWaterDrink.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // nUDRevieDrink
-            // 
-            this.nUDRevieDrink.Location = new System.Drawing.Point(211, 89);
-            this.nUDRevieDrink.Name = "nUDRevieDrink";
-            this.nUDRevieDrink.Size = new System.Drawing.Size(120, 27);
-            this.nUDRevieDrink.TabIndex = 7;
-            this.nUDRevieDrink.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // label2
             // 
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -208,11 +211,31 @@
             this.tbTotalMoney.Size = new System.Drawing.Size(221, 27);
             this.tbTotalMoney.TabIndex = 14;
             // 
+            // lbBack
+            // 
+            this.lbBack.AutoSize = true;
+            this.lbBack.Location = new System.Drawing.Point(3, 42);
+            this.lbBack.Name = "lbBack";
+            this.lbBack.Size = new System.Drawing.Size(60, 17);
+            this.lbBack.TabIndex = 15;
+            this.lbBack.Text = "Quay lại";
+            // 
+            // btnBack
+            // 
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+            this.btnBack.Location = new System.Drawing.Point(12, 9);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(37, 30);
+            this.btnBack.TabIndex = 16;
+            this.btnBack.UseVisualStyleBackColor = true;
+            // 
             // frmPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 575);
+            this.Controls.Add(this.lbBack);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.tbTotalMoney);
             this.Controls.Add(this.tbDiscountMoney);
             this.Controls.Add(this.lbDiscount);
@@ -230,8 +253,8 @@
             this.Text = "Thanh toán";
             this.gbDrinks.ResumeLayout(false);
             this.gbDrinks.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nUDWaterDrink)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDRevieDrink)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nUDWaterDrink)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,5 +278,7 @@
         private System.Windows.Forms.Label lbDiscount;
         private System.Windows.Forms.TextBox tbDiscountMoney;
         private System.Windows.Forms.TextBox tbTotalMoney;
+        private System.Windows.Forms.Label lbBack;
+        private System.Windows.Forms.Button btnBack;
     }
 }

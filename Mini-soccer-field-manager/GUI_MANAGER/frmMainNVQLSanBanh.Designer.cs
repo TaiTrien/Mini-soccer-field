@@ -38,6 +38,8 @@
             this.lbPay = new System.Windows.Forms.Label();
             this.lbImportDrinks = new System.Windows.Forms.Label();
             this.btnImportDrinks = new System.Windows.Forms.Button();
+            this.lbSignOut = new System.Windows.Forms.Label();
+            this.btnSignOut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnFieldSchedule
@@ -132,11 +134,31 @@
             this.btnImportDrinks.UseVisualStyleBackColor = true;
             this.btnImportDrinks.Click += new System.EventHandler(this.btnImportDrinks_Click);
             // 
+            // lbSignOut
+            // 
+            this.lbSignOut.AutoSize = true;
+            this.lbSignOut.Location = new System.Drawing.Point(529, 54);
+            this.lbSignOut.Name = "lbSignOut";
+            this.lbSignOut.Size = new System.Drawing.Size(75, 17);
+            this.lbSignOut.TabIndex = 11;
+            this.lbSignOut.Text = "Đăng Xuất";
+            // 
+            // btnSignOut
+            // 
+            this.btnSignOut.Image = ((System.Drawing.Image)(resources.GetObject("btnSignOut.Image")));
+            this.btnSignOut.Location = new System.Drawing.Point(552, 12);
+            this.btnSignOut.Name = "btnSignOut";
+            this.btnSignOut.Size = new System.Drawing.Size(33, 39);
+            this.btnSignOut.TabIndex = 10;
+            this.btnSignOut.UseVisualStyleBackColor = true;
+            // 
             // frmMainNVQLSanBanh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(610, 562);
+            this.Controls.Add(this.lbSignOut);
+            this.Controls.Add(this.btnSignOut);
             this.Controls.Add(this.lbImportDrinks);
             this.Controls.Add(this.btnImportDrinks);
             this.Controls.Add(this.lbPay);
@@ -165,5 +187,7 @@
         private System.Windows.Forms.Label lbPay;
         private System.Windows.Forms.Label lbImportDrinks;
         private System.Windows.Forms.Button btnImportDrinks;
+        private System.Windows.Forms.Label lbSignOut;
+        private System.Windows.Forms.Button btnSignOut;
     }
 }

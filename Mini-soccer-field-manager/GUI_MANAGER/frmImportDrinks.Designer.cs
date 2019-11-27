@@ -42,6 +42,8 @@
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.btnImportDrinks = new System.Windows.Forms.Button();
+            this.lbBack = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pBWater)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBRevie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -180,11 +182,31 @@
             this.btnImportDrinks.Text = "Nhập";
             this.btnImportDrinks.UseVisualStyleBackColor = true;
             // 
+            // lbBack
+            // 
+            this.lbBack.AutoSize = true;
+            this.lbBack.Location = new System.Drawing.Point(3, 45);
+            this.lbBack.Name = "lbBack";
+            this.lbBack.Size = new System.Drawing.Size(60, 17);
+            this.lbBack.TabIndex = 16;
+            this.lbBack.Text = "Quay lại";
+            // 
+            // btnBack
+            // 
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+            this.btnBack.Location = new System.Drawing.Point(12, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(37, 30);
+            this.btnBack.TabIndex = 17;
+            this.btnBack.UseVisualStyleBackColor = true;
+            // 
             // frmImportDrinks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(863, 486);
+            this.Controls.Add(this.lbBack);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnImportDrinks);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.numericUpDown2);
@@ -225,5 +247,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnImportDrinks;
+        private System.Windows.Forms.Label lbBack;
+        private System.Windows.Forms.Button btnBack;
     }
 }
