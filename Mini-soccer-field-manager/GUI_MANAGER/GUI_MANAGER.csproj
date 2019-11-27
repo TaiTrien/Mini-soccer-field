@@ -143,5 +143,15 @@
   <ItemGroup>
     <Folder Include="Icon\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUS_MANAGER\BUS_MANAGER.csproj">
+      <Project>{e18022a6-070a-436e-b2d4-427dee36bd5b}</Project>
+      <Name>BUS_MANAGER</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO_MANAGER\DTO_MANAGER.csproj">
+      <Project>{a5e1490d-60e3-4f5d-a13f-004114bd3d1d}</Project>
+      <Name>DTO_MANAGER</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

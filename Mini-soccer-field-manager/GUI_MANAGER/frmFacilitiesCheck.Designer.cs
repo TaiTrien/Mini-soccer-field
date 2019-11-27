@@ -36,10 +36,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnUpdate = new System.Windows.Forms.Button();
+            this.lbUpdate = new System.Windows.Forms.Label();
             this.lbSignOut = new System.Windows.Forms.Label();
             this.btnSignOut = new System.Windows.Forms.Button();
-            this.lbUpdate = new System.Windows.Forms.Label();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -112,14 +112,15 @@
             this.panel3.Size = new System.Drawing.Size(206, 77);
             this.panel3.TabIndex = 5;
             // 
-            // btnUpdate
+            // lbUpdate
             // 
-            this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
-            this.btnUpdate.Location = new System.Drawing.Point(26, 10);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(40, 39);
-            this.btnUpdate.TabIndex = 0;
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.lbUpdate.AutoSize = true;
+            this.lbUpdate.Location = new System.Drawing.Point(13, 52);
+            this.lbUpdate.Name = "lbUpdate";
+            this.lbUpdate.Size = new System.Drawing.Size(65, 17);
+            this.lbUpdate.TabIndex = 10;
+            this.lbUpdate.Text = "Cập nhật";
+            this.lbUpdate.Click += new System.EventHandler(this.LbUpdate_Click);
             // 
             // lbSignOut
             // 
@@ -139,15 +140,14 @@
             this.btnSignOut.TabIndex = 8;
             this.btnSignOut.UseVisualStyleBackColor = true;
             // 
-            // lbUpdate
+            // btnUpdate
             // 
-            this.lbUpdate.AutoSize = true;
-            this.lbUpdate.Location = new System.Drawing.Point(13, 52);
-            this.lbUpdate.Name = "lbUpdate";
-            this.lbUpdate.Size = new System.Drawing.Size(65, 17);
-            this.lbUpdate.TabIndex = 10;
-            this.lbUpdate.Text = "Cập nhật";
-            this.lbUpdate.Click += new System.EventHandler(this.LbUpdate_Click);
+            this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
+            this.btnUpdate.Location = new System.Drawing.Point(26, 10);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(40, 39);
+            this.btnUpdate.TabIndex = 0;
+            this.btnUpdate.UseVisualStyleBackColor = true;
             // 
             // frmFacilitiesCheck
             // 
@@ -158,6 +158,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "frmFacilitiesCheck";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhân viên quản lí cơ sở vật chất";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -25,6 +25,7 @@ CREATE TABLE [dbo].[tblTAIKHOAN](
 [maTaiKhoan] [nvarchar](5) NOT NULL,
 [userName] [nvarchar](30) NOT NULL,
 [passWord] [nvarchar](30) NOT NULL,
+[role] [nvarchar](30) NOT NULL,
  CONSTRAINT [PK_tblTAIKHOAN] PRIMARY KEY CLUSTERED 
 (
 	[maTaiKhoan] ASC
