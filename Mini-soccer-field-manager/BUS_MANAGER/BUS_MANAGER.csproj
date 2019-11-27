@@ -40,8 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="userBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL_MANAGER\DAL_MANAGER.csproj">
+      <Project>{ad678570-9e5f-4c75-a055-fb2501a5e06c}</Project>
+      <Name>DAL_MANAGER</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO_MANAGER\DTO_MANAGER.csproj">
+      <Project>{a5e1490d-60e3-4f5d-a13f-004114bd3d1d}</Project>
+      <Name>DTO_MANAGER</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

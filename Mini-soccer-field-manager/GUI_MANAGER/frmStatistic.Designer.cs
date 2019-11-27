@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStatistic));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSignOut = new System.Windows.Forms.Button();
             this.lbMonth = new System.Windows.Forms.Label();
             this.lbYear = new System.Windows.Forms.Label();
             this.btnStatistic = new System.Windows.Forms.Button();
             this.dtpMonth = new System.Windows.Forms.DateTimePicker();
             this.dtpYear = new System.Windows.Forms.DateTimePicker();
+            this.btnSignOut = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lbSignOut = new System.Windows.Forms.Label();
@@ -55,15 +55,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(376, 86);
             this.panel1.TabIndex = 0;
-            // 
-            // btnSignOut
-            // 
-            this.btnSignOut.Image = ((System.Drawing.Image)(resources.GetObject("btnSignOut.Image")));
-            this.btnSignOut.Location = new System.Drawing.Point(707, 17);
-            this.btnSignOut.Name = "btnSignOut";
-            this.btnSignOut.Size = new System.Drawing.Size(33, 39);
-            this.btnSignOut.TabIndex = 6;
-            this.btnSignOut.UseVisualStyleBackColor = true;
             // 
             // lbMonth
             // 
@@ -88,7 +79,7 @@
             this.btnStatistic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStatistic.Location = new System.Drawing.Point(248, 24);
             this.btnStatistic.Name = "btnStatistic";
-            this.btnStatistic.Size = new System.Drawing.Size(91, 38);
+            this.btnStatistic.Size = new System.Drawing.Size(101, 47);
             this.btnStatistic.TabIndex = 3;
             this.btnStatistic.Text = "Thống Kê";
             this.btnStatistic.UseVisualStyleBackColor = true;
@@ -108,6 +99,15 @@
             this.dtpYear.Name = "dtpYear";
             this.dtpYear.Size = new System.Drawing.Size(139, 22);
             this.dtpYear.TabIndex = 1;
+            // 
+            // btnSignOut
+            // 
+            this.btnSignOut.Image = ((System.Drawing.Image)(resources.GetObject("btnSignOut.Image")));
+            this.btnSignOut.Location = new System.Drawing.Point(707, 17);
+            this.btnSignOut.Name = "btnSignOut";
+            this.btnSignOut.Size = new System.Drawing.Size(33, 39);
+            this.btnSignOut.TabIndex = 6;
+            this.btnSignOut.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -146,6 +146,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "frmStatistic";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhân viên quản lí tài chính";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

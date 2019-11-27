@@ -41,8 +41,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lbBack = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
+            this.lbBack = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -175,15 +175,6 @@
             this.panel3.Size = new System.Drawing.Size(70, 64);
             this.panel3.TabIndex = 4;
             // 
-            // lbBack
-            // 
-            this.lbBack.AutoSize = true;
-            this.lbBack.Location = new System.Drawing.Point(7, 42);
-            this.lbBack.Name = "lbBack";
-            this.lbBack.Size = new System.Drawing.Size(60, 17);
-            this.lbBack.TabIndex = 5;
-            this.lbBack.Text = "Quay lại";
-            // 
             // btnBack
             // 
             this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
@@ -192,6 +183,15 @@
             this.btnBack.Size = new System.Drawing.Size(52, 30);
             this.btnBack.TabIndex = 18;
             this.btnBack.UseVisualStyleBackColor = true;
+            // 
+            // lbBack
+            // 
+            this.lbBack.AutoSize = true;
+            this.lbBack.Location = new System.Drawing.Point(7, 42);
+            this.lbBack.Name = "lbBack";
+            this.lbBack.Size = new System.Drawing.Size(60, 17);
+            this.lbBack.TabIndex = 5;
+            this.lbBack.Text = "Quay lại";
             // 
             // frmFacilitiesUpdate
             // 
@@ -202,6 +202,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "frmFacilitiesUpdate";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Câp nhập tình trạng cơ sở vật chất";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
