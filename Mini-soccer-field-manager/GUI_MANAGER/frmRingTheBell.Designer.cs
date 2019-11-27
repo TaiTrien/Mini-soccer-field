@@ -40,6 +40,8 @@
             this.lbNotFree = new System.Windows.Forms.Label();
             this.lbFreeTxt = new System.Windows.Forms.Label();
             this.lbNotFreeTxt = new System.Windows.Forms.Label();
+            this.lbBack = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnField1
@@ -88,7 +90,7 @@
             this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.Location = new System.Drawing.Point(335, 9);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(234, 39);
+            this.lbTitle.Size = new System.Drawing.Size(225, 38);
             this.lbTitle.TabIndex = 4;
             this.lbTitle.Text = "Tình trạng sân";
             // 
@@ -160,11 +162,31 @@
             this.lbNotFreeTxt.TabIndex = 10;
             this.lbNotFreeTxt.Text = "Đang đá";
             // 
+            // lbBack
+            // 
+            this.lbBack.AutoSize = true;
+            this.lbBack.Location = new System.Drawing.Point(850, 53);
+            this.lbBack.Name = "lbBack";
+            this.lbBack.Size = new System.Drawing.Size(60, 17);
+            this.lbBack.TabIndex = 11;
+            this.lbBack.Text = "Quay lại";
+            // 
+            // btnBack
+            // 
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+            this.btnBack.Location = new System.Drawing.Point(859, 20);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(37, 30);
+            this.btnBack.TabIndex = 12;
+            this.btnBack.UseVisualStyleBackColor = true;
+            // 
             // frmRingTheBell
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(925, 586);
+            this.Controls.Add(this.lbBack);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lbNotFreeTxt);
             this.Controls.Add(this.lbFreeTxt);
             this.Controls.Add(this.lbNotFree);
@@ -197,5 +219,7 @@
         private System.Windows.Forms.Label lbNotFree;
         private System.Windows.Forms.Label lbFreeTxt;
         private System.Windows.Forms.Label lbNotFreeTxt;
+        private System.Windows.Forms.Label lbBack;
+        private System.Windows.Forms.Button btnBack;
     }
 }
