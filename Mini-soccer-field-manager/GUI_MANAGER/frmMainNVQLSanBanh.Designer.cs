@@ -130,6 +130,7 @@
             this.btnImportDrinks.Size = new System.Drawing.Size(203, 171);
             this.btnImportDrinks.TabIndex = 7;
             this.btnImportDrinks.UseVisualStyleBackColor = true;
+            this.btnImportDrinks.Click += new System.EventHandler(this.btnImportDrinks_Click);
             // 
             // frmMainNVQLSanBanh
             // 

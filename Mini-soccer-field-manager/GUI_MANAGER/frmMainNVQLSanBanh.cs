@@ -33,5 +33,11 @@ namespace GUI_MANAGER
             frmPayment frmPayment = new frmPayment();
             frmPayment.Show();
         }
+
+        private void btnImportDrinks_Click(object sender, EventArgs e)
+        {
+            frmImportDrinks frmImportDrinks = new frmImportDrinks();
+            frmImportDrinks.Show();
+        }
     }
 }
