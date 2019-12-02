@@ -136,7 +136,6 @@ CREATE TABLE [dbo].[tblDOUONG](
 	[soluongconlai] [nvarchar](10) NOT NULL,
 	[dongianhap] [nvarchar](10) NOT NULL,
 	[dongiaxuat] [nvarchar](10) NOT NULL,
-	[ngaytaohoadon] [smalldatetime] NOT NULL,
 CONSTRAINT [PK_tblDOUONG] PRIMARY KEY CLUSTERED 
 (
 	[maDouong] ASC
