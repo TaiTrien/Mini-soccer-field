@@ -82,7 +82,7 @@ CONSTRAINT fk_KHACHHANG_PHIEUDATSAN
 /*N'TẠO BẢNG SÂN'*/
 CREATE TABLE [dbo].[tblSAN](
 	[maSan] [nvarchar](5) NOT NULL,
-	[tinhTrang] [nvarchar](10),
+	[tinhTrang] bit,
 
  CONSTRAINT [PK_tblSAN] PRIMARY KEY CLUSTERED 
 (
@@ -136,7 +136,7 @@ CREATE TABLE [dbo].[tblDOUONG](
 	[tendouong] [nvarchar](10) NOT NULL,
 	[soluongconlai] [nvarchar](10) NOT NULL,
 	[dongianhap] [nvarchar](10) NOT NULL,
-	[dongiaxuat] [nvarchar](10) NOT NULL,
+	[dongiaban] [nvarchar](10) NOT NULL,
 	[ngaytaohoadon] [smalldatetime] NOT NULL,
 CONSTRAINT [PK_tblDOUONG] PRIMARY KEY CLUSTERED 
 (

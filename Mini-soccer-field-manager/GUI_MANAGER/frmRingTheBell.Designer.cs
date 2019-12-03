@@ -42,6 +42,9 @@
             this.lbNotFreeTxt = new System.Windows.Forms.Label();
             this.lbBack = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbCustomerField1 = new System.Windows.Forms.TextBox();
+            this.tbCustomerField2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnField1
@@ -53,6 +56,7 @@
             this.btnField1.Size = new System.Drawing.Size(334, 415);
             this.btnField1.TabIndex = 0;
             this.btnField1.UseVisualStyleBackColor = true;
+            this.btnField1.Click += new System.EventHandler(this.btnField1_Click);
             // 
             // btnField2
             // 
@@ -180,11 +184,44 @@
             this.btnBack.TabIndex = 12;
             this.btnBack.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(218, 66);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 17);
+            this.label1.TabIndex = 13;
+            // 
+            // tbCustomerField1
+            // 
+            this.tbCustomerField1.BackColor = System.Drawing.SystemColors.Control;
+            this.tbCustomerField1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbCustomerField1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCustomerField1.Location = new System.Drawing.Point(147, 69);
+            this.tbCustomerField1.Name = "tbCustomerField1";
+            this.tbCustomerField1.Size = new System.Drawing.Size(201, 23);
+            this.tbCustomerField1.TabIndex = 14;
+            this.tbCustomerField1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbCustomerField2
+            // 
+            this.tbCustomerField2.BackColor = System.Drawing.SystemColors.Control;
+            this.tbCustomerField2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbCustomerField2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCustomerField2.Location = new System.Drawing.Point(568, 69);
+            this.tbCustomerField2.Name = "tbCustomerField2";
+            this.tbCustomerField2.Size = new System.Drawing.Size(201, 23);
+            this.tbCustomerField2.TabIndex = 15;
+            this.tbCustomerField2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // frmRingTheBell
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(925, 586);
+            this.Controls.Add(this.tbCustomerField2);
+            this.Controls.Add(this.tbCustomerField1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lbBack);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lbNotFreeTxt);
@@ -201,6 +238,7 @@
             this.Name = "frmRingTheBell";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rung chuông";
+            this.Load += new System.EventHandler(this.frmRingTheBell_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,5 +259,8 @@
         private System.Windows.Forms.Label lbNotFreeTxt;
         private System.Windows.Forms.Label lbBack;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbCustomerField1;
+        private System.Windows.Forms.TextBox tbCustomerField2;
     }
 }

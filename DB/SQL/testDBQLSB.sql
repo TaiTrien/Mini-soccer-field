@@ -10,6 +10,8 @@ SET DATEFORMAT DMY
 INSERT INTO [tblTAIKHOAN] ([maTaiKhoan],[userName],[passWord],[role]) VALUES (1,N'lydaonam',N'namlydao123', 'NhanVienQLSB')
 INSERT INTO [tblTAIKHOAN] ([maTaiKhoan],[userName],[passWord],[role]) VALUES (2,N'taitrien',N'taitrien99', 'NhanVienQLCSVC')
 INSERT INTO [tblTAIKHOAN] ([maTaiKhoan],[userName],[passWord],[role]) VALUES (3,N'duytan',N'duytan99', 'NhanVienQLTC')
+INSERT INTO [tblTAIKHOAN] ([maTaiKhoan],[userName],[passWord],[role]) VALUES (4,N'1',N'1', 'NhanVienQLSB')
+
 /*N'Test bảng NHANVIEN'*/
 INSERT INTO [tblNHANVIEN] ([maNhanVien],[maTaiKhoan],[hoTen],[tuoi],[diaChi],[gioiTinh],[soDT]) VALUES (1,1,N'Lý Đạo Nam',20,N'01 Trần Duy Hưng, Hà Nội =)))','Nam','0969696969')
 INSERT INTO [tblNHANVIEN] ([maNhanVien],[maTaiKhoan],[hoTen],[tuoi],[diaChi],[gioiTinh],[soDT]) VALUES (2,2,N'Võ Văn Tài Triển',20,N'?????','Nam','0977777777')
@@ -18,7 +20,7 @@ INSERT INTO [tblKHACHHANG] ([maKH],[tenKH],[loaiKH],[diaChi],[gioiTinh],[soDT]) 
 /*N'Test bảng PHIEUDATSAN'*/
 INSERT INTO [tblPHIEUDATSAN] ([maPhieuDatSan], [maNhanVien],[maKH]) VALUES (1,2,1)
 /*N'Test bảng SAN'*/
-INSERT INTO [tblSAN] ([maSan], [tinhTrang]) VALUES (1,N'Trống')
+INSERT INTO [tblSAN] ([maSan], [tinhTrang]) VALUES (1,1)
 /*N'Test bảng CHITIETDATSAN'*/
 INSERT INTO [tblCHITIETDATSAN] ([maPhieuDatSan],[maSan],[ngayDat],[gioDat],[thoiLuong]) VALUES (1,1,'18/11/2019','20:00',2)
 /*N'Test bảng THAMSO'*/
@@ -33,3 +35,8 @@ INSERT INTO [tblCHITIETHOADON] ([maLoaiHoaDon],[maHoaDon],[trigiahoadon]) VALUES
 INSERT INTO [tblCSVC] ([maCSVC],[maNhanVien],[tencsvc],[soluongnhap],[dongianhap],[tinhtrangcsvc]) VALUES (1,1,'banh',5,50000,'hu hong')
 /*N'Test bảng DOUONG'*/
 INSERT INTO [tblDOUONG] ([maDoUong],[tendouong],[soluongconlai],[dongianhap],[dongiaban],[ngaytaohoadon]) VALUES (1,'nuoc suoi',5,5000,10000,'18/11/2019')
+
+SELECT  tblCHITIETDATSAN.maPhieuDatSan, maSan, ngayDat, gioDat, thoiLuong, tblKHACHHANG.tenKH
+FROM tblCHITIETDATSAN, tblPHIEUDATSAN, tblKHACHHANG
+WHERE
+  tblCHITIETDATSAN.maPhieuDatSan = tblPHIEUDATSAN.maPhieuDatSan and tblKHACHHANG.maKH = tblPHIEUDATSAN.maKH
