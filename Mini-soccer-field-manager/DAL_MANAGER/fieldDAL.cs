@@ -42,6 +42,8 @@ namespace DAL_MANAGER
                             {
                                 fieldDTO field = new fieldDTO();
                                 field.MaSanBanh = reader["maSan"].ToString();
+                                field.GioDatSan = DateTime.Parse(reader["gioDat"].ToString());
+                                field.NgayDatSan = DateTime.Parse(reader["ngayDat"].ToString());
                                 field.ThoiLuongDatSan = float.Parse(reader["thoiLuong"].ToString());
                                 field.tenKH = reader["tenKH"].ToString();
                                 lstFields.Add(field);
