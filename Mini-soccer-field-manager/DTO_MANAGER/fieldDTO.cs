@@ -11,13 +11,13 @@ namespace DTO_MANAGER
         private int fieldStatus;
         private DateTime bookingDate;
         private DateTime startTime; // time to begin playing
-        private float duration; // how long is the game
+        private DateTime duration; // how long is the game
         private string customerName; 
         public string MaSanBanh { get => fieldCode; set => fieldCode = value; }
         public int TinhTrangSan { get => fieldStatus; set => fieldStatus = value; }
         public DateTime NgayDatSan { get => bookingDate; set => bookingDate = value; }
         public DateTime GioDatSan { get => startTime; set => startTime = value; }
-        public float ThoiLuongDatSan { get => duration; set => duration = value; }
+        public DateTime ThoiLuongDatSan { get => duration; set => duration = value; }
         public string tenKH { get => customerName; set => customerName = value; }
 
 

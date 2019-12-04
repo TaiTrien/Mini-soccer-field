@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRingTheBell));
             this.btnField1 = new System.Windows.Forms.Button();
             this.btnField2 = new System.Windows.Forms.Button();
@@ -45,6 +46,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tbCustomerField1 = new System.Windows.Forms.TextBox();
             this.tbCustomerField2 = new System.Windows.Forms.TextBox();
+            this.countDownTimerField1 = new System.Windows.Forms.Timer(this.components);
+            this.countDownTimerField2 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // btnField1
@@ -102,11 +105,10 @@
             // 
             this.tbTimerField1.BackColor = System.Drawing.SystemColors.Control;
             this.tbTimerField1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbTimerField1.Enabled = false;
-            this.tbTimerField1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTimerField1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTimerField1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.tbTimerField1.Location = new System.Drawing.Point(195, 98);
             this.tbTimerField1.Name = "tbTimerField1";
-            this.tbTimerField1.ReadOnly = true;
             this.tbTimerField1.Size = new System.Drawing.Size(100, 27);
             this.tbTimerField1.TabIndex = 5;
             this.tbTimerField1.Text = "00:00:00";
@@ -116,11 +118,10 @@
             // 
             this.tbTimerField2.BackColor = System.Drawing.SystemColors.Control;
             this.tbTimerField2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbTimerField2.Enabled = false;
-            this.tbTimerField2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTimerField2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTimerField2.ForeColor = System.Drawing.SystemColors.WindowText;
             this.tbTimerField2.Location = new System.Drawing.Point(616, 98);
             this.tbTimerField2.Name = "tbTimerField2";
-            this.tbTimerField2.ReadOnly = true;
             this.tbTimerField2.Size = new System.Drawing.Size(100, 27);
             this.tbTimerField2.TabIndex = 6;
             this.tbTimerField2.Text = "00:00:00";
@@ -214,6 +215,15 @@
             this.tbCustomerField2.TabIndex = 15;
             this.tbCustomerField2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // countDownTimerField1
+            // 
+            this.countDownTimerField1.Interval = 1000;
+            this.countDownTimerField1.Tick += new System.EventHandler(this.countDownTimerField1_Tick);
+            // 
+            // countDownTimerField2
+            // 
+            this.countDownTimerField2.Interval = 1000;
+            // 
             // frmRingTheBell
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -262,5 +272,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbCustomerField1;
         private System.Windows.Forms.TextBox tbCustomerField2;
+        private System.Windows.Forms.Timer countDownTimerField1;
+        private System.Windows.Forms.Timer countDownTimerField2;
     }
 }

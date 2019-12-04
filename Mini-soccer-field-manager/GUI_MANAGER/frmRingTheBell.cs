@@ -8,6 +8,7 @@ using System.Text;
 using DTO_MANAGER;
 using BUS_MANAGER;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace GUI_MANAGER
 {
@@ -15,14 +16,63 @@ namespace GUI_MANAGER
     {
         private fieldDTO field1DTO, field2DTO;
         private fieldBUS fieldBUS;
+        private int durationField1 = 0; // with minutes
+        private int durationField2 = 0;
         public frmRingTheBell()
         {
             InitializeComponent();
+            tbTimerField1.BackColor = Color.Green;
+            tbTimerField2.BackColor = Color.Green;
         }
 
         private void btnField1_Click(object sender, EventArgs e)
         {
-
+            durationField1 = changeStringIntoIntTime(tbTimerField1.Text);
+            if (tbCustomerField1.Text != null && tbTimerField1.BackColor == Color.Green) // to check field busy
+            {
+                countDownTimerField1.Start();
+                countDownTimerField1.Enabled = true;
+                tbTimerField1.BackColor = Color.Red;
+            }
+            else if (tbCustomerField1.Text != null && tbTimerField1.BackColor == Color.Red) // to click another time
+            {
+                countDownTimerField1.Stop();
+                tbTimerField1.BackColor = Color.Green;
+            }
+        }
+        private void countDownTimerField1_Tick(object sender, EventArgs e)
+        {
+            durationField1--;
+            int hours, minutes, seconds;
+            hours = durationField1 / 3600;
+            minutes = (durationField1 % 3600) / 60;
+            seconds = (durationField1 % 3600) % 60;
+            tbTimerField1.Text = (hours >= 10 ? hours.ToString() : "0" + hours) + ":" +
+                (minutes >= 10 ? minutes.ToString() : "0" + minutes) + ":" + 
+                    (seconds >= 10 ? seconds.ToString() : "0" + seconds); 
+            if (durationField1 == 0)
+            {
+                countDownTimerField1.Stop();
+                tbTimerField1.BackColor = Color.Green;
+            }
+        }
+      
+        private int changeStringIntoIntTime(String time) // to change string of time such hh:mm:ss to seconds with int type
+        {
+            string[] result;// result after split
+            int seconds = 0;
+            // Split a string delimited by characters.
+            result = time.Split(':');
+            try
+            {
+                seconds = int.Parse(result[0]) * 3600 + int.Parse(result[1]) * 60 + int.Parse(result[2]);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Có lỗi");
+                return 0;
+            }
+            return seconds;
         }
 
         private void frmRingTheBell_Load(object sender, EventArgs e)
@@ -37,22 +87,46 @@ namespace GUI_MANAGER
         }
         private void loadInfo() // to load information for field including customer name, duration of field, field status
         {
+            //DateTime.Now.ToString("HH:mm") : to get current time 
             List<fieldDTO> lstFields = fieldBUS.selectedFields();
             if (lstFields != null)
             {
                foreach( fieldDTO fields in lstFields)
-                {
-                    if (field1DTO.MaSanBanh == fields.MaSanBanh)
-                    {
-                        tbCustomerField1.Text = fields.tenKH;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Nothing to show");
-                    }
-                }
+               {
+                    displayInfoField(fields);
+               }
             }
             else return;
+        }
+
+        
+
+        /* to display information about fields
+        */
+        private void displayInfoField(fieldDTO field) 
+        {
+            string bookingDate = field.NgayDatSan.ToShortDateString();
+            string bookingTime = field.GioDatSan.ToString("HH:mm:ss");
+            if (field1DTO.MaSanBanh == field.MaSanBanh)
+            {
+                if ("20:00:00" == bookingTime && "3/3/2019" == bookingDate)
+                {
+                    tbCustomerField1.Text = field.tenKH;
+                    tbTimerField1.Text = field.ThoiLuongDatSan.ToString("HH:mm:ss");
+                }
+            }
+            else
+            {
+                tbTimerField1.BackColor = Color.Green;
+            }
+            if (field2DTO.MaSanBanh == field.MaSanBanh)
+            {
+                tbCustomerField2.Text = field.tenKH;
+            }
+            else
+            {
+                tbTimerField2.BackColor = Color.Green;
+            }
         }
     }
 }
