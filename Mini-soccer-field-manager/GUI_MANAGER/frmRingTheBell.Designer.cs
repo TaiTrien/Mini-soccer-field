@@ -48,6 +48,8 @@
             this.tbCustomerField2 = new System.Windows.Forms.TextBox();
             this.countDownTimerField1 = new System.Windows.Forms.Timer(this.components);
             this.countDownTimerField2 = new System.Windows.Forms.Timer(this.components);
+            this.btnPaymentField1 = new System.Windows.Forms.Button();
+            this.btnPaymentField2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnField1
@@ -224,11 +226,36 @@
             // 
             this.countDownTimerField2.Interval = 1000;
             // 
+            // btnPaymentField1
+            // 
+            this.btnPaymentField1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPaymentField1.Location = new System.Drawing.Point(416, 131);
+            this.btnPaymentField1.Name = "btnPaymentField1";
+            this.btnPaymentField1.Size = new System.Drawing.Size(72, 67);
+            this.btnPaymentField1.TabIndex = 16;
+            this.btnPaymentField1.Text = "Tính tiền";
+            this.btnPaymentField1.UseVisualStyleBackColor = true;
+            this.btnPaymentField1.Visible = false;
+            this.btnPaymentField1.Click += new System.EventHandler(this.btnPaymentField1_Click);
+            // 
+            // btnPaymentField2
+            // 
+            this.btnPaymentField2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPaymentField2.Location = new System.Drawing.Point(838, 131);
+            this.btnPaymentField2.Name = "btnPaymentField2";
+            this.btnPaymentField2.Size = new System.Drawing.Size(72, 67);
+            this.btnPaymentField2.TabIndex = 17;
+            this.btnPaymentField2.Text = "Tính tiền";
+            this.btnPaymentField2.UseVisualStyleBackColor = true;
+            this.btnPaymentField2.Visible = false;
+            // 
             // frmRingTheBell
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(925, 586);
+            this.Controls.Add(this.btnPaymentField2);
+            this.Controls.Add(this.btnPaymentField1);
             this.Controls.Add(this.tbCustomerField2);
             this.Controls.Add(this.tbCustomerField1);
             this.Controls.Add(this.label1);
@@ -274,5 +301,7 @@
         private System.Windows.Forms.TextBox tbCustomerField2;
         private System.Windows.Forms.Timer countDownTimerField1;
         private System.Windows.Forms.Timer countDownTimerField2;
+        private System.Windows.Forms.Button btnPaymentField1;
+        private System.Windows.Forms.Button btnPaymentField2;
     }
 }

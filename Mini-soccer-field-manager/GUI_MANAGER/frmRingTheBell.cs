@@ -28,16 +28,32 @@ namespace GUI_MANAGER
         private void btnField1_Click(object sender, EventArgs e)
         {
             durationField1 = changeStringIntoIntTime(tbTimerField1.Text);
-            if (tbCustomerField1.Text != null && tbTimerField1.BackColor == Color.Green) // to check field busy
+            if ( tbTimerField1.BackColor == Color.Green) // to check field busy
             {
-                countDownTimerField1.Start();
-                countDownTimerField1.Enabled = true;
-                tbTimerField1.BackColor = Color.Red;
+                if (tbCustomerField1.Text != null)
+                {
+                    countDownTimerField1.Start();
+                    countDownTimerField1.Enabled = true;
+                    tbTimerField1.BackColor = Color.Red;
+                }
+               
             }
-            else if (tbCustomerField1.Text != null && tbTimerField1.BackColor == Color.Red) // to click another time
+            else if (tbTimerField1.BackColor == Color.Red) // to click another time
             {
-                countDownTimerField1.Stop();
-                tbTimerField1.BackColor = Color.Green;
+                if (tbCustomerField1.Text != null)
+                {
+                    countDownTimerField1.Stop();
+                    tbTimerField1.BackColor = Color.Green;
+                    DialogResult result = MessageBox.Show("Bạn có muốn tính tiền sân này không?", "Thông báo", MessageBoxButtons.YesNoCancel);
+                    if (result == DialogResult.Yes)
+                    {
+                        frmPayment frmPayment = new frmPayment();
+                        frmPayment.Show();
+                        /*get data to form payment here*/
+                        /*Update database functionin here*/
+                        loadInfo();
+                    }
+                }
             }
         }
         private void countDownTimerField1_Tick(object sender, EventArgs e)
@@ -53,6 +69,7 @@ namespace GUI_MANAGER
             if (durationField1 == 0)
             {
                 countDownTimerField1.Stop();
+                btnPaymentField1.Visible = true;
                 tbTimerField1.BackColor = Color.Green;
             }
         }
@@ -99,7 +116,14 @@ namespace GUI_MANAGER
             else return;
         }
 
-        
+        private void btnPaymentField1_Click(object sender, EventArgs e)
+        {
+            frmPayment frmPayment = new frmPayment();
+            frmPayment.Show();
+            /*get data to form payment here*/
+        }
+
+
 
         /* to display information about fields
         */
