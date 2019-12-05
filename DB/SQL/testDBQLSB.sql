@@ -7,9 +7,8 @@ GO
 SET DATEFORMAT DMY
 /*N'Tạo giá trị mặc định'*/
 /*N'Test bảng TAIKHOAN'*/
-INSERT INTO [tblTAIKHOAN] ([maTaiKhoan],[userName],[passWord],[role]) VALUES (1,N'lydaonam',N'namlydao123', 'NhanVienQLSB')
-INSERT INTO [tblTAIKHOAN] ([maTaiKhoan],[userName],[passWord],[role]) VALUES (2,N'taitrien',N'taitrien99', 'NhanVienQLCSVC')
-INSERT INTO [tblTAIKHOAN] ([maTaiKhoan],[userName],[passWord],[role]) VALUES (3,N'duytan',N'duytan99', 'NhanVienQLTC')
+INSERT INTO [tblTAIKHOAN] ([maTaiKhoan],[userName],[passWord],[Role]) VALUES (1,N'lydaonam',N'namlydao123','master')
+INSERT INTO [tblTAIKHOAN] ([maTaiKhoan],[userName],[passWord],[Role]) VALUES (2,N'taitrien',N'taitrien99','master')
 /*N'Test bảng NHANVIEN'*/
 INSERT INTO [tblNHANVIEN] ([maNhanVien],[maTaiKhoan],[hoTen],[tuoi],[diaChi],[gioiTinh],[soDT]) VALUES (1,1,N'Lý Đạo Nam',20,N'01 Trần Duy Hưng, Hà Nội =)))','Nam','0969696969')
 INSERT INTO [tblNHANVIEN] ([maNhanVien],[maTaiKhoan],[hoTen],[tuoi],[diaChi],[gioiTinh],[soDT]) VALUES (2,2,N'Võ Văn Tài Triển',20,N'?????','Nam','0977777777')
@@ -18,13 +17,13 @@ INSERT INTO [tblKHACHHANG] ([maKH],[tenKH],[loaiKH],[diaChi],[gioiTinh],[soDT]) 
 /*N'Test bảng PHIEUDATSAN'*/
 INSERT INTO [tblPHIEUDATSAN] ([maPhieuDatSan], [maNhanVien],[maKH]) VALUES (1,2,1)
 /*N'Test bảng SAN'*/
-INSERT INTO [tblSAN] ([maSan], [tinhTrang]) VALUES (1,N'Trống')
+INSERT INTO [tblSAN] ([maSan], [tinhTrang]) VALUES (1,0)
 /*N'Test bảng CHITIETDATSAN'*/
-INSERT INTO [tblCHITIETDATSAN] ([maPhieuDatSan],[maSan],[ngayDat],[gioDat],[thoiLuong]) VALUES (1,1,'18/11/2019','20:00',2)
+INSERT INTO [tblCHITIETDATSAN] ([maPhieuDatSan],[maSan],[ngayDat],[gioDat],[thoiLuong]) VALUES (1,1,'2019-03-03','20:00','00:30')
 /*N'Test bảng THAMSO'*/
 INSERT INTO [tblTHAMSO] ([luongnhanvien],[tiengiuxe],[giasanngay],[giasandem],[sotiencoc]) VALUES (10000,5000,30000,50000,10000)
 /*N'Test bảng HOADON'*/
-INSERT INTO [tblHOADON] ([maHoaDon],[maNhanVien],[maKH],[ngaytaohoadon]) VALUES (1,1,1,'18/11/2019')
+INSERT INTO [tblHOADON] ([maHoaDon],[maNhanVien],[maKH],[ngaytaohoadon]) VALUES (1,1,1,'2019-03-03')
 /*N'Test bảng LOAIHOADON'*/
 INSERT INTO [tblLOAIHOADON] ([maLoaiHoaDon],[loaihoadon]) VALUES (1,'thu san')
 /*N'Test bảng CHITIETHOADON'*/
@@ -32,4 +31,4 @@ INSERT INTO [tblCHITIETHOADON] ([maLoaiHoaDon],[maHoaDon],[trigiahoadon]) VALUES
 /*N'Test bảng CSVC'*/
 INSERT INTO [tblCSVC] ([maCSVC],[maNhanVien],[tencsvc],[soluongnhap],[dongianhap],[tinhtrangcsvc]) VALUES (1,1,'banh',5,50000,'hu hong')
 /*N'Test bảng DOUONG'*/
-INSERT INTO [tblDOUONG] ([maDoUong],[tendouong],[soluongconlai],[dongianhap],[dongiaban],[ngaytaohoadon]) VALUES (1,'nuoc suoi',5,5000,10000,'18/11/2019')
+INSERT INTO [tblDOUONG] ([maDoUong],[tendouong],[soluongconlai],[dongianhap],[dongiaban],[ngaytaohoadon]) VALUES (1,'nuoc suoi',5,5000,10000,'2019-03-03')

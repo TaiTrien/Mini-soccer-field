@@ -40,8 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="userBUS.cs" />
+    <Compile Include="ChiTietDatSanBUS.cs" />
+    <Compile Include="KhachHangBUS.cs" />
+    <Compile Include="PhieuDatSanBUS.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SanBUS.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL_MANAGER\DAL_MANAGER.csproj">
