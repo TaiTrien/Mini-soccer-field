@@ -44,7 +44,7 @@ namespace GUI_MANAGER
                 {
                     countDownTimerField1.Stop();
                     tbTimerField1.BackColor = Color.Green;
-                    DialogResult result = MessageBox.Show("Bạn có muốn tính tiền sân này không?", "Thông báo", MessageBoxButtons.YesNoCancel);
+                    DialogResult result = MessageBox.Show("Bạn có muốn tính tiền sân này không?", "Thông báo", MessageBoxButtons.YesNo);
                     if (result == DialogResult.Yes)
                     {
                         frmPayment frmPayment = new frmPayment();
@@ -52,6 +52,48 @@ namespace GUI_MANAGER
                         /*get data to form payment here*/
                         /*Update database functionin here*/
                         loadInfo();
+                    }
+                    else if (result == DialogResult.No)
+                    {
+                        countDownTimerField1.Start();
+                        tbTimerField1.BackColor = Color.Red;
+                    }
+                }
+            }
+        }
+
+        private void btnField2_Click(object sender, EventArgs e)
+        {
+            durationField2 = changeStringIntoIntTime(tbTimerField2.Text);
+            if (tbTimerField2.BackColor == Color.Green) // to check field busy
+            {
+                if (tbCustomerField2.Text != null)
+                {
+                    countDownTimerField2.Start();
+                    countDownTimerField2.Enabled = true;
+                    tbTimerField2.BackColor = Color.Red;
+                }
+
+            }
+            else if (tbTimerField2.BackColor == Color.Red) // to click another time
+            {
+                if (tbCustomerField2.Text != null)
+                {
+                    countDownTimerField2.Stop();
+                    tbTimerField2.BackColor = Color.Green;
+                    DialogResult result = MessageBox.Show("Bạn có muốn tính tiền sân này không?", "Thông báo", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        frmPayment frmPayment = new frmPayment();
+                        frmPayment.Show();
+                        /*get data to form payment here*/
+                        /*Update database functionin here*/
+                        loadInfo();
+                    }
+                    else if (result == DialogResult.No)
+                    {
+                        countDownTimerField2.Start();
+                        tbTimerField2.BackColor = Color.Red;
                     }
                 }
             }
@@ -73,7 +115,24 @@ namespace GUI_MANAGER
                 tbTimerField1.BackColor = Color.Green;
             }
         }
-      
+        private void countDownTimerField2_Tick(object sender, EventArgs e)
+        {
+            durationField2--;
+            int hours, minutes, seconds;
+            hours = durationField2 / 3600;
+            minutes = (durationField2 % 3600) / 60;
+            seconds = (durationField2 % 3600) % 60;
+            tbTimerField2.Text = (hours >= 10 ? hours.ToString() : "0" + hours) + ":" +
+                (minutes >= 10 ? minutes.ToString() : "0" + minutes) + ":" +
+                    (seconds >= 10 ? seconds.ToString() : "0" + seconds);
+            if (durationField2 == 0)
+            {
+                countDownTimerField2.Stop();
+                btnPaymentField2.Visible = true;
+                tbTimerField2.BackColor = Color.Green;
+            }
+        }
+
         private int changeStringIntoIntTime(String time) // to change string of time such hh:mm:ss to seconds with int type
         {
             string[] result;// result after split
@@ -115,15 +174,14 @@ namespace GUI_MANAGER
             }
             else return;
         }
+        // to use 
 
-        private void btnPaymentField1_Click(object sender, EventArgs e)
+        private void btnPaymentField_Click(object sender, EventArgs e)
         {
             frmPayment frmPayment = new frmPayment();
             frmPayment.Show();
             /*get data to form payment here*/
         }
-
-
 
         /* to display information about fields
         */
@@ -145,7 +203,11 @@ namespace GUI_MANAGER
             }
             if (field2DTO.MaSanBanh == field.MaSanBanh)
             {
-                tbCustomerField2.Text = field.tenKH;
+                if ("20:00:00" == bookingTime && "3/3/2019" == bookingDate)
+                {
+                    tbCustomerField2.Text = field.tenKH;
+                    tbTimerField2.Text = field.ThoiLuongDatSan.ToString("HH:mm:ss");
+                }
             }
             else
             {

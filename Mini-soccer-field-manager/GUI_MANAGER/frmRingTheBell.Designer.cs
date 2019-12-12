@@ -72,6 +72,7 @@
             this.btnField2.Size = new System.Drawing.Size(334, 415);
             this.btnField2.TabIndex = 1;
             this.btnField2.UseVisualStyleBackColor = true;
+            this.btnField2.Click += new System.EventHandler(this.btnField2_Click);
             // 
             // lbField1
             // 
@@ -225,6 +226,7 @@
             // countDownTimerField2
             // 
             this.countDownTimerField2.Interval = 1000;
+            this.countDownTimerField2.Tick += new System.EventHandler(this.countDownTimerField2_Tick);
             // 
             // btnPaymentField1
             // 
@@ -236,7 +238,7 @@
             this.btnPaymentField1.Text = "Tính tiền";
             this.btnPaymentField1.UseVisualStyleBackColor = true;
             this.btnPaymentField1.Visible = false;
-            this.btnPaymentField1.Click += new System.EventHandler(this.btnPaymentField1_Click);
+            this.btnPaymentField1.Click += new System.EventHandler(this.btnPaymentField_Click);
             // 
             // btnPaymentField2
             // 
@@ -248,6 +250,7 @@
             this.btnPaymentField2.Text = "Tính tiền";
             this.btnPaymentField2.UseVisualStyleBackColor = true;
             this.btnPaymentField2.Visible = false;
+            this.btnPaymentField2.Click += new System.EventHandler(this.btnPaymentField_Click);
             // 
             // frmRingTheBell
             // 
