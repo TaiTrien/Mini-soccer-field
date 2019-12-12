@@ -29,6 +29,7 @@ namespace GUI_MANAGER
 
             if (role == "NhanVienQLSB")
             {
+                this.Hide();
                 frmMainNVQLSanBanh frmMainNVQLSanBanh = new frmMainNVQLSanBanh();
                 frmMainNVQLSanBanh.Show();
             }
@@ -43,7 +44,7 @@ namespace GUI_MANAGER
                 frmStatistic.Show();
             }
             else MessageBox.Show("Đăng nhập thất bại");
-
+            
         }
 
         private void frmLogin_Load(object sender, EventArgs e)

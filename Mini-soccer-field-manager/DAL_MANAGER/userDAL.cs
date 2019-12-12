@@ -7,6 +7,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using DTO_MANAGER;
+using System.Diagnostics;
 
 namespace DAL_MANAGER
 {
@@ -15,7 +16,7 @@ namespace DAL_MANAGER
         static void Main(string[] args)
         {
         }
-        
+
         public string selectRoleAccount(userDTO user) // to select role of this account
         {
             string role = string.Empty;
@@ -24,8 +25,7 @@ namespace DAL_MANAGER
             query += "FROM tblTAIKHOAN ";
             query += "WHERE userName = @username AND passWord = @password";
 
-
-            using (SqlConnection con = new SqlConnection(@"server=" + Dns.GetHostName() + ";Trusted_Connection=yes;database=QLSB;"))
+            using (SqlConnection con = new SqlConnection(@"server=DESKTOP-5IOTGUN\SQLEXPRESS;Trusted_Connection=yes;database=QLSB;"))
             {
 
                 using (SqlCommand cmd = new SqlCommand())

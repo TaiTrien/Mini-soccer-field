@@ -179,6 +179,7 @@
             this.btnBack.Size = new System.Drawing.Size(52, 30);
             this.btnBack.TabIndex = 12;
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
             // frmRingTheBell
             // 

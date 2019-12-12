@@ -183,6 +183,7 @@
             this.btnBack.Size = new System.Drawing.Size(52, 30);
             this.btnBack.TabIndex = 18;
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
             // lbBack
             // 

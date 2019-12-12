@@ -15,5 +15,10 @@ namespace GUI_MANAGER
         {
             InitializeComponent();
         }
+
+        private void BtnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -139,6 +139,7 @@
             this.btnSignOut.Size = new System.Drawing.Size(33, 39);
             this.btnSignOut.TabIndex = 8;
             this.btnSignOut.UseVisualStyleBackColor = true;
+            this.btnSignOut.Click += new System.EventHandler(this.BtnSignOut_Click);
             // 
             // btnUpdate
             // 
