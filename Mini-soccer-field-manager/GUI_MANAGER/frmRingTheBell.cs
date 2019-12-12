@@ -113,6 +113,9 @@ namespace GUI_MANAGER
                 countDownTimerField1.Stop();
                 btnPaymentField1.Visible = true;
                 tbTimerField1.BackColor = Color.Green;
+                frmPayment frmPayment = new frmPayment();
+                frmPayment.Show();
+                // to show data of bill
             }
         }
         private void countDownTimerField2_Tick(object sender, EventArgs e)
@@ -130,6 +133,9 @@ namespace GUI_MANAGER
                 countDownTimerField2.Stop();
                 btnPaymentField2.Visible = true;
                 tbTimerField2.BackColor = Color.Green;
+                 frmPayment frmPayment = new frmPayment();
+                frmPayment.Show();
+                // to show data of bill
             }
         }
 
