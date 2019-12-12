@@ -136,7 +136,7 @@ CREATE TABLE [dbo].[tblDOUONG](
 	[tendouong] [nvarchar](10) NOT NULL,
 	[soluongconlai] [nvarchar](10) NOT NULL,
 	[dongianhap] [nvarchar](10) NOT NULL,
-	[dongiaxuat] [nvarchar](10) NOT NULL,
+	[dongiaban] [nvarchar](10) NOT NULL,
 	[ngaytaohoadon] [smalldatetime] NOT NULL,
 CONSTRAINT [PK_tblDOUONG] PRIMARY KEY CLUSTERED 
 (
@@ -147,7 +147,7 @@ CONSTRAINT [PK_tblDOUONG] PRIMARY KEY CLUSTERED
 CREATE TABLE [dbo].[tblHOADON](
 	[maHoaDon] [nvarchar](5) NOT NULL,
 	[maNhanvien] [nvarchar](5) NOT NULL,
-	[maKH] [nvarchar](5) NOT NULL,
+	[maKH] [nvarchar](5) ,
 	[ngaytaohoadon] [smalldatetime] NOT NULL,
 CONSTRAINT [PK_tblHOADON] PRIMARY KEY CLUSTERED 
 (
