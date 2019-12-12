@@ -14,6 +14,7 @@ namespace GUI_MANAGER
     public partial class frmCustomer : Form
     {
         private KhachHangBUS khBus;
+        public bool click;
         public frmCustomer()
         {
             InitializeComponent();
@@ -22,6 +23,7 @@ namespace GUI_MANAGER
         {
             khBus = new KhachHangBUS();
             cbCusType.Items.Add("Vãng lai");
+            click = false;
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -33,7 +35,7 @@ namespace GUI_MANAGER
             this.Close();
         }
 
-        private void btnSaveCus_Click(object sender, EventArgs e)
+        public void btnSaveCus_Click(object sender, EventArgs e)
         {
             KhachHangDTO kh = new KhachHangDTO();
             kh.MaKH = khBus.autogenerate_maKH();
@@ -58,6 +60,7 @@ namespace GUI_MANAGER
                 MessageBox.Show("Thêm khách hàng thất bại. Vui lòng kiểm tra lại dũ liệu");
             else
                 MessageBox.Show("Thêm khách hàng thành công");
+            click = true;
         }
     }
 }

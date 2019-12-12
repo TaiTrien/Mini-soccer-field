@@ -232,7 +232,7 @@
         private System.Windows.Forms.RadioButton rbMale;
         private System.Windows.Forms.RadioButton rbFemale;
         private System.Windows.Forms.TextBox tbCusAddr;
-        private System.Windows.Forms.Button btnSaveCus;
+        public System.Windows.Forms.Button btnSaveCus;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label lbBack;
     }

@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFieldSchedule));
             this.DGVFieldSchedule = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripCancel = new System.Windows.Forms.ToolStripMenuItem();
             this.btnReserveField = new System.Windows.Forms.Button();
             this.lbBack = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
@@ -47,11 +49,11 @@
             this.gBInputInfo = new System.Windows.Forms.GroupBox();
             this.dTPlength = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripCancel = new System.Windows.Forms.ToolStripMenuItem();
+            this.BtnConfirm = new System.Windows.Forms.Button();
+            this.BtnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGVFieldSchedule)).BeginInit();
-            this.gBInputInfo.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.gBInputInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // DGVFieldSchedule
@@ -64,6 +66,21 @@
             this.DGVFieldSchedule.RowTemplate.Height = 24;
             this.DGVFieldSchedule.Size = new System.Drawing.Size(776, 302);
             this.DGVFieldSchedule.TabIndex = 0;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripCancel});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(133, 28);
+            // 
+            // toolStripCancel
+            // 
+            this.toolStripCancel.Name = "toolStripCancel";
+            this.toolStripCancel.Size = new System.Drawing.Size(132, 24);
+            this.toolStripCancel.Text = "Hủy Sân";
+            this.toolStripCancel.Click += new System.EventHandler(this.HuySanToolStripMenuItem_Click);
             // 
             // btnReserveField
             // 
@@ -93,6 +110,7 @@
             this.btnBack.Size = new System.Drawing.Size(52, 30);
             this.btnBack.TabIndex = 19;
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnAdd
             // 
@@ -186,7 +204,6 @@
             this.cbCusPhone.Name = "cbCusPhone";
             this.cbCusPhone.Size = new System.Drawing.Size(161, 28);
             this.cbCusPhone.TabIndex = 9;
-            this.cbCusPhone.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // gBInputInfo
             // 
@@ -229,20 +246,27 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.btnAddKH_Click);
             // 
-            // contextMenuStrip1
+            // BtnConfirm
             // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripCancel});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(133, 28);
+            this.BtnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
+            this.BtnConfirm.Location = new System.Drawing.Point(214, 549);
+            this.BtnConfirm.Name = "BtnConfirm";
+            this.BtnConfirm.Size = new System.Drawing.Size(151, 52);
+            this.BtnConfirm.TabIndex = 21;
+            this.BtnConfirm.Text = "Lưu";
+            this.BtnConfirm.UseVisualStyleBackColor = true;
+            this.BtnConfirm.Click += new System.EventHandler(this.BtnConfirm_Click);
             // 
-            // toolStripCancel
+            // BtnCancel
             // 
-            this.toolStripCancel.Name = "toolStripCancel";
-            this.toolStripCancel.Size = new System.Drawing.Size(132, 24);
-            this.toolStripCancel.Text = "Hủy Sân";
-            this.toolStripCancel.Click += new System.EventHandler(this.HuySanToolStripMenuItem_Click);
+            this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
+            this.BtnCancel.Location = new System.Drawing.Point(471, 551);
+            this.BtnCancel.Name = "BtnCancel";
+            this.BtnCancel.Size = new System.Drawing.Size(151, 52);
+            this.BtnCancel.TabIndex = 22;
+            this.BtnCancel.Text = "Hủy";
+            this.BtnCancel.UseVisualStyleBackColor = true;
+            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // frmFieldSchedule
             // 
@@ -255,14 +279,16 @@
             this.Controls.Add(this.btnReserveField);
             this.Controls.Add(this.gBInputInfo);
             this.Controls.Add(this.DGVFieldSchedule);
+            this.Controls.Add(this.BtnConfirm);
+            this.Controls.Add(this.BtnCancel);
             this.Name = "frmFieldSchedule";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lịch sân";
             this.Load += new System.EventHandler(this.frmFieldSchedule_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVFieldSchedule)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.gBInputInfo.ResumeLayout(false);
             this.gBInputInfo.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,5 +315,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripCancel;
         private System.Windows.Forms.DateTimePicker dTPlength;
+        private System.Windows.Forms.Button BtnConfirm;
+        private System.Windows.Forms.Button BtnCancel;
     }
 }

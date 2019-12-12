@@ -17,26 +17,29 @@ namespace GUI_MANAGER
         private PhieuDatSanBUS pdsBus;
         private ChiTietDatSanBUS ctBus;
         private KhachHangBUS khBus;
-        public int ParaMaPDS;//Save maPDS when adding chitietdatsan
+        public int ParaMaPDS = 0;//Save maPDS when adding chitietdatsan
         public frmFieldSchedule()
         {
             InitializeComponent();
         }
         public void frmFieldSchedule_Load(object sender, EventArgs e)
         {
-            pdsBus= new PhieuDatSanBUS();
-            ctBus= new ChiTietDatSanBUS();
+            pdsBus = new PhieuDatSanBUS();
+            ctBus = new ChiTietDatSanBUS();
             khBus = new KhachHangBUS();
             loadCusPhone_Combobox();
             getMaPDS();
             load_dataGridView();
+            BtnConfirm.Visible = false;
+            BtnCancel.Visible = false;
+            btnAdd.Enabled = false;
         }
         private void getMaPDS()
         {
             PhieuDatSanDTO pds = new PhieuDatSanDTO();
             ParaMaPDS = pdsBus.autogenerate_maPDS();
         }
-        private void loadCusPhone_Combobox()
+        public void loadCusPhone_Combobox()
         {
             List<KhachHangDTO> listKH = khBus.select();
 
@@ -58,19 +61,17 @@ namespace GUI_MANAGER
             }
 
         }
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+     
         private void load_dataGridView()
         {
             List<PhieuDatSanDTO> listpds = pdsBus.select();
             List<ChiTietDatSanDTO> listctds = ctBus.select();
-            loadData_Vao_GridView(listpds, listctds);
+            List<KhachHangDTO> listkh = khBus.select();
+            loadData_Vao_GridView(listpds, listctds, listkh);
         }
-        private void loadData_Vao_GridView(List<PhieuDatSanDTO> listPhieuDatSan,List<ChiTietDatSanDTO> listCTDatSan)
+        private void loadData_Vao_GridView(List<PhieuDatSanDTO> listPhieuDatSan, List<ChiTietDatSanDTO> listCTDatSan, List<KhachHangDTO> listKH)
         {
-            if (listPhieuDatSan == null || listCTDatSan==null)
+            if (listPhieuDatSan == null || listCTDatSan == null || listKH == null)
             {
                 MessageBox.Show("Đã xảy ra lỗi");
                 return;
@@ -79,43 +80,42 @@ namespace GUI_MANAGER
             DGVFieldSchedule.Columns.Clear();
             DGVFieldSchedule.DataSource = null;
 
-            DGVFieldSchedule.AutoGenerateColumns = false;
-            DGVFieldSchedule.AllowUserToAddRows = false;
-            DGVFieldSchedule.DataSource = listPhieuDatSan;
-            DGVFieldSchedule.DataSource = listCTDatSan;
+            DataTable table = new DataTable();
+            table.Columns.Add("Mã Phiếu Đặt Sân", typeof(int));
+            table.Columns.Add("Sân", typeof(int));
+            table.Columns.Add("Khách Hàng", typeof(string));
+            table.Columns.Add("Ngày Đặt", typeof(DateTime));
+            table.Columns.Add("Giờ Đặt", typeof(DateTime));
+            table.Columns.Add("Thời Lượng", typeof(DateTime));
 
-            DataGridViewTextBoxColumn clMaPDS = new DataGridViewTextBoxColumn();
-            clMaPDS.Name = "MaPDS";
-            clMaPDS.HeaderText = "Mã Phiếu";
-            clMaPDS.DataPropertyName = "maPhieuDatSan";
-            DGVFieldSchedule.Columns.Add(clMaPDS);
 
-            DataGridViewTextBoxColumn clMaSan = new DataGridViewTextBoxColumn();
-            clMaSan.Name = "MaSan";
-            clMaSan.HeaderText = "Sân";
-            clMaSan.DataPropertyName = "maSan";
-            DGVFieldSchedule.Columns.Add(clMaSan);
+            foreach (PhieuDatSanDTO pds in listPhieuDatSan)
+            {
+                foreach (ChiTietDatSanDTO ctds in listCTDatSan)
+                {
+                    foreach (KhachHangDTO kh in listKH)
+                    {
+                        if (pds.MaPhieuDatSan == ctds.MaPhieuDatSan && pds.MaKH == kh.MaKH)
+                        {
 
-            DataGridViewTextBoxColumn clNgDat = new DataGridViewTextBoxColumn();
-            clNgDat.Name = "NgayDat";
-            clNgDat.HeaderText = "Ngày Đặt";
-            clNgDat.DataPropertyName = "ngayDat";
-            DGVFieldSchedule.Columns.Add(clNgDat);
-            this.DGVFieldSchedule.Columns[2].DefaultCellStyle.Format = "dd/MM/yyyy";
-            DataGridViewTextBoxColumn clGiDat = new DataGridViewTextBoxColumn();
-            clGiDat.Name = "GioDat";
-            clGiDat.HeaderText = "Giờ Đặt";
-            clGiDat.DataPropertyName = "gioDat";         
-            DGVFieldSchedule.Columns.Add(clGiDat);
-            this.DGVFieldSchedule.Columns[3].DefaultCellStyle.Format = "hh:mm tt";
-            DataGridViewTextBoxColumn clThLuong = new DataGridViewTextBoxColumn();
-            clThLuong.Name = "ThoiLuong";
-            clThLuong.HeaderText = "Thời Lượng";
-            clThLuong.DataPropertyName = "thoiLuong";
-            DGVFieldSchedule.Columns.Add(clThLuong);
-            this.DGVFieldSchedule.Columns[4].DefaultCellStyle.Format = "HH:mm";
-            CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[DGVFieldSchedule.DataSource];
-            myCurrencyManager.Refresh();          
+                            DataRow row = table.NewRow();
+                            row["Mã Phiếu Đặt Sân"] = pds.MaPhieuDatSan;
+                            row["Sân"] = ctds.MaSan;
+                            row["Khách Hàng"] = kh.TenKH;
+                            row["Ngày Đặt"] = ctds.NgayDat;
+                            row["Giờ Đặt"] = ctds.GioDat;
+                            row["Thời Lượng"] = ctds.ThoiLuong;
+                            table.Rows.Add(row);
+
+                        }
+                    }
+                }
+            }
+
+            DGVFieldSchedule.DataSource = table.DefaultView;
+            this.DGVFieldSchedule.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
+            this.DGVFieldSchedule.Columns[4].DefaultCellStyle.Format = "hh:mm tt";
+            this.DGVFieldSchedule.Columns[5].DefaultCellStyle.Format = "HH:mm";
         }
 
         private void btnReserveField_Click(object sender, EventArgs e)
@@ -138,7 +138,7 @@ namespace GUI_MANAGER
             ct.MaSan = int.Parse(cbFieldName.Text);
             ct.NgayDat = dTPReservationDate.Value;
             ct.ThoiLuong = dTPlength.Value;
-            ct.GioDat =dTPTime.Value;
+            ct.GioDat = dTPTime.Value;
             //2. Insert into DB
             bool kq1 = pdsBus.datsan(pds);
             bool kq2 = ctBus.themchitietdatsan(ct);
@@ -147,6 +147,7 @@ namespace GUI_MANAGER
             else
                 MessageBox.Show("Đặt sân thành công");
             load_dataGridView();
+            btnAdd.Enabled = true;
         }
         private void HuySanToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -163,10 +164,10 @@ namespace GUI_MANAGER
                 pds.MaPhieuDatSan = int.Parse(selectedRow.Cells[0].Value.ToString());
                 ct.MaPhieuDatSan = int.Parse(selectedRow.Cells[0].Value.ToString());
                 ct.MaSan = int.Parse(selectedRow.Cells[1].Value.ToString());
-                ct.ThoiLuong = DateTime.Parse(selectedRow.Cells[4].Value.ToString());
-                ct.NgayDat = DateTime.Parse(selectedRow.Cells[2].Value.ToString());
-                ct.GioDat = DateTime.Parse(selectedRow.Cells[3].Value.ToString());
-                bool kq1=false, kq2=false;
+                ct.ThoiLuong = DateTime.Parse(selectedRow.Cells[5].Value.ToString());
+                ct.NgayDat = DateTime.Parse(selectedRow.Cells[3].Value.ToString());
+                ct.GioDat = DateTime.Parse(selectedRow.Cells[4].Value.ToString());
+                bool kq1 = false, kq2 = false;
                 if (ct != null)
                 {
                     kq1 = ctBus.huychitietdatsan(ct);
@@ -174,9 +175,9 @@ namespace GUI_MANAGER
                 if (pds != null)
                 {
                     kq2 = pdsBus.huysan(pds);
-                  
+
                 }
-                if (kq1 == false && kq2==false)
+                if (kq1 == false && kq2 == false)
                     MessageBox.Show("Hủy sân thất bại. Vui lòng kiểm tra lại dũ liệu");
                 else
                 {
@@ -187,7 +188,26 @@ namespace GUI_MANAGER
 
         }
         private void btnADD_Click(object sender, EventArgs e)
-        {     
+        {
+            cbCusPhone.Enabled = false;
+            btnAdd.Visible = false;
+            btnReserveField.Visible = false;
+            BtnConfirm.Visible = true;
+            BtnCancel.Visible = true;
+        }
+
+        private void btnAddKH_Click(object sender, EventArgs e)
+        {
+            frmCustomer cus = new frmCustomer();
+            cus.Show();
+            cus.btnSaveCus.Click += new System.EventHandler(button2_click);
+        }
+        public void button2_click(object sender, EventArgs e)
+        {
+            loadCusPhone_Combobox();
+        }
+        private void BtnConfirm_Click(object sender, EventArgs e)
+        {
             ChiTietDatSanDTO ct = new ChiTietDatSanDTO();
             ct.MaPhieuDatSan = ParaMaPDS;
             ct.MaSan = int.Parse(cbFieldName.Text);
@@ -200,13 +220,25 @@ namespace GUI_MANAGER
             else
                 MessageBox.Show("Đặt sân thành công");
             load_dataGridView();
+            Ani();
         }
-        
-        private void btnAddKH_Click(object sender, EventArgs e)
+
+        private void Ani()
         {
-            frmCustomer cus = new frmCustomer();
-            cus.Show();
-            
+            BtnConfirm.Visible = false;
+            BtnCancel.Visible = false;
+            btnAdd.Visible = true;
+            btnReserveField.Visible = true;
+            cbCusPhone.Enabled = true;
+        }
+        private void BtnCancel_Click(object sender, EventArgs e)
+        {
+            Ani();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
