@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStatistic));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSignOut = new System.Windows.Forms.Button();
             this.lbMonth = new System.Windows.Forms.Label();
             this.lbYear = new System.Windows.Forms.Label();
             this.btnStatistic = new System.Windows.Forms.Button();
             this.dtpMonth = new System.Windows.Forms.DateTimePicker();
             this.dtpYear = new System.Windows.Forms.DateTimePicker();
+            this.btnSignOut = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lbSignOut = new System.Windows.Forms.Label();
@@ -51,19 +51,11 @@
             this.panel1.Controls.Add(this.btnStatistic);
             this.panel1.Controls.Add(this.dtpMonth);
             this.panel1.Controls.Add(this.dtpYear);
-            this.panel1.Location = new System.Drawing.Point(206, 5);
+            this.panel1.Location = new System.Drawing.Point(205, 5);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(376, 86);
             this.panel1.TabIndex = 0;
-            // 
-            // btnSignOut
-            // 
-            this.btnSignOut.Image = ((System.Drawing.Image)(resources.GetObject("btnSignOut.Image")));
-            this.btnSignOut.Location = new System.Drawing.Point(707, 17);
-            this.btnSignOut.Name = "btnSignOut";
-            this.btnSignOut.Size = new System.Drawing.Size(33, 39);
-            this.btnSignOut.TabIndex = 6;
-            this.btnSignOut.UseVisualStyleBackColor = true;
             // 
             // lbMonth
             // 
@@ -86,33 +78,51 @@
             // btnStatistic
             // 
             this.btnStatistic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStatistic.Location = new System.Drawing.Point(248, 24);
+            this.btnStatistic.Location = new System.Drawing.Point(248, 25);
+            this.btnStatistic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnStatistic.Name = "btnStatistic";
-            this.btnStatistic.Size = new System.Drawing.Size(91, 38);
+            this.btnStatistic.Size = new System.Drawing.Size(104, 38);
             this.btnStatistic.TabIndex = 3;
             this.btnStatistic.Text = "Thống Kê";
             this.btnStatistic.UseVisualStyleBackColor = true;
+            this.btnStatistic.Click += new System.EventHandler(this.btnStatistic_Click);
             // 
             // dtpMonth
             // 
-            this.dtpMonth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpMonth.CustomFormat = "MM";
+            this.dtpMonth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpMonth.Location = new System.Drawing.Point(71, 49);
+            this.dtpMonth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpMonth.Name = "dtpMonth";
             this.dtpMonth.Size = new System.Drawing.Size(139, 22);
             this.dtpMonth.TabIndex = 2;
             // 
             // dtpYear
             // 
-            this.dtpYear.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpYear.CustomFormat = "yyyy";
+            this.dtpYear.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpYear.Location = new System.Drawing.Point(71, 10);
+            this.dtpYear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpYear.Name = "dtpYear";
             this.dtpYear.Size = new System.Drawing.Size(139, 22);
             this.dtpYear.TabIndex = 1;
+            // 
+            // btnSignOut
+            // 
+            this.btnSignOut.Image = ((System.Drawing.Image)(resources.GetObject("btnSignOut.Image")));
+            this.btnSignOut.Location = new System.Drawing.Point(707, 17);
+            this.btnSignOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSignOut.Name = "btnSignOut";
+            this.btnSignOut.Size = new System.Drawing.Size(33, 39);
+            this.btnSignOut.TabIndex = 6;
+            this.btnSignOut.UseVisualStyleBackColor = true;
+            this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Location = new System.Drawing.Point(0, 97);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(799, 351);
             this.panel2.TabIndex = 1;
@@ -120,7 +130,8 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -145,8 +156,10 @@
             this.Controls.Add(this.btnSignOut);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmStatistic";
             this.Text = "Nhân viên quản lí tài chính";
+            this.Load += new System.EventHandler(this.frmStatistic_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

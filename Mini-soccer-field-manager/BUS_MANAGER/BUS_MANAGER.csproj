@@ -41,7 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChiTietDatSanBUS.cs" />
+    <Compile Include="ChiTietHoaDonBUS.cs" />
+    <Compile Include="HoaDonBUS.cs" />
     <Compile Include="KhachHangBUS.cs" />
+    <Compile Include="LoaiHoaDonBUS.cs" />
     <Compile Include="PhieuDatSanBUS.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

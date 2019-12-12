@@ -18,7 +18,7 @@ namespace GUI_MANAGER
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            frmMainNVQLSanBanh frmMain = new frmMainNVQLSanBanh();
+            frmStatistic frmMain = new frmStatistic();
             frmMain.Show();
         }
     }

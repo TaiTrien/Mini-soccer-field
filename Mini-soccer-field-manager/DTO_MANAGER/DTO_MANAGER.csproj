@@ -41,7 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChiTietDatSanDTO.cs" />
+    <Compile Include="ChiTietHoaDonDTO.cs" />
+    <Compile Include="HoaDonDTO.cs" />
     <Compile Include="KhachHangDTO.cs" />
+    <Compile Include="LoaiHoaDonDTO.cs" />
     <Compile Include="PhieuDatSanDTO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
