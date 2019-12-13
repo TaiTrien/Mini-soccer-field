@@ -63,7 +63,7 @@ namespace GUI_MANAGER
             csvcDTO csvcDTO = new csvcDTO();
             temp = ma1;
             csvcDTO.MaHoaDon = csvcBUS.autogenerate_maHOADON().ToString();
-            csvcDTO.MaKH =null;
+            csvcDTO.MaKH = 1.ToString();
             csvcDTO.NgayTaoHoaDon = dateTimePicker1.Value;
             csvcDTO.TriGiaHoaDon = (Decimal.ToInt32(numericUpDown1.Value) * gia).ToString();
             csvcDTO.MaNhanVien = 2.ToString();
