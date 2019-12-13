@@ -15,8 +15,8 @@ namespace DAL_MANAGER
         {
            
             string queryHD = string.Empty;
-            queryHD += "INSERT INTO [tblHOADON] ([maHoaDon],[maNhanVien],[maKH],[ngaytaohoadon]) ";
-            queryHD += "VALUES (@maHoaDon,@maNhanVien,@maKH,@ngaytaohoadon)";
+            queryHD += " INSERT INTO [tblHOADON] ([maHoaDon],[maNhanVien],[maKH],[ngaytaohoadon]) ";
+            queryHD += " VALUES (@maHoaDon,@maNhanVien,@maKH,@ngaytaohoadon)";
             string queryLHD = string.Empty;
             queryLHD += " SELECT *";
             queryLHD += " FROM [tblLOAIHOADON] where maLoaiHoaDon=2";
@@ -35,19 +35,10 @@ namespace DAL_MANAGER
                     cmd.Parameters.AddWithValue("@maNhanVien", PAY.MaNhanVien);
                     cmd.Parameters.AddWithValue("@maKH", PAY.MaKH);
                     cmd.Parameters.AddWithValue("@ngaytaohoadon", PAY.NgayTaoHoaDon);
-
-                    try
-                    {
-                        con.Open();
-                        cmd.ExecuteNonQuery();
-                        con.Close();
-                        con.Dispose();
-                    }
-                    catch (Exception ex)
-                    {
-                        con.Close();
-                        return false;
-                    }
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    con.Dispose();
                 }
             }
             using (SqlConnection con = new SqlConnection(@"server=" + Dns.GetHostName() + ";Trusted_Connection=yes;database=QLSB;"))
