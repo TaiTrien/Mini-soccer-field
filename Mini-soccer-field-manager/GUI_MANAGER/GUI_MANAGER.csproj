@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomer.Designer.cs">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmFieldSchedule.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmCustomer.resx">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmFieldSchedule.resx">
       <DependentUpon>frmFieldSchedule.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,10 +166,17 @@
       <Project>{e18022a6-070a-436e-b2d4-427dee36bd5b}</Project>
       <Name>BUS_MANAGER</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DAL_MANAGER\DAL_MANAGER.csproj">
+      <Project>{ad678570-9e5f-4c75-a055-fb2501a5e06c}</Project>
+      <Name>DAL_MANAGER</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DTO_MANAGER\DTO_MANAGER.csproj">
       <Project>{a5e1490d-60e3-4f5d-a13f-004114bd3d1d}</Project>
       <Name>DTO_MANAGER</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

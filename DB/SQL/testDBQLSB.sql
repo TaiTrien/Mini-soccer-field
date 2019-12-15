@@ -42,7 +42,3 @@ INSERT INTO [tblCHITIETHOADON] ([maLoaiHoaDon],[maHoaDon],[trigiahoadon]) VALUES
 INSERT INTO [tblCSVC] ([maCSVC],[maNhanVien],[tencsvc],[soluongnhap],[dongianhap],[tinhtrangcsvc]) VALUES (1,1,'banh',5,50000,'hu hong')
 /*N'Test bảng DOUONG'*/
 INSERT INTO [tblDOUONG] ([maDoUong],[tendouong],[soluongconlai],[dongianhap],[dongiaban],[ngaytaohoadon]) VALUES (1,'nuoc suoi',5,5000,10000,'2019-03-03')
-SELECT  tblCHITIETDATSAN.maPhieuDatSan, maSan, ngayDat, gioDat, thoiLuong, tblKHACHHANG.tenKH
-FROM tblCHITIETDATSAN, tblPHIEUDATSAN, tblKHACHHANG
-WHERE
-  tblCHITIETDATSAN.maPhieuDatSan = tblPHIEUDATSAN.maPhieuDatSan and tblKHACHHANG.maKH = tblPHIEUDATSAN.maKH

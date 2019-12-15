@@ -15,7 +15,7 @@ namespace BUS_MANAGER
             userDAL = new userDAL();
 
         }
-       
+
         static void Main(string[] args)
         {
         }
@@ -27,3 +27,4 @@ namespace BUS_MANAGER
         }
     }
 }
+
