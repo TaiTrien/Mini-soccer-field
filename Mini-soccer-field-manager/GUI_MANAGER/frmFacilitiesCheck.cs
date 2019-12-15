@@ -115,17 +115,18 @@ namespace GUI_MANAGER
             clTCVSCName.DataPropertyName = "tenCSVC";
             dgvCSVC.Columns.Add(clTCVSCName);
 
+            DataGridViewTextBoxColumn clTCVSCval = new DataGridViewTextBoxColumn();
+            clTCVSCval.Name = "csvctot";
+            clTCVSCval.HeaderText = "CSVC Tốt";
+            clTCVSCval.DataPropertyName = "CSVCtot";
+            dgvCSVC.Columns.Add(clTCVSCval);
+
             DataGridViewTextBoxColumn clTCVSCStatus = new DataGridViewTextBoxColumn();
-            clTCVSCStatus.Name = "tinhtrangcsvc";
-            clTCVSCStatus.HeaderText = "Tình Trạng CSVC";
-            clTCVSCStatus.DataPropertyName = "tinhtrangCSVC";
+            clTCVSCStatus.Name = "csvchong";
+            clTCVSCStatus.HeaderText = "CSVC Hỏng";
+            clTCVSCStatus.DataPropertyName = "CSVChong";
             dgvCSVC.Columns.Add(clTCVSCStatus);
 
-            DataGridViewTextBoxColumn clTCVSCval = new DataGridViewTextBoxColumn();
-            clTCVSCval.Name = "soluongnhap";
-            clTCVSCval.HeaderText = "Số Lượng";
-            clTCVSCval.DataPropertyName = "SoLuongNhap";
-            dgvCSVC.Columns.Add(clTCVSCval);
         }
 
         

@@ -15,6 +15,8 @@ namespace GUI_MANAGER
         private csvcBUS csvcBUS;
         private csvcDTO csvcDTO;
         public string temp;
+        public int oldtot;
+        public int oldhong;
         public frmFacilitiesUpdate()
         {
             InitializeComponent();
@@ -23,6 +25,7 @@ namespace GUI_MANAGER
         private void frmFacilitiesUpdate_Load(object sender, EventArgs e)
         {
             csvcBUS = new csvcBUS();
+            
             Loandatainto_comboBox1();
         }
         private void Loandatainto_comboBox1()
@@ -62,14 +65,24 @@ namespace GUI_MANAGER
             }
             csvcDTO csvcDTO = new csvcDTO();
             temp = ma1;
+            string val = comboBox1.SelectedValue.ToString();
+            oldtot = csvcBUS.CSVCTOT(val);
+            oldhong = csvcBUS.CSVCHONG(val);
             csvcDTO.MaHoaDon = csvcBUS.autogenerate_maHOADON().ToString();
             csvcDTO.MaKH = 1.ToString();
             csvcDTO.NgayTaoHoaDon = dateTimePicker1.Value;
             csvcDTO.TriGiaHoaDon = (Decimal.ToInt32(numericUpDown1.Value) * gia).ToString();
             csvcDTO.MaNhanVien = 2.ToString();
             csvcDTO.tenCSVC = comboBox1.Text;
-            csvcDTO.tinhtrangCSVC = "tốt";
-            csvcDTO.SoLuongNhap =Decimal.ToInt32(numericUpDown1.Value);
+            csvcDTO.CSVCtot =Decimal.ToInt32(numericUpDown1.Value)+oldtot;
+            if (oldhong <= Decimal.ToInt32(numericUpDown1.Value))
+            {
+                csvcDTO.CSVChong = 0;
+            }
+            else
+            { 
+                csvcDTO.CSVChong =oldhong - Decimal.ToInt32(numericUpDown1.Value); 
+            }
             csvcDTO.DonGiaNhap = gia;
             bool resultHD = csvcBUS.facilities_payment(csvcDTO);
             if (resultHD == true)
@@ -81,7 +94,6 @@ namespace GUI_MANAGER
                 MessageBox.Show("Thêm CSVC thành công");
             else
                 MessageBox.Show("Thêm CSVC thất bại");
-            string val = comboBox1.SelectedValue.ToString();
             List<csvcDTO> listCSVC = csvcBUS.selectedCSVCchance(val);
             if (listCSVC == null)
             {
@@ -108,17 +120,17 @@ namespace GUI_MANAGER
             clTCVSCName.DataPropertyName = "tenCSVC";
             dgv1.Columns.Add(clTCVSCName);
 
-            DataGridViewTextBoxColumn clTCVSCStatus = new DataGridViewTextBoxColumn();
-            clTCVSCStatus.Name = "tinhtrangcsvc";
-            clTCVSCStatus.HeaderText = "Tình Trạng CSVC";
-            clTCVSCStatus.DataPropertyName = "tinhtrangCSVC";
-            dgv1.Columns.Add(clTCVSCStatus);
-
             DataGridViewTextBoxColumn clTCVSCval = new DataGridViewTextBoxColumn();
-            clTCVSCval.Name = "soluongnhap";
-            clTCVSCval.HeaderText = "Số Lượng";
-            clTCVSCval.DataPropertyName = "SoLuongNhap";
+            clTCVSCval.Name = "csvctot";
+            clTCVSCval.HeaderText = "CSVC Tốt";
+            clTCVSCval.DataPropertyName = "CSVCtot";
             dgv1.Columns.Add(clTCVSCval);
+
+            DataGridViewTextBoxColumn clTCVSCStatus = new DataGridViewTextBoxColumn();
+            clTCVSCStatus.Name = "csvchong";
+            clTCVSCStatus.HeaderText = "CSVC Hỏng";
+            clTCVSCStatus.DataPropertyName = "CSVChong";
+            dgv1.Columns.Add(clTCVSCStatus);
 
         }
 
@@ -150,24 +162,32 @@ namespace GUI_MANAGER
             }
             csvcDTO csvcDTO = new csvcDTO();
             temp = ma1;
-
+            string val = comboBox1.SelectedValue.ToString();
+            oldtot = csvcBUS.CSVCTOT(val);
+            oldhong = csvcBUS.CSVCHONG(val);
             csvcDTO.MaNhanVien = 2.ToString();
             csvcDTO.tenCSVC = comboBox1.Text;
-            csvcDTO.tinhtrangCSVC = "hỏng";
-            csvcDTO.SoLuongNhap = Decimal.ToInt32(numericUpDown1.Value);
+            csvcDTO.CSVChong = Decimal.ToInt32(numericUpDown1.Value) + oldhong;
+            if (oldtot <= Decimal.ToInt32(numericUpDown1.Value))
+            {
+                csvcDTO.CSVCtot = 0;
+            }
+            else
+            {
+                csvcDTO.CSVCtot = oldtot - Decimal.ToInt32(numericUpDown1.Value);
+            }
             csvcDTO.DonGiaNhap = gia;
             bool result = csvcBUS.add(csvcDTO, temp);
             if (result == true)
                 MessageBox.Show("Thêm CSVC thành công");
             else
                 MessageBox.Show("Thêm CSVC thất bại");
-            string val = comboBox1.SelectedValue.ToString();
+            
             List<csvcDTO> listCSVC = csvcBUS.selectedCSVCchance(val);
             if (listCSVC == null)
             {
                 MessageBox.Show("Chưa có thông tin CSVC");
             }
-
 
             dgv1.Columns.Clear();
             dgv1.DataSource = null;
@@ -188,17 +208,17 @@ namespace GUI_MANAGER
             clTCVSCName.DataPropertyName = "tenCSVC";
             dgv1.Columns.Add(clTCVSCName);
 
-            DataGridViewTextBoxColumn clTCVSCStatus = new DataGridViewTextBoxColumn();
-            clTCVSCStatus.Name = "tinhtrangcsvc";
-            clTCVSCStatus.HeaderText = "Tình Trạng CSVC";
-            clTCVSCStatus.DataPropertyName = "tinhtrangCSVC";
-            dgv1.Columns.Add(clTCVSCStatus);
-
             DataGridViewTextBoxColumn clTCVSCval = new DataGridViewTextBoxColumn();
-            clTCVSCval.Name = "soluongnhap";
-            clTCVSCval.HeaderText = "Số Lượng";
-            clTCVSCval.DataPropertyName = "SoLuongNhap";
+            clTCVSCval.Name = "csvctot";
+            clTCVSCval.HeaderText = "CSVC Tốt";
+            clTCVSCval.DataPropertyName = "CSVCtot";
             dgv1.Columns.Add(clTCVSCval);
+
+            DataGridViewTextBoxColumn clTCVSCStatus = new DataGridViewTextBoxColumn();
+            clTCVSCStatus.Name = "csvchong";
+            clTCVSCStatus.HeaderText = "CSVC Hỏng";
+            clTCVSCStatus.DataPropertyName = "CSVChong";
+            dgv1.Columns.Add(clTCVSCStatus);
         }
     }
 }
