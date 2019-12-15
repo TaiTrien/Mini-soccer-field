@@ -15,7 +15,7 @@ namespace DAL_MANAGER
         static void Main(string[] args)
         {
         }
-        
+
         public string selectRoleAccount(userDTO user) // to select role of this account
         {
             string role = string.Empty;

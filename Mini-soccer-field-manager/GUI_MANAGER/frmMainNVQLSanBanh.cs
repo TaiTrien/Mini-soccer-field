@@ -28,16 +28,18 @@ namespace GUI_MANAGER
             frmRing.Show();
         }
 
-        private void btnPay_Click(object sender, EventArgs e)
-        {
-            frmPayment frmPayment = new frmPayment();
-            frmPayment.Show();
-        }
 
         private void btnImportDrinks_Click(object sender, EventArgs e)
         {
             frmImportDrinks frmImportDrinks = new frmImportDrinks();
             frmImportDrinks.Show();
+        }
+
+
+        private void btnPrice_Click(object sender, EventArgs e)
+        {
+            frmParameters frmParameters = new frmParameters();
+            frmParameters.Show();
         }
     }
 }

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2016
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL_MANAGER", "DAL_MANAGER.csproj", "{AD678570-9E5F-4C75-A055-FB2501A5E06C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD678570-9E5F-4C75-A055-FB2501A5E06C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD678570-9E5F-4C75-A055-FB2501A5E06C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD678570-9E5F-4C75-A055-FB2501A5E06C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD678570-9E5F-4C75-A055-FB2501A5E06C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {35BF12A7-CEE0-44F2-B4ED-CD1DA806F044}
+	EndGlobalSection
+EndGlobal

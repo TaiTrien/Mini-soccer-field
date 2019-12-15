@@ -40,8 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="fieldBUS.cs" />
+    <Compile Include="parametersBUS.cs" />
+    <Compile Include="ChiTietDatSanBUS.cs" />
+    <Compile Include="ChiTietHoaDonBUS.cs" />
+    <Compile Include="HoaDonBUS.cs" />
+    <Compile Include="KhachHangBUS.cs" />
+    <Compile Include="LoaiHoaDonBUS.cs" />
+    <Compile Include="PhieuDatSanBUS.cs" />
     <Compile Include="userBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SanBUS.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL_MANAGER\DAL_MANAGER.csproj">

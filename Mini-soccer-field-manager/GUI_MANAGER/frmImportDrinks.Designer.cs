@@ -64,7 +64,7 @@
             // 
             this.pBRevie.Image = ((System.Drawing.Image)(resources.GetObject("pBRevie.Image")));
             this.pBRevie.Location = new System.Drawing.Point(541, 97);
-            this.pBRevie.Name = "pBRevie";
+            this.pBRevie.Name = "pBRevive";
             this.pBRevie.Size = new System.Drawing.Size(235, 216);
             this.pBRevie.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pBRevie.TabIndex = 1;
@@ -88,7 +88,8 @@
             this.lbRevie.Name = "lbRevie";
             this.lbRevie.Size = new System.Drawing.Size(115, 25);
             this.lbRevie.TabIndex = 3;
-            this.lbRevie.Text = "Nước revie";
+            this.lbRevie.Text = "Nước revive";
+            this.lbRevie.Click += new System.EventHandler(this.lbRevive_Click);
             // 
             // lbRestOfRevie
             // 
@@ -170,7 +171,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(198, 20);
             this.label1.TabIndex = 14;
-            this.label1.Text = "Số lượng revie nhập thêm";
+            this.label1.Text = "Số lượng revive nhập thêm";
             // 
             // btnImportDrinks
             // 

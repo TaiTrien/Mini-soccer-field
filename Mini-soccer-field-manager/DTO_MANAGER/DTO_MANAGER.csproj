@@ -40,8 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietDatSanDTO.cs" />
+    <Compile Include="ChiTietHoaDonDTO.cs" />
+    <Compile Include="HoaDonDTO.cs" />
+    <Compile Include="KhachHangDTO.cs" />
+    <Compile Include="LoaiHoaDonDTO.cs" />
+    <Compile Include="PhieuDatSanDTO.cs" />
+    <Compile Include="fieldDTO.cs" />
+    <Compile Include="parametersDTO.cs" />
     <Compile Include="userDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SanDTO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

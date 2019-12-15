@@ -47,27 +47,22 @@
             // 
             this.tbUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbUserName.ForeColor = System.Drawing.Color.Gray;
             this.tbUserName.Location = new System.Drawing.Point(318, 99);
             this.tbUserName.Name = "tbUserName";
             this.tbUserName.Size = new System.Drawing.Size(194, 27);
             this.tbUserName.TabIndex = 2;
             this.tbUserName.Text = "Username";
-            this.tbUserName.Enter += new System.EventHandler(this.tbUserName_Enter);
-            this.tbUserName.Leave += new System.EventHandler(this.tbUserName_Leave);
             // 
             // tbPassword
             // 
             this.tbPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPassword.ForeColor = System.Drawing.Color.Gray;
-            this.tbPassword.Location = new System.Drawing.Point(318, 174);
+            this.tbPassword.Location = new System.Drawing.Point(318, 178);
             this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(194, 27);
             this.tbPassword.TabIndex = 3;
             this.tbPassword.Text = "Password";
-            this.tbPassword.Enter += new System.EventHandler(this.tbPassword_Enter);
-            this.tbPassword.Leave += new System.EventHandler(this.tbPassword_Leave);
             // 
             // label1
             // 
@@ -125,7 +120,7 @@
             this.btnLogin.Location = new System.Drawing.Point(221, 239);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(253, 35);
-            this.btnLogin.TabIndex = 1;
+            this.btnLogin.TabIndex = 8;
             this.btnLogin.Text = "Sign in";
             this.btnLogin.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnLogin.UseVisualStyleBackColor = false;
