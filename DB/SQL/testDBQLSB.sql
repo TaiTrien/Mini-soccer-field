@@ -38,6 +38,7 @@ INSERT INTO [tblCSVC] ([maCSVC],[maNhanVien],[tencsvc],[csvctot],[csvchong],[don
 INSERT INTO [tblCSVC] ([maCSVC],[maNhanVien],[tencsvc],[csvctot],[csvchong],[dongianhap]) VALUES (4,2,'den',50,5,50000)
 /*N'Test bảng DOUONG'*/
 INSERT INTO [tblDOUONG] ([maDoUong],[tendouong],[soluongconlai],[dongianhap],[dongiaban],[ngaytaohoadon]) VALUES (1,'nuoc suoi',5,5000,10000,'2019-03-03')
+INSERT INTO [tblDOUONG] ([maDoUong],[tendouong],[soluongconlai],[dongianhap],[dongiaban],[ngaytaohoadon]) VALUES (2,'nuocrevive',10,5000,10000,'2019-03-03')
 INSERT INTO [tblTAIKHOAN] ([maTaiKhoan],[userName],[passWord],[Role]) VALUES (4,N'QLSB',N'1','NhanVienQLSB')
 INSERT INTO [tblTAIKHOAN] ([maTaiKhoan],[userName],[passWord],[Role]) VALUES (5,N'QLTC',N'1','NhanVienQLTC')
 INSERT INTO [tblTAIKHOAN] ([maTaiKhoan],[userName],[passWord],[Role]) VALUES (6,N'QLCSVC',N'1','NhanVienQLCSVC')

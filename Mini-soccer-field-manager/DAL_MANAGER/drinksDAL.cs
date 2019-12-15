@@ -26,7 +26,7 @@ namespace DAL_MANAGER
             query += "UPDATE tblDOUONG SET soluongconlai = @soluongconlai ";
             query += "WHERE maDoUong = @maDoUong";
 
-            using (SqlConnection con = new SqlConnection(@"server=DESKTOP-5IOTGUN\SQLEXPRESS;Trusted_Connection=yes;database=QLSB;")) //Init connection to host
+            using (SqlConnection con = new SqlConnection(@"server=" + Dns.GetHostName() + ";Trusted_Connection=yes;database=QLSB;")) //Init connection to host
             {
 
                 using (SqlCommand cmd = new SqlCommand())
@@ -63,7 +63,8 @@ namespace DAL_MANAGER
 
             List<drinksDTO> lsDrinks = new List<drinksDTO>();
 
-            using (SqlConnection con = new SqlConnection(@"server=DESKTOP-5IOTGUN\SQLEXPRESS; Trusted_Connection=yes;database=QLSB;"))
+            using (SqlConnection con = new SqlConnection(@"server=" + Dns.GetHostName() + ";Trusted_Connection=yes;database=QLSB;"))
+
             {
 
                 using (SqlCommand cmd = new SqlCommand())

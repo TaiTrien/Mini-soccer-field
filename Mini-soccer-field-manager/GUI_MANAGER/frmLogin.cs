@@ -22,10 +22,10 @@ namespace GUI_MANAGER
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //string role;
-            //userDTO.TenTaiKhoan = tbUserName.Text;
-            //userDTO.MatKhau = tbPassword.Text;
-            //role = userBUS.selectRole(userDTO);
+            string role;
+            userDTO.TenTaiKhoan = tbUserName.Text;
+            userDTO.MatKhau = tbPassword.Text;
+            role = userBUS.selectRole(userDTO);
 
             if (role == "NhanVienQLSB")
             {

@@ -24,8 +24,7 @@ namespace DAL_MANAGER
             query += "SELECT * ";
             query += "FROM tblTAIKHOAN ";
             query += "WHERE userName = @username AND passWord = @password";
-
-            using (SqlConnection con = new SqlConnection(@"server=DESKTOP-5IOTGUN\SQLEXPRESS;Trusted_Connection=yes;database=QLSB;"))
+            using (SqlConnection con = new SqlConnection(@"server=" + Dns.GetHostName() + ";Trusted_Connection=yes;database=QLSB;"))
             {
 
                 using (SqlCommand cmd = new SqlCommand())

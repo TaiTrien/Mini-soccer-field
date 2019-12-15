@@ -79,12 +79,6 @@ namespace GUI_MANAGER
             frmFacilitiesUpdate.Show();         
         }
 
-        private void btnSignOut_Click(object sender, EventArgs e)
-        {
-            frmLogin frmLogin = new frmLogin();
-            frmLogin.Show();
-            
-        }
 
         private void btnCheck_Click(object sender, EventArgs e)
         {
