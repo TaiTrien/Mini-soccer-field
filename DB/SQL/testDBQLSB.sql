@@ -9,6 +9,13 @@ SET DATEFORMAT DMY
 /*N'Test bảng TAIKHOAN'*/
 INSERT INTO [tblTAIKHOAN] ([maTaiKhoan],[userName],[passWord],[Role]) VALUES (1,N'lydaonam',N'namlydao123','master')
 INSERT INTO [tblTAIKHOAN] ([maTaiKhoan],[userName],[passWord],[Role]) VALUES (2,N'taitrien',N'taitrien99','master')
+INSERT INTO [tblTAIKHOAN] ([maTaiKhoan],[userName],[passWord],[Role]) VALUES (3,N'lydaonam',N'namlydao123','master')
+
+INSERT INTO [tblTAIKHOAN] ([maTaiKhoan],[userName],[passWord],[Role]) VALUES (4,N'QLSB',N'1','NhanVienQLSB')
+INSERT INTO [tblTAIKHOAN] ([maTaiKhoan],[userName],[passWord],[Role]) VALUES (5,N'QLTC',N'1','NhanVienQLTC')
+INSERT INTO [tblTAIKHOAN] ([maTaiKhoan],[userName],[passWord],[Role]) VALUES (6,N'QLCSVC',N'1','NhanVienQLCSVC')
+
+
 /*N'Test bảng NHANVIEN'*/
 INSERT INTO [tblNHANVIEN] ([maNhanVien],[maTaiKhoan],[hoTen],[tuoi],[diaChi],[gioiTinh],[soDT]) VALUES (1,1,N'Lý Đạo Nam',20,N'01 Trần Duy Hưng, Hà Nội =)))','Nam','0969696969')
 INSERT INTO [tblNHANVIEN] ([maNhanVien],[maTaiKhoan],[hoTen],[tuoi],[diaChi],[gioiTinh],[soDT]) VALUES (2,2,N'Võ Văn Tài Triển',20,N'?????','Nam','0977777777')
