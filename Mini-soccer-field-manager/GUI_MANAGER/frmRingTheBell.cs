@@ -29,7 +29,7 @@ namespace GUI_MANAGER
             durationField1 = changeStringIntoIntTime(tbTimerField1.Text);
             if ( tbTimerField1.BackColor == Color.Green) // to check field busy
             {
-                if (!string.IsNullOrWhiteSpace(tbCustomerField1.Text))
+                if (tbCustomerField1.Text != null)
                 {
                     countDownTimerField1.Start();
                     countDownTimerField1.Enabled = true;
@@ -39,7 +39,7 @@ namespace GUI_MANAGER
             }
             else if (tbTimerField1.BackColor == Color.Red) // to click another time
             {
-                if (!string.IsNullOrWhiteSpace(tbCustomerField1.Text))
+                if (tbCustomerField1.Text != null)
                 {
                     countDownTimerField1.Stop();
                     tbTimerField1.BackColor = Color.Green;
@@ -66,7 +66,7 @@ namespace GUI_MANAGER
             durationField2 = changeStringIntoIntTime(tbTimerField2.Text);
             if (tbTimerField2.BackColor == Color.Green) // to check field busy
             {
-                if (!string.IsNullOrWhiteSpace(tbCustomerField2.Text))
+                if (tbCustomerField2.Text != null)
                 {
                     countDownTimerField2.Start();
                     countDownTimerField2.Enabled = true;
@@ -76,7 +76,7 @@ namespace GUI_MANAGER
             }
             else if (tbTimerField2.BackColor == Color.Red) // to click another time
             {
-                if (!string.IsNullOrWhiteSpace(tbCustomerField2.Text))
+                if (tbCustomerField2.Text != null && countDownTimerField2.Enabled == true)
                 {
                     countDownTimerField2.Stop();
                     tbTimerField2.BackColor = Color.Green;

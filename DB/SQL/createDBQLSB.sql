@@ -115,9 +115,9 @@ CREATE TABLE [dbo].[tblCSVC](
 	[maCSVC] [nvarchar](5) NOT NULL,
 	[maNhanVien] [nvarchar](5) NOT NULL,
 	[tencsvc] [nvarchar](20) NOT NULL,
-	[soluongnhap] [int] NOT NULL,
+	[csvctot] [int] ,
+	[csvchong] [int],
 	[dongianhap] [int] NOT NULL,
-	[tinhtrangcsvc] [nvarchar](20) NOT NULL ,
 	CONSTRAINT [PK_tblCSVC] PRIMARY KEY CLUSTERED 
 (
 	[maCSVC] ASC

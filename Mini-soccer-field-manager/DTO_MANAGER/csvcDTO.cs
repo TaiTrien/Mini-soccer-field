@@ -10,8 +10,8 @@ namespace DTO_MANAGER
         private string maCSVC;
         private string maNhanVien;
         private string tencsvc;
-        private string tinhtrangcsvc;
-        private int soluongnhap;
+        private int csvchong;
+        private int csvctot;
         private int dongianhap;
         private string maHoaDon;
         private string maKH;
@@ -29,8 +29,8 @@ namespace DTO_MANAGER
         public string MaCSVC { get => maCSVC; set => maCSVC = value; }
         public string MaNhanVien { get => maNhanVien; set => maNhanVien = value; }
         public string tenCSVC { get => tencsvc; set => tencsvc = value; }
-        public string tinhtrangCSVC { get => tinhtrangcsvc; set => tinhtrangcsvc = value; }
-        public int SoLuongNhap { get => soluongnhap; set => soluongnhap = value; }
+        public int CSVChong { get => csvchong; set => csvchong = value; }
+        public int CSVCtot { get => csvctot; set => csvctot = value; }
         public int DonGiaNhap { get => dongianhap; set => dongianhap = value; }
     }
 }

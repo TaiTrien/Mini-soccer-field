@@ -23,6 +23,14 @@ namespace BUS_MANAGER
             bool isAdd = csvcDAL.add(CSVC,maold);
             return isAdd;
         }
+        public int CSVCTOT(string sel_item)
+        {
+            return csvcDAL.CSVCTOT(sel_item);
+        }
+        public int CSVCHONG(string sel_item)
+        {
+            return csvcDAL.CSVCHONG(sel_item);
+        }
         public List<csvcDTO> selectedCSVC()
         {
             return csvcDAL.selectedCSVC();
