@@ -39,6 +39,8 @@ INSERT INTO [tblLOAIHOADON] ([maLoaiHoaDon],[loaihoadon]) VALUES (1,'thu san')
 /*N'Test bảng CHITIETHOADON'*/
 INSERT INTO [tblCHITIETHOADON] ([maLoaiHoaDon],[maHoaDon],[trigiahoadon]) VALUES (1,1,100000)
 /*N'Test bảng CSVC'*/
-INSERT INTO [tblCSVC] ([maCSVC],[maNhanVien],[tencsvc],[soluongnhap],[dongianhap],[tinhtrangcsvc]) VALUES (1,1,'banh',5,50000,'hu hong')
+INSERT INTO [tblCSVC] ([maCSVC],[maNhanVien],[tencsvc],[soluongnhap],[dongianhap],[tinhtrangcsvc]) VALUES (1,2,'banh',5,50000,'hu hong')
+INSERT INTO [tblCSVC] ([maCSVC],[maNhanVien],[tencsvc],[soluongnhap],[dongianhap],[tinhtrangcsvc]) VALUES (2,2,'luoi',4,150000,'hu hong')
+INSERT INTO [tblCSVC] ([maCSVC],[maNhanVien],[tencsvc],[soluongnhap],[dongianhap],[tinhtrangcsvc]) VALUES (3,2,'san co',2,500000,'tot')
 /*N'Test bảng DOUONG'*/
 INSERT INTO [tblDOUONG] ([maDoUong],[tendouong],[soluongconlai],[dongianhap],[dongiaban],[ngaytaohoadon]) VALUES (1,'nuoc suoi',5,5000,10000,'2019-03-03')

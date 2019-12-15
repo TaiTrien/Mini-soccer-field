@@ -143,8 +143,8 @@ CONSTRAINT [PK_tblDOUONG] PRIMARY KEY CLUSTERED
 CREATE TABLE [dbo].[tblHOADON](
 	[maHoaDon] [nvarchar](5) NOT NULL,
 	[maNhanvien] [nvarchar](5) NOT NULL,
-	[maKH] [nvarchar](5) NOT NULL,
-	[ngaytaohoadon] [date] NOT NULL,
+	[maKH] [nvarchar](5) ,
+	[ngaytaohoadon] [smalldatetime] NOT NULL,
 CONSTRAINT [PK_tblHOADON] PRIMARY KEY CLUSTERED 
 (
 	[maHoaDon] ASC
