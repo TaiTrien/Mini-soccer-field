@@ -21,8 +21,7 @@ namespace GUI_MANAGER
         public frmRingTheBell()
         {
             InitializeComponent();
-            tbTimerField1.BackColor = Color.Green;
-            tbTimerField2.BackColor = Color.Green;
+           
         }
 
         private void btnField1_Click(object sender, EventArgs e)
@@ -77,7 +76,7 @@ namespace GUI_MANAGER
             }
             else if (tbTimerField2.BackColor == Color.Red) // to click another time
             {
-                if (tbCustomerField2.Text != null)
+                if (tbCustomerField2.Text != null && countDownTimerField2.Enabled == true)
                 {
                     countDownTimerField2.Stop();
                     tbTimerField2.BackColor = Color.Green;
@@ -164,6 +163,8 @@ namespace GUI_MANAGER
             fieldBUS = new fieldBUS();
             field1DTO.MaSanBanh = "1";
             field2DTO.MaSanBanh = "2";
+            tbTimerField1.BackColor = Color.Green;
+            tbTimerField2.BackColor = Color.Green;
             loadInfo();
 
         }
@@ -203,10 +204,7 @@ namespace GUI_MANAGER
                     tbTimerField1.Text = field.ThoiLuongDatSan.ToString("HH:mm:ss");
                 }
             }
-            else
-            {
-                tbTimerField1.BackColor = Color.Green;
-            }
+       
             if (field2DTO.MaSanBanh == field.MaSanBanh)
             {
                 if ("20:00:00" == bookingTime && "3/3/2019" == bookingDate)
@@ -215,10 +213,8 @@ namespace GUI_MANAGER
                     tbTimerField2.Text = field.ThoiLuongDatSan.ToString("HH:mm:ss");
                 }
             }
-            else
-            {
-                tbTimerField2.BackColor = Color.Green;
-            }
+          
         }
     }
+   
 }
