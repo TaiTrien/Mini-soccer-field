@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{10AC8AD1-646B-4639-882C-3041A2F8DC9C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GUI_MANAGER</RootNamespace>
+    <AssemblyName>GUI_MANAGER</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomer.Designer.cs">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFieldSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFieldSchedule.Designer.cs">
+      <DependentUpon>frmFieldSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFacilitiesCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFacilitiesCheck.Designer.cs">
+      <DependentUpon>frmFacilitiesCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFacilitiesUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFacilitiesUpdate.Designer.cs">
+      <DependentUpon>frmFacilitiesUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmImportDrinks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImportDrinks.Designer.cs">
+      <DependentUpon>frmImportDrinks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainNVQLSanBanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainNVQLSanBanh.Designer.cs">
+      <DependentUpon>frmMainNVQLSanBanh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmParameters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmParameters.Designer.cs">
+      <DependentUpon>frmParameters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPayment.Designer.cs">
+      <DependentUpon>frmPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRingTheBell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRingTheBell.Designer.cs">
+      <DependentUpon>frmRingTheBell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStatistic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStatistic.Designer.cs">
+      <DependentUpon>frmStatistic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmCustomer.resx">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFieldSchedule.resx">
+      <DependentUpon>frmFieldSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFacilitiesCheck.resx">
+      <DependentUpon>frmFacilitiesCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFacilitiesUpdate.resx">
+      <DependentUpon>frmFacilitiesUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmImportDrinks.resx">
+      <DependentUpon>frmImportDrinks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainNVQLSanBanh.resx">
+      <DependentUpon>frmMainNVQLSanBanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmParameters.resx">
+      <DependentUpon>frmParameters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPayment.resx">
+      <DependentUpon>frmPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRingTheBell.resx">
+      <DependentUpon>frmRingTheBell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStatistic.resx">
+      <DependentUpon>frmStatistic.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Icon\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUS_MANAGER\BUS_MANAGER.csproj">
+      <Project>{e18022a6-070a-436e-b2d4-427dee36bd5b}</Project>
+      <Name>BUS_MANAGER</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL_MANAGER\DAL_MANAGER.csproj">
+      <Project>{ad678570-9e5f-4c75-a055-fb2501a5e06c}</Project>
+      <Name>DAL_MANAGER</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO_MANAGER\DTO_MANAGER.csproj">
+      <Project>{a5e1490d-60e3-4f5d-a13f-004114bd3d1d}</Project>
+      <Name>DTO_MANAGER</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
