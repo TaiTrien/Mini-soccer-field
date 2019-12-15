@@ -108,7 +108,7 @@ namespace DAL_MANAGER
         {
         string queryadd = string.Empty;
         queryadd += " update [tblCSVC]";
-        queryadd += " set maNhanVien=@maNhanVien,tencsvc=@tencsvc,tinhtrangcsvc=@tinhtrangcsvc,soluongnhap=@soluongnhap,dongianhap=@dongianhap where maCSVC=@maold";
+        queryadd += " set maNhanVien=@maNhanVien,tencsvc=@tencsvc,csvctot=@csvctot,csvchong=@csvchong,dongianhap=@dongianhap where maCSVC=@maold";
         using (SqlConnection con = new SqlConnection(@"server=" + Dns.GetHostName() + ";Trusted_Connection=yes;database=QLSB;")) 
         {
             
@@ -119,8 +119,8 @@ namespace DAL_MANAGER
                 cmd.CommandText = queryadd;
                 cmd.Parameters.AddWithValue("@maNhanVien", CSVC.MaNhanVien);
                 cmd.Parameters.AddWithValue("@tencsvc", CSVC.tenCSVC);
-                cmd.Parameters.AddWithValue("@tinhtrangcsvc", CSVC.tinhtrangCSVC);
-                cmd.Parameters.AddWithValue("@soluongnhap", CSVC.SoLuongNhap);
+                cmd.Parameters.AddWithValue("@csvctot", CSVC.CSVCtot);
+                cmd.Parameters.AddWithValue("@csvchong", CSVC.CSVChong);
                 cmd.Parameters.AddWithValue("@dongianhap", CSVC.DonGiaNhap);
                 cmd.Parameters.AddWithValue("@maold", maold);
                 try
@@ -140,6 +140,106 @@ namespace DAL_MANAGER
             return true;
         }
     
+        public int CSVCTOT(string sel_item)
+
+        {
+            string val = sel_item;
+            int CSVCTOT=0;
+            string query = string.Empty;
+            query += "SELECT *";
+            query += "FROM tblCSVC Where tencsvc = '" + val + "'";
+
+            using (SqlConnection con = new SqlConnection(@"server=" + Dns.GetHostName() + ";Trusted_Connection=yes;database=QLSB;"))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+
+                    try
+                    {
+                        con.Open();
+                        SqlDataReader reader = null;
+                        reader = cmd.ExecuteReader();
+                        if (reader.HasRows == true)
+                        {
+                            
+                            while (reader.Read())
+                            {
+                                csvcDTO CSVC = new csvcDTO();
+                                CSVC.MaCSVC = reader["MaCSVC"].ToString();
+                                CSVC.tenCSVC = reader["tenCSVC"].ToString();
+                                CSVC.CSVChong =int.Parse( reader["CSVChong"].ToString());
+                                CSVC.CSVCtot = int.Parse(reader["CSVCtot"].ToString());
+                                CSVCTOT = CSVC.CSVCtot;
+                                
+                            }
+                        }
+
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return 0;
+                    }
+                }
+            }
+            return CSVCTOT;
+        }
+        public int CSVCHONG(string sel_item)
+
+        {
+            string val = sel_item;
+            int CSVCHONG = 0;
+            string query = string.Empty;
+            query += "SELECT *";
+            query += "FROM tblCSVC Where tencsvc = '" + val + "'";
+
+            using (SqlConnection con = new SqlConnection(@"server=" + Dns.GetHostName() + ";Trusted_Connection=yes;database=QLSB;"))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+
+                    try
+                    {
+                        con.Open();
+                        SqlDataReader reader = null;
+                        reader = cmd.ExecuteReader();
+                        if (reader.HasRows == true)
+                        {
+
+                            while (reader.Read())
+                            {
+                                csvcDTO CSVC = new csvcDTO();
+                                CSVC.MaCSVC = reader["MaCSVC"].ToString();
+                                CSVC.tenCSVC = reader["tenCSVC"].ToString();
+                                CSVC.CSVChong = int.Parse(reader["CSVChong"].ToString());
+                                CSVC.CSVCtot = int.Parse(reader["CSVCtot"].ToString());
+                                CSVCHONG = CSVC.CSVChong;
+
+                            }
+                        }
+
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return 0;
+                    }
+                }
+            }
+            return CSVCHONG;
+        }
         public List<csvcDTO> selectedCSVC()
 
         {
@@ -165,15 +265,14 @@ namespace DAL_MANAGER
                         reader = cmd.ExecuteReader();
                         if (reader.HasRows == true)
                         {
-                            
+
                             while (reader.Read())
                             {
                                 csvcDTO CSVC = new csvcDTO();
                                 CSVC.MaCSVC = reader["MaCSVC"].ToString();
                                 CSVC.tenCSVC = reader["tenCSVC"].ToString();
-                                CSVC.tinhtrangCSVC = reader["tinhtrangCSVC"].ToString();
-                                CSVC.SoLuongNhap = int.Parse(reader["SoLuongNhap"].ToString());
-                                
+                                CSVC.CSVChong = int.Parse(reader["CSVChong"].ToString());
+                                CSVC.CSVCtot = int.Parse(reader["CSVCtot"].ToString());
                                 lscsvc.Add(CSVC);
                             }
                         }
@@ -222,9 +321,8 @@ namespace DAL_MANAGER
                                 csvcDTO CSVC = new csvcDTO();
                                 CSVC.MaCSVC = reader["MaCSVC"].ToString();
                                 CSVC.tenCSVC = reader["tenCSVC"].ToString();
-                                CSVC.tinhtrangCSVC = reader["tinhtrangCSVC"].ToString();
-                                CSVC.SoLuongNhap = int.Parse(reader["SoLuongNhap"].ToString());
-
+                                CSVC.CSVChong = int.Parse(reader["CSVChong"].ToString());
+                                CSVC.CSVCtot = int.Parse(reader["CSVCtot"].ToString());
                                 lscsvc.Add(CSVC);
                             }
                         }
