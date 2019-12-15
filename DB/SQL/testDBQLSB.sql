@@ -17,12 +17,19 @@ INSERT INTO [tblNHANVIEN] ([maNhanVien],[maTaiKhoan],[hoTen],[tuoi],[diaChi],[gi
 INSERT INTO [tblNHANVIEN] ([maNhanVien],[maTaiKhoan],[hoTen],[tuoi],[diaChi],[gioiTinh],[soDT]) VALUES (2,2,N'Võ Văn Tài Triển',20,N'?????','Nam','0977777777')
 /*N'Test bảng KHACHHANG'*/
 INSERT INTO [tblKHACHHANG] ([maKH],[tenKH],[loaiKH],[diaChi],[gioiTinh],[soDT]) VALUES (1,N'Ngô Bá Khá',N'Vãng lai',N'Vũ Trường','Nam','0966666666')
+INSERT INTO [tblKHACHHANG] ([maKH],[tenKH],[loaiKH],[diaChi],[gioiTinh],[soDT]) VALUES (2,N'Ngô Bá Bảnh',N'Vãng lai',N'Vũ Trường','Nữ','0966666666')
+
 /*N'Test bảng PHIEUDATSAN'*/
 INSERT INTO [tblPHIEUDATSAN] ([maPhieuDatSan], [maNhanVien],[maKH]) VALUES (1,2,1)
+INSERT INTO [tblPHIEUDATSAN] ([maPhieuDatSan], [maNhanVien],[maKH]) VALUES (2,2,2)
+
 /*N'Test bảng SAN'*/
 INSERT INTO [tblSAN] ([maSan], [tinhTrang]) VALUES (1,0)
+INSERT INTO [tblSAN] ([maSan], [tinhTrang]) VALUES (2,0)
 /*N'Test bảng CHITIETDATSAN'*/
 INSERT INTO [tblCHITIETDATSAN] ([maPhieuDatSan],[maSan],[ngayDat],[gioDat],[thoiLuong]) VALUES (1,1,'2019-03-03','20:00','00:30')
+INSERT INTO [tblCHITIETDATSAN] ([maPhieuDatSan],[maSan],[ngayDat],[gioDat],[thoiLuong]) VALUES (2,2,'2019-03-03','20:00','01:30')
+
 /*N'Test bảng THAMSO'*/
 INSERT INTO [tblTHAMSO] ([luongnhanvien],[tiengiuxe],[giasanngay],[giasandem],[sotiencoc]) VALUES (10000,5000,30000,50000,10000)
 /*N'Test bảng HOADON'*/

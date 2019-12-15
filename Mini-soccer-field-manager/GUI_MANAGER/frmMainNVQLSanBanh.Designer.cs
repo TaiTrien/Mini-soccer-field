@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainNVQLSanBanh));
             this.btnFieldSchedule = new System.Windows.Forms.Button();
             this.btnRingTheBell = new System.Windows.Forms.Button();
-            this.btnPay = new System.Windows.Forms.Button();
+            this.btnPrice = new System.Windows.Forms.Button();
             this.lbMain = new System.Windows.Forms.Label();
             this.lbFieldSchedule = new System.Windows.Forms.Label();
             this.lbRingTheBell = new System.Windows.Forms.Label();
@@ -64,15 +64,15 @@
             this.btnRingTheBell.UseVisualStyleBackColor = true;
             this.btnRingTheBell.Click += new System.EventHandler(this.btnRingTheBell_Click);
             // 
-            // btnPay
+            // btnPrice
             // 
-            this.btnPay.Image = ((System.Drawing.Image)(resources.GetObject("btnPay.Image")));
-            this.btnPay.Location = new System.Drawing.Point(365, 328);
-            this.btnPay.Name = "btnPay";
-            this.btnPay.Size = new System.Drawing.Size(203, 171);
-            this.btnPay.TabIndex = 2;
-            this.btnPay.UseVisualStyleBackColor = true;
-            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
+            this.btnPrice.Image = ((System.Drawing.Image)(resources.GetObject("btnPrice.Image")));
+            this.btnPrice.Location = new System.Drawing.Point(365, 328);
+            this.btnPrice.Name = "btnPrice";
+            this.btnPrice.Size = new System.Drawing.Size(203, 171);
+            this.btnPrice.TabIndex = 2;
+            this.btnPrice.UseVisualStyleBackColor = true;
+            this.btnPrice.Click += new System.EventHandler(this.btnPrice_Click);
             // 
             // lbMain
             // 
@@ -108,11 +108,11 @@
             // 
             this.lbPay.AutoSize = true;
             this.lbPay.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPay.Location = new System.Drawing.Point(388, 512);
+            this.lbPay.Location = new System.Drawing.Point(397, 512);
             this.lbPay.Name = "lbPay";
-            this.lbPay.Size = new System.Drawing.Size(159, 32);
+            this.lbPay.Size = new System.Drawing.Size(128, 32);
             this.lbPay.TabIndex = 6;
-            this.lbPay.Text = "Thanh toán";
+            this.lbPay.Text = "Bảng giá";
             // 
             // lbImportDrinks
             // 
@@ -165,7 +165,7 @@
             this.Controls.Add(this.lbRingTheBell);
             this.Controls.Add(this.lbFieldSchedule);
             this.Controls.Add(this.lbMain);
-            this.Controls.Add(this.btnPay);
+            this.Controls.Add(this.btnPrice);
             this.Controls.Add(this.btnRingTheBell);
             this.Controls.Add(this.btnFieldSchedule);
             this.Name = "frmMainNVQLSanBanh";
@@ -180,7 +180,7 @@
 
         private System.Windows.Forms.Button btnFieldSchedule;
         private System.Windows.Forms.Button btnRingTheBell;
-        private System.Windows.Forms.Button btnPay;
+        private System.Windows.Forms.Button btnPrice;
         private System.Windows.Forms.Label lbMain;
         private System.Windows.Forms.Label lbFieldSchedule;
         private System.Windows.Forms.Label lbRingTheBell;

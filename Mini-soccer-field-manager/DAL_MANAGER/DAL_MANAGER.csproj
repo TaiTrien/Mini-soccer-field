@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="fieldDAL.cs" />
+    <Compile Include="parametersDAL.cs" />
     <Compile Include="userDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

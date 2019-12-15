@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="fieldDTO.cs" />
+    <Compile Include="parametersDTO.cs" />
     <Compile Include="userDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

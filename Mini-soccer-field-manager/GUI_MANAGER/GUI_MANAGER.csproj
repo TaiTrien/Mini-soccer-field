@@ -81,6 +81,12 @@
     <Compile Include="frmMainNVQLSanBanh.Designer.cs">
       <DependentUpon>frmMainNVQLSanBanh.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmParameters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmParameters.Designer.cs">
+      <DependentUpon>frmParameters.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPayment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMainNVQLSanBanh.resx">
       <DependentUpon>frmMainNVQLSanBanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmParameters.resx">
+      <DependentUpon>frmParameters.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPayment.resx">
       <DependentUpon>frmPayment.cs</DependentUpon>
