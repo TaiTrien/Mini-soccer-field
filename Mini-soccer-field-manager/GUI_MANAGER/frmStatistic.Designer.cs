@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStatistic));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbType = new System.Windows.Forms.ComboBox();
             this.lbMonth = new System.Windows.Forms.Label();
             this.lbYear = new System.Windows.Forms.Label();
             this.btnStatistic = new System.Windows.Forms.Button();
@@ -39,8 +41,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lbSignOut = new System.Windows.Forms.Label();
-            this.cbType = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -59,6 +59,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(376, 127);
             this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label1.Location = new System.Drawing.Point(12, 95);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 17);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Loại Hóa Đơn";
+            // 
+            // cbType
+            // 
+            this.cbType.FormattingEnabled = true;
+            this.cbType.Location = new System.Drawing.Point(126, 88);
+            this.cbType.Name = "cbType";
+            this.cbType.Size = new System.Drawing.Size(139, 24);
+            this.cbType.TabIndex = 6;
             // 
             // lbMonth
             // 
@@ -149,24 +167,6 @@
             this.lbSignOut.TabIndex = 7;
             this.lbSignOut.Text = "Đăng Xuất";
             // 
-            // cbType
-            // 
-            this.cbType.FormattingEnabled = true;
-            this.cbType.Location = new System.Drawing.Point(126, 88);
-            this.cbType.Name = "cbType";
-            this.cbType.Size = new System.Drawing.Size(139, 24);
-            this.cbType.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label1.Location = new System.Drawing.Point(12, 95);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 17);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Loại Hóa Đơn";
-            // 
             // frmStatistic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -179,6 +179,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmStatistic";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhân viên quản lí tài chính";
             this.Load += new System.EventHandler(this.frmStatistic_Load);
             this.panel1.ResumeLayout(false);

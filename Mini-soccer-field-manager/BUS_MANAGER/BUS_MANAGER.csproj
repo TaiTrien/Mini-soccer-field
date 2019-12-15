@@ -46,7 +46,7 @@
     <Compile Include="KhachHangBUS.cs" />
     <Compile Include="LoaiHoaDonBUS.cs" />
     <Compile Include="PhieuDatSanBUS.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="userBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SanBUS.cs" />
   </ItemGroup>
