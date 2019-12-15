@@ -22,6 +22,11 @@ namespace GUI_MANAGER
         {
             InitializeComponent();
         }
+
+        private void BtnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         public void frmFieldSchedule_Load(object sender, EventArgs e)
         {
             pdsBus = new PhieuDatSanBUS();

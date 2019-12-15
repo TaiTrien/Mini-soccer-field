@@ -34,7 +34,7 @@
             this.lbWater = new System.Windows.Forms.Label();
             this.lbRevie = new System.Windows.Forms.Label();
             this.lbRestOfRevie = new System.Windows.Forms.Label();
-            this.tbRestOfRevie = new System.Windows.Forms.TextBox();
+            this.tbRestOfRevive = new System.Windows.Forms.TextBox();
             this.tbRestOfWater = new System.Windows.Forms.TextBox();
             this.lbRestOfWater = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -69,6 +69,7 @@
             this.pBRevie.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pBRevie.TabIndex = 1;
             this.pBRevie.TabStop = false;
+            this.pBRevie.Click += new System.EventHandler(this.PBRevie_Click);
             // 
             // lbWater
             // 
@@ -86,7 +87,7 @@
             this.lbRevie.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRevie.Location = new System.Drawing.Point(603, 316);
             this.lbRevie.Name = "lbRevie";
-            this.lbRevie.Size = new System.Drawing.Size(115, 25);
+            this.lbRevie.Size = new System.Drawing.Size(126, 25);
             this.lbRevie.TabIndex = 3;
             this.lbRevie.Text = "Nước revive";
             this.lbRevie.Click += new System.EventHandler(this.lbRevive_Click);
@@ -101,18 +102,18 @@
             this.lbRestOfRevie.TabIndex = 5;
             this.lbRestOfRevie.Text = "Số lượng còn lại";
             // 
-            // tbRestOfRevie
+            // tbRestOfRevive
             // 
-            this.tbRestOfRevie.BackColor = System.Drawing.SystemColors.Control;
-            this.tbRestOfRevie.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbRestOfRevie.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbRestOfRevie.Location = new System.Drawing.Point(594, 69);
-            this.tbRestOfRevie.Name = "tbRestOfRevie";
-            this.tbRestOfRevie.ReadOnly = true;
-            this.tbRestOfRevie.Size = new System.Drawing.Size(124, 21);
-            this.tbRestOfRevie.TabIndex = 7;
-            this.tbRestOfRevie.Text = "12";
-            this.tbRestOfRevie.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbRestOfRevive.BackColor = System.Drawing.SystemColors.Control;
+            this.tbRestOfRevive.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbRestOfRevive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbRestOfRevive.Location = new System.Drawing.Point(594, 69);
+            this.tbRestOfRevive.Name = "tbRestOfRevive";
+            this.tbRestOfRevive.ReadOnly = true;
+            this.tbRestOfRevive.Size = new System.Drawing.Size(124, 21);
+            this.tbRestOfRevive.TabIndex = 7;
+            this.tbRestOfRevive.Text = "12";
+            this.tbRestOfRevive.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tbRestOfWater
             // 
@@ -182,6 +183,7 @@
             this.btnImportDrinks.TabIndex = 15;
             this.btnImportDrinks.Text = "Nhập";
             this.btnImportDrinks.UseVisualStyleBackColor = true;
+            this.btnImportDrinks.Click += new System.EventHandler(this.BtnImportDrinks_Click);
             // 
             // lbBack
             // 
@@ -200,6 +202,7 @@
             this.btnBack.Size = new System.Drawing.Size(52, 30);
             this.btnBack.TabIndex = 17;
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
             // frmImportDrinks
             // 
@@ -215,7 +218,7 @@
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.tbRestOfWater);
             this.Controls.Add(this.lbRestOfWater);
-            this.Controls.Add(this.tbRestOfRevie);
+            this.Controls.Add(this.tbRestOfRevive);
             this.Controls.Add(this.lbRestOfRevie);
             this.Controls.Add(this.lbRevie);
             this.Controls.Add(this.lbWater);
@@ -224,6 +227,7 @@
             this.Name = "frmImportDrinks";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhập nước uống";
+            this.Load += new System.EventHandler(this.FrmImportDrinks_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pBWater)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBRevie)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
@@ -240,7 +244,7 @@
         private System.Windows.Forms.Label lbWater;
         private System.Windows.Forms.Label lbRevie;
         private System.Windows.Forms.Label lbRestOfRevie;
-        private System.Windows.Forms.TextBox tbRestOfRevie;
+        private System.Windows.Forms.TextBox tbRestOfRevive;
         private System.Windows.Forms.TextBox tbRestOfWater;
         private System.Windows.Forms.Label lbRestOfWater;
         private System.Windows.Forms.NumericUpDown numericUpDown1;

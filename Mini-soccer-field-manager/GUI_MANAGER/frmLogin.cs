@@ -27,23 +27,24 @@ namespace GUI_MANAGER
             //userDTO.MatKhau = tbPassword.Text;
             //role = userBUS.selectRole(userDTO);
 
-            //if (role == "NhanVienQLSB")
-            //{
-            //    frmMainNVQLSanBanh frmMainNVQLSanBanh = new frmMainNVQLSanBanh();
-            //    frmMainNVQLSanBanh.Show();
-            //}
-            //else if (role == "NhanVienQLCSVC")
-            //{
+            if (role == "NhanVienQLSB")
+            {
+                this.Hide();
+                frmMainNVQLSanBanh frmMainNVQLSanBanh = new frmMainNVQLSanBanh();
+                frmMainNVQLSanBanh.Show();
+            }
+            else if (role == "NhanVienQLCSVC")
+            {
                 frmFacilitiesCheck frmFacilitiesCheck = new frmFacilitiesCheck();
                 frmFacilitiesCheck.Show();
-            //}
-            //else if (role == "NhanVienQLTC")
-            //{
-            //    frmStatistic frmStatistic = new frmStatistic();
-            //    frmStatistic.Show();
-            //}
-            //else MessageBox.Show("Đăng nhập thất bại");
-
+            }
+            else if (role == "NhanVienQLTC")
+            {
+                frmStatistic frmStatistic = new frmStatistic();
+                frmStatistic.Show();
+            }
+            else MessageBox.Show("Đăng nhập thất bại");
+            
         }
 
         private void frmLogin_Load(object sender, EventArgs e)

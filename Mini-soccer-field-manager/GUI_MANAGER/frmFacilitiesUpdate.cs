@@ -221,5 +221,9 @@ namespace GUI_MANAGER
             clTCVSCStatus.DataPropertyName = "CSVChong";
             dgv1.Columns.Add(clTCVSCStatus);
         }
+        {
+        private void BtnBack_Click(object sender, EventArgs e)
+            this.Close();
+        }
     }
 }
