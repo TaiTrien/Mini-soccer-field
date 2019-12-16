@@ -61,7 +61,7 @@ namespace GUI_MANAGER
             LoadInfo();
             loadCusPhone_Combobox();
             tbTotalMoney.Text = "0";
-            
+
         }
 
         public void LoadInfo()
@@ -93,7 +93,7 @@ namespace GUI_MANAGER
         }
         public void loadCusInfo() // to load info customer
         {
-            
+
             List<KhachHangDTO> listKH = khBus.select();
 
             if (listKH == null)
@@ -108,13 +108,13 @@ namespace GUI_MANAGER
                     tbCustomerName.Text = kh.TenKH;
                 }
             }
-            
+
         }
         public void loadTimeTotal() // to load total time they play
         {
             float temp = float.Parse(frmRingTheBell.SetValueForTongGioDa);
-            
-            float totalTime = (float) Math.Round((temp / 60) ,  1); // total in minutes
+
+            float totalTime = (float)Math.Round((temp / 60), 1); // total in minutes
             tbTotalTime.Text = totalTime.ToString();
         }
         private void BtnBack_Click(object sender, EventArgs e)
@@ -152,7 +152,7 @@ namespace GUI_MANAGER
             ChiTietHoaDonDTO cthdnuoc = new ChiTietHoaDonDTO();
             cthdsan.MaHD = hd.MaHD;
             cthdsan.MaLoaiHoaDon = 1;
-            cthdsan.trigiaHoaDon = float.Parse(tbTotalTime.Text) * GiaSan()+ int.Parse(nUDParkingCars.Value.ToString()) * par.GiaGiuXe;
+            cthdsan.trigiaHoaDon = float.Parse(tbTotalTime.Text) * GiaSan() + int.Parse(nUDParkingCars.Value.ToString()) * par.GiaGiuXe;
             if (int.Parse(nUDRevieDrink.Value.ToString()) != 0 || int.Parse(nUDWaterDrink.Value.ToString()) != 0)
             {
                 cthdnuoc.MaHD = hd.MaHD;
@@ -171,15 +171,15 @@ namespace GUI_MANAGER
         }
         private float tinhTong()
         {
-            
+
             parametersDTO par = parBus.Selected();
-            return float.Parse(tbTotalTime.Text) * GiaSan() + int.Parse(nUDWaterDrink.Value.ToString()) * giaNuoc  + int.Parse(nUDRevieDrink.Value.ToString()) * giaRevive
+            return float.Parse(tbTotalTime.Text) * GiaSan() + int.Parse(nUDWaterDrink.Value.ToString()) * giaNuoc + int.Parse(nUDRevieDrink.Value.ToString()) * giaRevive
             + int.Parse(nUDParkingCars.Value.ToString()) * par.GiaGiuXe/**par.GiaGiuXe*/ - float.Parse(tbDiscountMoney.Text);
 
         }
         private void tbTotalTime_TextChanged(object sender, EventArgs e)
         {
-            
+
             if (((TextBox)sender).Text == "")
             {
                 ((TextBox)sender).Text = "0";

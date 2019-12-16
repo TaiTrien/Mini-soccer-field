@@ -41,7 +41,7 @@ namespace GUI_MANAGER
             String caption = "Đăng xuất";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
-           
+
 
             result = MessageBox.Show(message, caption, buttons);
             if (result == System.Windows.Forms.DialogResult.Yes)

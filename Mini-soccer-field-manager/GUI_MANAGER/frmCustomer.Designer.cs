@@ -209,6 +209,7 @@
             this.Controls.Add(this.btnSaveCus);
             this.Controls.Add(this.gBInputInfo);
             this.Name = "frmCustomer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin khách hàng";
             this.Load += new System.EventHandler(this.frmThemKH_Load);
             this.gBInputInfo.ResumeLayout(false);

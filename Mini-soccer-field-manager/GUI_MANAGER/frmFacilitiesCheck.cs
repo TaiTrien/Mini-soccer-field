@@ -23,7 +23,7 @@ namespace GUI_MANAGER
         {
             csvcBUS = new csvcBUS();
 
-            cbdselectedvalue(); 
+            cbdselectedvalue();
             //LoadDataInto_DataGridViewOfCSVC();
             List<csvcDTO> listCSVC = csvcBUS.selectedCSVC();
             cbFacilities.DataSource = listCSVC;
@@ -33,7 +33,7 @@ namespace GUI_MANAGER
             cbFacilities.DisplayMember = "tenCSVC";
             cbFacilities.ValueMember = "tenCSVC";
         }
-        
+
         /*private void LoadDataInto_DataGridViewOfCSVC()
         {
             List<csvcDTO> listCSVC = csvcBUS.selectedCSVC();
@@ -76,7 +76,7 @@ namespace GUI_MANAGER
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             frmFacilitiesUpdate frmFacilitiesUpdate = new frmFacilitiesUpdate();
-            frmFacilitiesUpdate.Show();         
+            frmFacilitiesUpdate.Show();
         }
 
 
@@ -123,7 +123,7 @@ namespace GUI_MANAGER
 
         }
 
-        
+
 
         private void BtnSignOut_Click(object sender, EventArgs e)
         {

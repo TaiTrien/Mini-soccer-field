@@ -36,11 +36,11 @@ namespace GUI_MANAGER
             List<HoaDonDTO> listhd = hdBus.selectByDate(firstDayOfMonth, lastDayOfMonth);
             List<ChiTietHoaDonDTO> listcthd = cthdBus.select();
             List<LoaiHoaDonDTO> listlhd = lhdBus.select();
-            loadData_Vao_GridView(listhd, listcthd, listlhd,cbType.Text);
+            loadData_Vao_GridView(listhd, listcthd, listlhd, cbType.Text);
         }
-        private void loadData_Vao_GridView(List<HoaDonDTO> listHD, List<ChiTietHoaDonDTO> listctHD, List<LoaiHoaDonDTO> listloaiHD,string type)
+        private void loadData_Vao_GridView(List<HoaDonDTO> listHD, List<ChiTietHoaDonDTO> listctHD, List<LoaiHoaDonDTO> listloaiHD, string type)
         {
-            float total=0;
+            float total = 0;
             int id = 1;
             if (listHD == null || listctHD == null || listloaiHD == null)
             {

@@ -18,7 +18,7 @@ namespace GUI_MANAGER
     {
         private parametersBUS paraBUS;
         parametersDTO para = new parametersDTO();
-        
+
         public frmParameters()
         {
             InitializeComponent();
@@ -71,7 +71,7 @@ namespace GUI_MANAGER
             para.GiaSanDem = float.Parse(tbFieldPriceNight.Text);
             para.GiaGiuXe = float.Parse(tbPriceParking.Text);
 
-            List<drinksDTO> lsDrinks = new List<drinksDTO> (2);
+            List<drinksDTO> lsDrinks = new List<drinksDTO>(2);
             drinksDTO waterDTO = new drinksDTO();
             waterDTO.MaDoUong = "1";
             waterDTO.DonGiaMua = float.Parse(tbWaterInput.Text);
@@ -84,7 +84,7 @@ namespace GUI_MANAGER
 
             lsDrinks.Add(waterDTO);
             lsDrinks.Add(reviveDTO);
-            
+
             result = paraBUS.update(lsDrinks, para);
             if (result == false)
                 MessageBox.Show("Sửa thất bại.");

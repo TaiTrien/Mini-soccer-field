@@ -102,7 +102,7 @@ namespace DAL_MANAGER
                     }
                 }
             }
-            return lskh; 
+            return lskh;
         }
         public int autogenerate_maKH()
         {
@@ -127,7 +127,7 @@ namespace DAL_MANAGER
                         {
                             while (reader.Read())
                             {
-                                maKH = int.Parse(reader["MM"].ToString())+1;
+                                maKH = int.Parse(reader["MM"].ToString()) + 1;
                             }
                         }
 

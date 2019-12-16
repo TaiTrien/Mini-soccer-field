@@ -66,7 +66,7 @@ namespace GUI_MANAGER
             }
 
         }
-     
+
         private void load_dataGridView()
         {
             List<PhieuDatSanDTO> listpds = pdsBus.select();

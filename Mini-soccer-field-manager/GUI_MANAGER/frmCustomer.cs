@@ -50,7 +50,7 @@ namespace GUI_MANAGER
             {
                 kh.GioiTinh = "Nữ";
             }
-            
+
             kh.LoaiKH = cbCusType.Text;
             //2. Kiểm tra data hợp lệ or not
 

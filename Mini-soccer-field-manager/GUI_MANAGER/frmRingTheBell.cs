@@ -28,13 +28,13 @@ namespace GUI_MANAGER
         public frmRingTheBell()
         {
             InitializeComponent();
-           
+
         }
 
         private void btnField1_Click(object sender, EventArgs e)
         {
             durationField1 = changeStringIntoIntTime(tbTimerField1.Text);
-            if ( tbTimerField1.BackColor == Color.Green) // to check field busy
+            if (tbTimerField1.BackColor == Color.Green) // to check field busy
             {
                 if (!String.IsNullOrEmpty(tbCustomerField1.Text))
                 {
@@ -43,7 +43,7 @@ namespace GUI_MANAGER
                     countDownTimerField1.Enabled = true;
                     tbTimerField1.BackColor = Color.Red;
                 }
-               
+
             }
             else if (tbTimerField1.BackColor == Color.Red) // to click another time
             {
@@ -55,7 +55,7 @@ namespace GUI_MANAGER
                     if (result == DialogResult.Yes)
                     {
                         SetValueForNameCustomer = tbCustomerField1.Text;
-                        SetValueForTongGioDa = (changeStringIntoIntTime(SetValueForSoGioDatSan1)  - durationField1).ToString();
+                        SetValueForTongGioDa = (changeStringIntoIntTime(SetValueForSoGioDatSan1) - durationField1).ToString();
                         SetValueForMaSan = "1";
                         frmPayment frmPayment = new frmPayment();
                         frmPayment.Show();
@@ -118,8 +118,8 @@ namespace GUI_MANAGER
             minutes = (durationField1 % 3600) / 60;
             seconds = (durationField1 % 3600) % 60;
             tbTimerField1.Text = (hours >= 10 ? hours.ToString() : "0" + hours) + ":" +
-                (minutes >= 10 ? minutes.ToString() : "0" + minutes) + ":" + 
-                    (seconds >= 10 ? seconds.ToString() : "0" + seconds); 
+                (minutes >= 10 ? minutes.ToString() : "0" + minutes) + ":" +
+                    (seconds >= 10 ? seconds.ToString() : "0" + seconds);
             if (durationField1 == 0)
             {
                 countDownTimerField1.Stop();
@@ -145,7 +145,7 @@ namespace GUI_MANAGER
                 countDownTimerField2.Stop();
                 btnPaymentField2.Visible = true;
                 tbTimerField2.BackColor = Color.Green;
-                 frmPayment frmPayment = new frmPayment();
+                frmPayment frmPayment = new frmPayment();
                 frmPayment.Show();
                 // to show data of bill
             }
@@ -187,10 +187,10 @@ namespace GUI_MANAGER
             List<fieldDTO> lstFields = fieldBUS.selectedFields();
             if (lstFields != null)
             {
-               foreach( fieldDTO fields in lstFields)
-               {
+                foreach (fieldDTO fields in lstFields)
+                {
                     displayInfoField(fields);
-               }
+                }
             }
             else return;
         }
@@ -205,7 +205,7 @@ namespace GUI_MANAGER
 
         /* to display information about fields
         */
-        private void displayInfoField(fieldDTO field) 
+        private void displayInfoField(fieldDTO field)
         {
             string bookingDate = field.NgayDatSan.ToShortDateString();
             string bookingTime = field.GioDatSan.ToString("HH:mm:ss");
@@ -217,7 +217,7 @@ namespace GUI_MANAGER
                     tbTimerField1.Text = field.ThoiLuongDatSan.ToString("HH:mm:ss");
                 }
             }
-       
+
             if (field2DTO.MaSanBanh == field.MaSanBanh)
             {
                 if ("20:00:00" == bookingTime && "3/3/2019" == bookingDate)
@@ -226,7 +226,7 @@ namespace GUI_MANAGER
                     tbTimerField2.Text = field.ThoiLuongDatSan.ToString("HH:mm:ss");
                 }
             }
-          
+
         }
 
         private void BtnBack_Click(object sender, EventArgs e)
@@ -234,5 +234,5 @@ namespace GUI_MANAGER
             this.Close();
         }
     }
-   
+
 }
