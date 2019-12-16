@@ -18,6 +18,11 @@ namespace BUS_MANAGER
         {
             drinksDAL = new drinksDAL();
         }
+        public bool addDrinksToBill(HoaDonDTO hoaDonDTO, ChiTietHoaDonDTO chiTietHoaDonDTO)
+        {
+            bool re = drinksDAL.addDrinksToBill(hoaDonDTO, chiTietHoaDonDTO);
+            return re;
+        }
         public bool update(drinksDTO drinksDTO)
         {
             bool re = drinksDAL.update(drinksDTO);
@@ -26,6 +31,10 @@ namespace BUS_MANAGER
         public List<drinksDTO> selectDrinks()
         {
             return drinksDAL.selectDrinks();
+        }
+        public int autogenerate_maHOADON()
+        {
+            return drinksDAL.autogenerate_maHOADON();
         }
     }
 }
