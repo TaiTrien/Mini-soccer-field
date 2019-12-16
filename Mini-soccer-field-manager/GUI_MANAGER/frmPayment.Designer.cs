@@ -38,7 +38,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbRevieDrink = new System.Windows.Forms.Label();
             this.btnPay = new System.Windows.Forms.Button();
-            this.tbCustomer = new System.Windows.Forms.TextBox();
             this.tbTotalTime = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lbTotalMoney = new System.Windows.Forms.Label();
@@ -50,6 +49,7 @@
             this.tbParkingPrice = new System.Windows.Forms.TextBox();
             this.lbParkingPrice = new System.Windows.Forms.Label();
             this.nUDParkingCars = new System.Windows.Forms.NumericUpDown();
+            this.cBcusPhone = new System.Windows.Forms.ComboBox();
             this.gbDrinks.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUDRevieDrink)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDWaterDrink)).BeginInit();
@@ -72,9 +72,9 @@
             this.lbCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCustomer.Location = new System.Drawing.Point(18, 91);
             this.lbCustomer.Name = "lbCustomer";
-            this.lbCustomer.Size = new System.Drawing.Size(113, 20);
+            this.lbCustomer.Size = new System.Drawing.Size(155, 20);
             this.lbCustomer.TabIndex = 1;
-            this.lbCustomer.Text = "Khách hàng:";
+            this.lbCustomer.Text = "SĐT Khách hàng:";
             // 
             // lbTotalTime
             // 
@@ -107,6 +107,7 @@
             this.nUDRevieDrink.Size = new System.Drawing.Size(120, 27);
             this.nUDRevieDrink.TabIndex = 7;
             this.nUDRevieDrink.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nUDRevieDrink.ValueChanged += new System.EventHandler(this.nUDRevieDrink_ValueChanged);
             // 
             // nUDWaterDrink
             // 
@@ -115,6 +116,7 @@
             this.nUDWaterDrink.Size = new System.Drawing.Size(120, 27);
             this.nUDWaterDrink.TabIndex = 6;
             this.nUDWaterDrink.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nUDWaterDrink.ValueChanged += new System.EventHandler(this.nUDWaterDrink_ValueChanged);
             // 
             // label1
             // 
@@ -132,9 +134,9 @@
             this.lbRevieDrink.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRevieDrink.Location = new System.Drawing.Point(6, 95);
             this.lbRevieDrink.Name = "lbRevieDrink";
-            this.lbRevieDrink.Size = new System.Drawing.Size(105, 20);
+            this.lbRevieDrink.Size = new System.Drawing.Size(114, 20);
             this.lbRevieDrink.TabIndex = 5;
-            this.lbRevieDrink.Text = "Nước Revie";
+            this.lbRevieDrink.Text = "Nước Revive";
             // 
             // btnPay
             // 
@@ -146,16 +148,7 @@
             this.btnPay.TabIndex = 4;
             this.btnPay.Text = "Thanh toán";
             this.btnPay.UseVisualStyleBackColor = true;
-            // 
-            // tbCustomer
-            // 
-            this.tbCustomer.BackColor = System.Drawing.SystemColors.Control;
-            this.tbCustomer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCustomer.Location = new System.Drawing.Point(223, 91);
-            this.tbCustomer.Name = "tbCustomer";
-            this.tbCustomer.Size = new System.Drawing.Size(217, 27);
-            this.tbCustomer.TabIndex = 7;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // tbTotalTime
             // 
@@ -166,6 +159,8 @@
             this.tbTotalTime.Name = "tbTotalTime";
             this.tbTotalTime.Size = new System.Drawing.Size(217, 27);
             this.tbTotalTime.TabIndex = 8;
+            this.tbTotalTime.Text = "0";
+            this.tbTotalTime.TextChanged += new System.EventHandler(this.tbTotalTime_TextChanged);
             // 
             // label2
             // 
@@ -204,6 +199,8 @@
             this.tbDiscountMoney.Name = "tbDiscountMoney";
             this.tbDiscountMoney.Size = new System.Drawing.Size(217, 27);
             this.tbDiscountMoney.TabIndex = 13;
+            this.tbDiscountMoney.Text = "0";
+            this.tbDiscountMoney.TextChanged += new System.EventHandler(this.tbDiscountMoney_TextChanged);
             // 
             // tbTotalMoney
             // 
@@ -262,12 +259,22 @@
             this.nUDParkingCars.Size = new System.Drawing.Size(73, 28);
             this.nUDParkingCars.TabIndex = 19;
             this.nUDParkingCars.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nUDParkingCars.ValueChanged += new System.EventHandler(this.nUDParkingCars_ValueChanged);
+            // 
+            // cBcusPhone
+            // 
+            this.cBcusPhone.FormattingEnabled = true;
+            this.cBcusPhone.Location = new System.Drawing.Point(223, 87);
+            this.cBcusPhone.Name = "cBcusPhone";
+            this.cBcusPhone.Size = new System.Drawing.Size(217, 24);
+            this.cBcusPhone.TabIndex = 20;
             // 
             // frmPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 575);
+            this.Controls.Add(this.cBcusPhone);
             this.Controls.Add(this.nUDParkingCars);
             this.Controls.Add(this.tbParkingPrice);
             this.Controls.Add(this.lbParkingPrice);
@@ -279,7 +286,6 @@
             this.Controls.Add(this.lbTotalMoney);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbTotalTime);
-            this.Controls.Add(this.tbCustomer);
             this.Controls.Add(this.btnPay);
             this.Controls.Add(this.gbDrinks);
             this.Controls.Add(this.lbTotalTime);
@@ -288,6 +294,7 @@
             this.Name = "frmPayment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thanh toán";
+            this.Load += new System.EventHandler(this.frmPayment_Load);
             this.gbDrinks.ResumeLayout(false);
             this.gbDrinks.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUDRevieDrink)).EndInit();
@@ -309,7 +316,6 @@
         private System.Windows.Forms.NumericUpDown nUDRevieDrink;
         private System.Windows.Forms.NumericUpDown nUDWaterDrink;
         private System.Windows.Forms.Button btnPay;
-        private System.Windows.Forms.TextBox tbCustomer;
         private System.Windows.Forms.TextBox tbTotalTime;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbTotalMoney;
@@ -321,5 +327,6 @@
         private System.Windows.Forms.TextBox tbParkingPrice;
         private System.Windows.Forms.Label lbParkingPrice;
         private System.Windows.Forms.NumericUpDown nUDParkingCars;
+        private System.Windows.Forms.ComboBox cBcusPhone;
     }
 }

@@ -16,6 +16,81 @@ namespace DAL_MANAGER
             connectionString = ConfigurationManager.AppSettings["ConnectionString"];
         }
         public string ConnectionString { get => connectionString; set => connectionString = value; }
+        public bool taoHD(HoaDonDTO hd)
+        {
+            string query = string.Empty;
+            query += "INSERT INTO [tblHOADON] ([maHoaDon],[maNhanVien],[maKH],[ngaytaohoadon])";
+            query += "VALUES (@maHoaDon,@maNhanVien,@maKH,@ngaytaohoadon)";
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@maHoaDon", hd.MaHD);
+                    cmd.Parameters.AddWithValue("@maNhanVien", hd.MaNhanVien);
+                    cmd.Parameters.AddWithValue("@maKH", hd.MaKH);
+                    cmd.Parameters.AddWithValue("@ngaytaohoadon", hd.NgayTaoHoaDon);
+                    
+
+
+                    try
+                    {
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+        public int autogenerate_maHD()
+        {
+            int maHD = 1;
+            string query = string.Empty;
+            query += "SELECT MAX (KQ.MAHD) AS MM from (SELECT CONVERT(float, tblHOADON.maHoaDon) AS MAHD FROM tblHOADON ) AS KQ";
+
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+                    try
+                    {
+                        con.Open();
+                        SqlDataReader reader = null;
+                        reader = cmd.ExecuteReader();
+                        if (reader.HasRows == true)
+                        {
+                            while (reader.Read())
+                            {
+                                maHD = int.Parse(reader["MM"].ToString()) + 1;
+                            }
+                        }
+
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+
+                    }
+                }
+            }
+            return maHD;
+        }
         public List<HoaDonDTO> selectByDate(DateTime date1, DateTime date2)
         {
             string query = string.Empty;
