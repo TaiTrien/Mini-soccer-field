@@ -54,19 +54,20 @@ namespace DAL_MANAGER
             }
             return true;
         }
-        public List<KhachHangDTO> select()
+        public List<KhachHangDTO> select(/*String maKH*/)
         {
             string query = string.Empty;
-            query += "SELECT [maKH], [tenKH],[gioiTinh],[diaChi],[loaiKH],[soDT]";
-            query += "FROM [tblKHACHHANG]";
+            query += "SELECT [maKH],[tenKH],[gioiTinh],[diaChi],[loaiKH],[soDT] ";
+            query += "FROM [tblKHACHHANG] ";
+            //query += "WHERE maKH = @mkh";
 
-            List<KhachHangDTO> lsKhachHang = new List<KhachHangDTO>();
-
+            List<KhachHangDTO> lskh = new List<KhachHangDTO>();
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
 
                 using (SqlCommand cmd = new SqlCommand())
                 {
+                    //cmd.Parameters.AddWithValue("@mkh", maKH);
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
@@ -83,11 +84,11 @@ namespace DAL_MANAGER
                                 KhachHangDTO kh = new KhachHangDTO();
                                 kh.MaKH = int.Parse(reader["maKH"].ToString());
                                 kh.TenKH = reader["tenKH"].ToString();
-                                kh.GioiTinh = reader["maKH"].ToString();
+                                kh.GioiTinh = reader["gioiTinh"].ToString();
                                 kh.DiaChi = reader["diaChi"].ToString();
                                 kh.LoaiKH = reader["loaiKH"].ToString();
                                 kh.SoDT = reader["soDT"].ToString();
-                                lsKhachHang.Add(kh);
+                                lskh.Add(kh);
                             }
                         }
 
@@ -101,7 +102,7 @@ namespace DAL_MANAGER
                     }
                 }
             }
-            return lsKhachHang; 
+            return lskh; 
         }
         public int autogenerate_maKH()
         {

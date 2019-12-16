@@ -13,6 +13,16 @@ namespace BUS_MANAGER
         {
             hdDAL = new HoaDonDAL();
         }
+        public bool taoHD(HoaDonDTO hd)
+        {
+            bool re = hdDAL.taoHD(hd);
+            return re;
+        }
+        public int autogenerate_maHD()
+        {
+            int re = hdDAL.autogenerate_maHD();
+            return re;
+        }
         public List<HoaDonDTO> selectByDate(DateTime date1, DateTime date2)
         {
             return hdDAL.selectByDate(date1, date2);
