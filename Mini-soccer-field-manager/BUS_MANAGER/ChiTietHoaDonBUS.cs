@@ -13,7 +13,11 @@ namespace BUS_MANAGER
         {
             cthdDAL = new ChiTietHoaDonDAL();
         }
-
+        public bool taoCTHD(ChiTietHoaDonDTO cthd)
+        {
+            bool re = cthdDAL.taoCTHD(cthd);
+            return re;
+        }
         public List<ChiTietHoaDonDTO> select()
         {
             return cthdDAL.select();
