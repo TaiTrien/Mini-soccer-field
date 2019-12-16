@@ -93,6 +93,9 @@ namespace GUI_MANAGER
                     DialogResult result = MessageBox.Show("Bạn có muốn tính tiền sân này không?", "Thông báo", MessageBoxButtons.YesNo);
                     if (result == DialogResult.Yes)
                     {
+                        SetValueForNameCustomer = tbCustomerField2.Text;
+                        SetValueForTongGioDa = (changeStringIntoIntTime(SetValueForSoGioDatSan1) - durationField2).ToString();
+                        SetValueForMaSan = "2";
                         frmPayment frmPayment = new frmPayment();
                         frmPayment.Show();
                         /*get data to form payment here*/
