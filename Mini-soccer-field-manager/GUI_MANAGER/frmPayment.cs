@@ -18,11 +18,14 @@ namespace GUI_MANAGER
         private KhachHangBUS khBus;
         private parametersBUS parBus;
         private drinksBUS drkBus;
+        private drinksDTO water;
+        private drinksDTO revive;
         private float thunuoc;
         private float thusan;
         private float tong;
         private float giaRevive;
         private float giaNuoc;
+        private KhachHangDTO KH;
         private float khuyenmai = 0;
         public frmPayment()
         {
@@ -36,6 +39,13 @@ namespace GUI_MANAGER
             khBus = new KhachHangBUS();
             parBus = new parametersBUS();
             drkBus = new drinksBUS();
+            KH = new KhachHangDTO();
+            water = new drinksDTO();
+            water = drkBus.selectPrice("1");
+            revive = new drinksDTO();
+            revive = drkBus.selectPrice("2");
+            giaNuoc = water.DonGiaBan;
+            giaRevive = revive.DonGiaBan;
             //List<drinksDTO> listdrk = drkBus.selectDrinks();
             //foreach (drinksDTO drk in listdrk)
             //{
@@ -48,33 +58,35 @@ namespace GUI_MANAGER
             //        giaRevive = drk.DonGiaBan;
             //    }
             //}
-            //loadCusPhone_Combobox();
-            
+            LoadInfo();
+
             tbTotalMoney.Text = "0";
             
         }
-        
-        public void loadCusPhone_Combobox()
-        {
-            List<KhachHangDTO> listKH = khBus.select();
 
-            if (listKH == null)
+        public void LoadInfo()
+        {
+            loadCusInfo();
+            loadTimeTotal();
+        }
+        public void loadCusInfo() // to load info customer
+        {
+            KH = khBus.select(frmRingTheBell.SetValueForMaSan);
+
+            if (KH == null)
             {
                 MessageBox.Show("Có lỗi khi lấy dữ liệu khách hàng");
                 return;
             }
-            cBcusPhone.DataSource = new BindingSource(listKH, String.Empty);
-            cBcusPhone.DisplayMember = "Số ĐT";
-            cBcusPhone.ValueMember = "soDT";
-
-            CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[cBcusPhone.DataSource];
-            myCurrencyManager.Refresh();
-
-            if (cBcusPhone.Items.Count > 0)
-            {
-                cBcusPhone.SelectedIndex = 0;
-            }
-
+            tbCustomerName.Text = KH.TenKH;
+            tbPhoneNumber.Text = KH.SoDT;
+        }
+        public void loadTimeTotal() // to load total time they play
+        {
+            float temp = float.Parse(frmRingTheBell.SetValueForTongGioDa);
+            
+            float totalTime = (float) Math.Round((temp / 60) ,  1); // total in minutes
+            tbTotalTime.Text = totalTime.ToString();
         }
         private void BtnBack_Click(object sender, EventArgs e)
         {
@@ -93,31 +105,26 @@ namespace GUI_MANAGER
         private void btnPay_Click(object sender, EventArgs e)
         {
             parametersDTO par = parBus.Selected();
-            
+
             HoaDonDTO hd = new HoaDonDTO();
-            List<KhachHangDTO> listkh = khBus.select();
+            //List<KhachHangDTO> listkh = khBus.select();
             hd.MaHD = hdBus.autogenerate_maHD();
             hd.MaNhanVien = 1;
-            foreach (KhachHangDTO kh in listkh)
-            {
-                if(kh.SoDT==cBcusPhone.Text)
-                {
-                    hd.MaKH = kh.MaKH;
-                }
-            }
+            hd.MaKH = KH.MaKH;
+ 
             hd.ngaytaohoadon = DateTime.UtcNow;
             ChiTietHoaDonDTO cthdsan = new ChiTietHoaDonDTO();
             ChiTietHoaDonDTO cthdnuoc = new ChiTietHoaDonDTO();
             cthdsan.MaHD = hd.MaHD;
             cthdsan.MaLoaiHoaDon = 1;
-            cthdsan.trigiaHoaDon = int.Parse(tbTotalTime.Text)*GiaSan();
-            if(int.Parse(nUDRevieDrink.Value.ToString())!=0 || int.Parse(nUDWaterDrink.Value.ToString()) != 0)
+            cthdsan.trigiaHoaDon = int.Parse(tbTotalTime.Text) * GiaSan();
+            if (int.Parse(nUDRevieDrink.Value.ToString()) != 0 || int.Parse(nUDWaterDrink.Value.ToString()) != 0)
             {
                 cthdnuoc.MaHD = hd.MaHD;
                 cthdnuoc.MaLoaiHoaDon = 2;
-                cthdnuoc.trigiaHoaDon = int.Parse(nUDRevieDrink.Value.ToString()) * giaRevive+ int.Parse(nUDWaterDrink.Value.ToString())*giaNuoc;
+                cthdnuoc.trigiaHoaDon = int.Parse(nUDRevieDrink.Value.ToString()) * giaRevive + int.Parse(nUDWaterDrink.Value.ToString()) * giaNuoc;
             }
-            
+
             //2. Insert into DB
             bool kq1 = hdBus.taoHD(hd);
             bool kq2 = cthdBus.taoCTHD(cthdsan) && cthdBus.taoCTHD(cthdnuoc);
@@ -125,12 +132,14 @@ namespace GUI_MANAGER
                 MessageBox.Show("Thanh toán thất bại. Vui lòng kiểm tra lại dũ liệu");
             else
                 MessageBox.Show("Thanh toán thành công");
-            
+
         }
         private float tinhTong()
         {
-            //parametersDTO par = parBus.Selected();
-            return float.Parse(tbTotalTime.Text) * 50000 + int.Parse(nUDWaterDrink.Value.ToString()) * 10000/**giaNuoc*/  + int.Parse(nUDRevieDrink.Value.ToString()) * 10000/**giaRevive*/ + int.Parse(nUDParkingCars.Value.ToString()) * 5000/**par.GiaGiuXe*/ - float.Parse(tbDiscountMoney.Text);
+            
+            parametersDTO par = parBus.Selected();
+            return float.Parse(tbTotalTime.Text) * GiaSan() + int.Parse(nUDWaterDrink.Value.ToString()) * giaNuoc  + int.Parse(nUDRevieDrink.Value.ToString()) * giaRevive
+            + int.Parse(nUDParkingCars.Value.ToString()) * par.GiaGiuXe/**par.GiaGiuXe*/ - float.Parse(tbDiscountMoney.Text);
 
         }
         private void tbTotalTime_TextChanged(object sender, EventArgs e)

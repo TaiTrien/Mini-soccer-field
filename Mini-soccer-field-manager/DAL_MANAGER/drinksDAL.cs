@@ -54,7 +54,56 @@ namespace DAL_MANAGER
             }
             return true;
         }
+        public drinksDTO selectPrice(String maNuoc)
+        {
+            string query = string.Empty;
+            query += "SELECT dongiaban ";
+            query += "FROM tblDOUONG WHERE maDoUong = @mdu";
 
+           drinksDTO Drink = new drinksDTO();
+
+
+            using (SqlConnection con = new SqlConnection(@"server=" + Dns.GetHostName() + ";Trusted_Connection=yes;database=QLSB;"))
+
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Parameters.AddWithValue("@mdu", maNuoc);
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+
+                    try
+                    {
+                        con.Open();
+                        SqlDataReader reader = null;
+                        reader = cmd.ExecuteReader();
+                        if (reader.HasRows == true)
+                        {
+                            while (reader.Read())
+                            {
+                                drinksDTO drinks = new drinksDTO();
+                                //drinks.TenDoUong = reader["tendouong"].ToString();
+                                drinks.DonGiaBan = Convert.ToInt32(reader["dongiaban"]);
+                                //drinks.DonGiaMua = Convert.ToInt32(reader["dongianhap"]);
+                                //drinks.DonGiaBan = Convert.ToInt32(reader["dongiaban"]);
+                                //drinks.NgayHoaDon = reader.GetFieldValue<DateTime>(reader.GetOrdinal("ngaytaohoadon"));
+                            }
+                        }
+
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return null;
+                    }
+                }
+            }
+            return Drink;
+        }
         public List<drinksDTO> selectDrinks()
         {
             string query = string.Empty;

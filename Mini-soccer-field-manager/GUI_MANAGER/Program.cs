@@ -15,7 +15,7 @@ namespace GUI_MANAGER
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPayment());
+            Application.Run(new frmLogin());
         }
     }
 }

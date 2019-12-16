@@ -27,5 +27,9 @@ namespace BUS_MANAGER
         {
             return drinksDAL.selectDrinks();
         }
+        public drinksDTO selectPrice(String maDrinks) // to select drink based on its code
+        {
+            return drinksDAL.selectPrice(maDrinks);
+        }
     }
 }

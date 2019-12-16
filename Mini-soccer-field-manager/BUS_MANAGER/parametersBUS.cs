@@ -32,12 +32,6 @@ namespace BUS_MANAGER
             bool re = parametersDAL.updateDrinks(drinksDTO) && parametersDAL.updatePrice(parametersDTO);
             return re;
         }
-        //public bool edit(parametersDTO pr)
-        //{
-        //    parametersDAL parametersDAL = new parametersDAL();
-        //    bool res = parametersDAL.CapNhat(pr);
-        //    return res;
-
-        //}
+     
     }
 }
