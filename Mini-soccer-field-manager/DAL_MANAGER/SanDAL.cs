@@ -20,7 +20,7 @@ namespace DAL_MANAGER
         public bool san(SanDTO san)
         {
             string query = string.Empty;
-            query += "INSERT INTO [tblSAN] ([maSan], [tinhTrang])";
+            query += "INSERT INTO [tblSAN] ([maSan], [tinhTrang]) ";
             query += "VALUES (@maSan,@tinhTrang)";
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
