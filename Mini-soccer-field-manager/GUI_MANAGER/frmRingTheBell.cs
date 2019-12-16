@@ -14,6 +14,13 @@ namespace GUI_MANAGER
 {
     public partial class frmRingTheBell : Form
     {
+        public static string SetValueForNameCustomer = "";
+        public static string SetValueForTongGioDa = "";
+        public static string SetValueForSoGioDatSan1 = "";
+        public static string SetValueForSoGioDatSan2 = "";
+        public static string SetValueForMaSan = "";
+
+
         private fieldDTO field1DTO, field2DTO;
         private fieldBUS fieldBUS;
         private int durationField1 = 0; // with minutes
@@ -29,8 +36,9 @@ namespace GUI_MANAGER
             durationField1 = changeStringIntoIntTime(tbTimerField1.Text);
             if ( tbTimerField1.BackColor == Color.Green) // to check field busy
             {
-                if (tbCustomerField1.Text != null)
+                if (!String.IsNullOrEmpty(tbCustomerField1.Text))
                 {
+                    SetValueForSoGioDatSan1 = tbTimerField1.Text;
                     countDownTimerField1.Start();
                     countDownTimerField1.Enabled = true;
                     tbTimerField1.BackColor = Color.Red;
@@ -39,17 +47,19 @@ namespace GUI_MANAGER
             }
             else if (tbTimerField1.BackColor == Color.Red) // to click another time
             {
-                if (tbCustomerField1.Text != null)
+                if (!String.IsNullOrEmpty(tbCustomerField1.Text))
                 {
                     countDownTimerField1.Stop();
                     tbTimerField1.BackColor = Color.Green;
                     DialogResult result = MessageBox.Show("Bạn có muốn tính tiền sân này không?", "Thông báo", MessageBoxButtons.YesNo);
                     if (result == DialogResult.Yes)
                     {
+                        SetValueForNameCustomer = tbCustomerField1.Text;
+                        SetValueForTongGioDa = (changeStringIntoIntTime(SetValueForSoGioDatSan1)  - durationField1).ToString();
+                        SetValueForMaSan = "1";
                         frmPayment frmPayment = new frmPayment();
                         frmPayment.Show();
-                        /*get data to form payment here*/
-                        /*Update database functionin here*/
+
                         loadInfo();
                     }
                     else if (result == DialogResult.No)
@@ -66,7 +76,7 @@ namespace GUI_MANAGER
             durationField2 = changeStringIntoIntTime(tbTimerField2.Text);
             if (tbTimerField2.BackColor == Color.Green) // to check field busy
             {
-                if (tbCustomerField2.Text != null)
+                if (!String.IsNullOrEmpty(tbCustomerField2.Text))
                 {
                     countDownTimerField2.Start();
                     countDownTimerField2.Enabled = true;
@@ -76,13 +86,16 @@ namespace GUI_MANAGER
             }
             else if (tbTimerField2.BackColor == Color.Red) // to click another time
             {
-                if (tbCustomerField2.Text != null && countDownTimerField2.Enabled == true)
+                if (!String.IsNullOrEmpty(tbCustomerField1.Text))
                 {
                     countDownTimerField2.Stop();
                     tbTimerField2.BackColor = Color.Green;
                     DialogResult result = MessageBox.Show("Bạn có muốn tính tiền sân này không?", "Thông báo", MessageBoxButtons.YesNo);
                     if (result == DialogResult.Yes)
                     {
+                        SetValueForNameCustomer = tbCustomerField2.Text;
+                        SetValueForTongGioDa = (changeStringIntoIntTime(SetValueForSoGioDatSan1) - durationField2).ToString();
+                        SetValueForMaSan = "2";
                         frmPayment frmPayment = new frmPayment();
                         frmPayment.Show();
                         /*get data to form payment here*/

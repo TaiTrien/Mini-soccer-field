@@ -17,7 +17,38 @@ namespace DAL_MANAGER
         }
         public string ConnectionString { get => connectionString; set => connectionString = value; }
 
+        public bool taoCTHD(ChiTietHoaDonDTO cthd)
+        {
+            string query = string.Empty;
+            query += "INSERT INTO [tblCHITIETHOADON] ([maLoaiHoaDon],[maHoaDon],[trigiahoadon])";
+            query += "VALUES (@maLoaiHoaDon,@maHoaDon,@trigiahoadon)";
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
 
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@maLoaiHoaDon", cthd.MaLoaiHoaDon);
+                    cmd.Parameters.AddWithValue("@maHoaDon", cthd.MaHD);
+                    cmd.Parameters.AddWithValue("@trigiahoadon", cthd.TriGiaHoaDon);
+                    try
+                    {
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
         public List<ChiTietHoaDonDTO> select()
         {
             string query = string.Empty;

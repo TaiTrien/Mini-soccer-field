@@ -1,0 +1,1 @@
+SQLCMD -S CHIENCHIEN -E -i createDBQLSB.sql
