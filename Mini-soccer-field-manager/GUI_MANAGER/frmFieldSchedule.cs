@@ -46,14 +46,14 @@ namespace GUI_MANAGER
         }
         public void loadCusPhone_Combobox()
         {
-            List<KhachHangDTO> listKH = khBus.select();
+            KhachHangDTO KH = khBus.select(frmRingTheBell.SetValueForMaSan);
 
-            if (listKH == null)
+            if (KH == null)
             {
                 MessageBox.Show("Có lỗi khi lấy dữ liệu khách hàng");
                 return;
             }
-            cbCusPhone.DataSource = new BindingSource(listKH, String.Empty);
+            cbCusPhone.DataSource = new BindingSource(KH, String.Empty);
             cbCusPhone.DisplayMember = "Số ĐT";
             cbCusPhone.ValueMember = "soDT";
 
@@ -71,8 +71,8 @@ namespace GUI_MANAGER
         {
             List<PhieuDatSanDTO> listpds = pdsBus.select();
             List<ChiTietDatSanDTO> listctds = ctBus.select();
-            List<KhachHangDTO> listkh = khBus.select();
-            loadData_Vao_GridView(listpds, listctds, listkh);
+            /*ist<KhachHangDTO> listkh = khBus.select();*/
+            //loadData_Vao_GridView(listpds, listctds, listkh);
         }
         private void loadData_Vao_GridView(List<PhieuDatSanDTO> listPhieuDatSan, List<ChiTietDatSanDTO> listCTDatSan, List<KhachHangDTO> listKH)
         {
@@ -129,15 +129,15 @@ namespace GUI_MANAGER
             PhieuDatSanDTO pds = new PhieuDatSanDTO();
             pds.MaPhieuDatSan = pdsBus.autogenerate_maPDS();
             pds.MaNhanVien = 1;
-            List<KhachHangDTO> listKH = khBus.select();
+            //List<KhachHangDTO> listKH = khBus.select();
 
-            foreach (KhachHangDTO kh in listKH)
-            {
-                if (cbCusPhone.Text == kh.SoDT)
-                {
-                    pds.MaKH = kh.MaKH;
-                }
-            }
+            //foreach (KhachHangDTO kh in listKH)
+            //{
+            //    if (cbCusPhone.Text == kh.SoDT)
+            //    {
+            //        pds.MaKH = kh.MaKH;
+            //    }
+            //}
             ChiTietDatSanDTO ct = new ChiTietDatSanDTO();
             ct.MaPhieuDatSan = pds.MaPhieuDatSan;
             ct.MaSan = int.Parse(cbFieldName.Text);

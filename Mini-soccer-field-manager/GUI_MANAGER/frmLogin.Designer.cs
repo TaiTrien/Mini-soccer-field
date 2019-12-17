@@ -50,7 +50,7 @@
             this.tbUserName.Location = new System.Drawing.Point(318, 99);
             this.tbUserName.Name = "tbUserName";
             this.tbUserName.Size = new System.Drawing.Size(194, 27);
-            this.tbUserName.TabIndex = 2;
+            this.tbUserName.TabIndex = 1;
             this.tbUserName.Text = "Username";
             // 
             // tbPassword
@@ -61,7 +61,7 @@
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(194, 27);
-            this.tbPassword.TabIndex = 3;
+            this.tbPassword.TabIndex = 2;
             this.tbPassword.Text = "Password";
             // 
             // label1
@@ -120,7 +120,7 @@
             this.btnLogin.Location = new System.Drawing.Point(221, 239);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(253, 35);
-            this.btnLogin.TabIndex = 8;
+            this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Sign in";
             this.btnLogin.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -135,7 +135,7 @@
             this.label3.Location = new System.Drawing.Point(180, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(167, 32);
-            this.label3.TabIndex = 9;
+            this.label3.TabIndex = 0;
             this.label3.Text = "WELCOME";
             // 
             // frmLogin

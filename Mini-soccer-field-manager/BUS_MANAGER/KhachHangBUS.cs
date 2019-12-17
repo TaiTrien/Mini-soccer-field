@@ -23,9 +23,9 @@ namespace BUS_MANAGER
             int re = khDAL.autogenerate_maKH();
             return re;
         }
-        public List<KhachHangDTO> select()
+        public KhachHangDTO select(String maKH)
         {
-            return khDAL.select();
+            return khDAL.select(maKH);
         }
     }
 }

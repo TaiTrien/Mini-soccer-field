@@ -15,6 +15,8 @@ namespace GUI_MANAGER
     {
         private drinksBUS cleanwaterBUS, reviveBUS, drinksBUS;
         private drinksDTO cleanwaterDTO, reviveDTO;
+        private HoaDonDTO hoaDonDTO;
+        private ChiTietHoaDonDTO chiTietHoaDonDTO;
         public frmImportDrinks()
         {
             InitializeComponent();
@@ -31,9 +33,12 @@ namespace GUI_MANAGER
             cleanwaterDTO.DoUongConLai += Convert.ToInt32(numericUpDown1.Value);
             reviveDTO.DoUongConLai += Convert.ToInt32(numericUpDown2.Value);
 
+            add();
+            bool resultBill = drinksBUS.addDrinksToBill(hoaDonDTO, chiTietHoaDonDTO);
+
             bool result1 = cleanwaterBUS.update(cleanwaterDTO);
             bool result2 = reviveBUS.update(reviveDTO);
-            if (result1 == true && result2 == true)
+            if (result1 == true && result2 == true && resultBill == true)
             {
                 MessageBox.Show("Nhập nước thành công :)");
                 load();
@@ -85,12 +90,26 @@ namespace GUI_MANAGER
                 if (lsDrinks[i].MaDoUong == "1")
                 {
                     cleanwaterDTO.DoUongConLai += lsDrinks[i].DoUongConLai;
+                    cleanwaterDTO.DonGiaMua = lsDrinks[i].DonGiaMua;
                 }
                 else
                 {
                     reviveDTO.DoUongConLai += lsDrinks[i].DoUongConLai;
+                    reviveDTO.DonGiaMua = lsDrinks[i].DonGiaMua;
                 }
             }
+        }
+        private void add()
+        {
+            hoaDonDTO = new HoaDonDTO();
+            chiTietHoaDonDTO = new ChiTietHoaDonDTO();
+            hoaDonDTO.maHD = drinksBUS.autogenerate_maHOADON();
+            hoaDonDTO.maKH = 1;
+            hoaDonDTO.maNhanVien = 2;
+            hoaDonDTO.ngaytaohoadon = DateTime.Now.Date;
+            chiTietHoaDonDTO.maHD = hoaDonDTO.maHD;
+            chiTietHoaDonDTO.maloaiHoaDon = 4;
+            chiTietHoaDonDTO.trigiaHoaDon = Convert.ToInt32(numericUpDown1.Value) * cleanwaterDTO.DonGiaMua + Convert.ToInt32(numericUpDown2.Value) * reviveDTO.DonGiaMua;
         }
 
         private void lbRevive_Click(object sender, EventArgs e)

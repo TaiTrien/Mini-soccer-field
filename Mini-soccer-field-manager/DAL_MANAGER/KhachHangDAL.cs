@@ -81,8 +81,6 @@ namespace DAL_MANAGER
                         {
                             while (reader.Read())
                             {
-                                KhachHangDTO kh = new KhachHangDTO();
-                                kh.MaKH = int.Parse(reader["maKH"].ToString());
                                 kh.TenKH = reader["tenKH"].ToString();
                                 kh.GioiTinh = reader["gioiTinh"].ToString();
                                 kh.DiaChi = reader["diaChi"].ToString();

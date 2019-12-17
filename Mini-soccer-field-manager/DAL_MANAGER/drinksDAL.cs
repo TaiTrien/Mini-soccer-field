@@ -22,6 +22,67 @@ namespace DAL_MANAGER
             connectionString = ConfigurationManager.AppSettings["ConnectionString"];
         }
         public string ConnectionString { get => connectionString; set => connectionString = value; }
+        public bool addDrinksToBill(HoaDonDTO hoaDon, ChiTietHoaDonDTO chiTietHoaDon)
+        {
+            string queryHoaDon = string.Empty;
+            queryHoaDon += "insert into tblHOADON (maHoaDon, maNhanvien, maKH, ngaytaohoadon) ";
+            queryHoaDon += "values (@maHoaDon, @maNhanvien, @maKH, @ngaytaohoadon)";
+            using (SqlConnection con = new SqlConnection(@"server=" + Dns.GetHostName() + ";Trusted_Connection=yes;database=QLSB;")) //Init connection to host
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = queryHoaDon;
+                    cmd.Parameters.AddWithValue("@maHoaDon", hoaDon.maHD);
+                    cmd.Parameters.AddWithValue("@maNhanvien", hoaDon.maNhanVien);
+                    cmd.Parameters.AddWithValue("@maKH",hoaDon.MaKH);
+                    cmd.Parameters.AddWithValue("@ngaytaohoadon", hoaDon.NgayTaoHoaDon);
+                    try
+                    {
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return false;
+                    }
+                }
+            }
+            string queryCTHD = string.Empty;
+            queryCTHD += "insert into tblCHITIETHOADON (maLoaiHoaDon, maHoaDon, trigiahoadon) ";
+            queryCTHD += "values (@maLoaiHoaDon, @maHoaDon, @trigiahoadon)";
+            using (SqlConnection con = new SqlConnection(@"server=" + Dns.GetHostName() + ";Trusted_Connection=yes;database=QLSB;")) //Init connection to host
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = queryCTHD;
+                    cmd.Parameters.AddWithValue("@maLoaiHoaDon", chiTietHoaDon.MaLoaiHoaDon);
+                    cmd.Parameters.AddWithValue("@maHoaDon", chiTietHoaDon.MaHD);
+                    cmd.Parameters.AddWithValue("@trigiahoadon", chiTietHoaDon.TriGiaHoaDon);
+                    try
+                    {
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
         public bool update(drinksDTO drinks)
         {
             string query = string.Empty;
@@ -109,7 +170,7 @@ namespace DAL_MANAGER
         public List<drinksDTO> selectDrinks()
         {
             string query = string.Empty;
-            query += "SELECT maDoUong, soluongconlai ";
+            query += "SELECT maDoUong, soluongconlai, dongianhap ";
             query += "FROM tblDOUONG ";
 
             List<drinksDTO> lsDrinks = new List<drinksDTO>();
@@ -137,7 +198,7 @@ namespace DAL_MANAGER
                                 drinks.MaDoUong = reader["MaDoUong"].ToString();
                                 //drinks.TenDoUong = reader["tendouong"].ToString();
                                 drinks.DoUongConLai = Convert.ToInt32(reader["soluongconlai"]);
-                                //drinks.DonGiaMua = Convert.ToInt32(reader["dongianhap"]);
+                                drinks.DonGiaMua = Convert.ToInt32(reader["dongianhap"]);
                                 //drinks.DonGiaBan = Convert.ToInt32(reader["dongiaban"]);
                                 //drinks.NgayHoaDon = reader.GetFieldValue<DateTime>(reader.GetOrdinal("ngaytaohoadon"));
                                 lsDrinks.Add(drinks);
@@ -155,6 +216,45 @@ namespace DAL_MANAGER
                 }
             }
             return lsDrinks;
+        }
+        public int autogenerate_maHOADON()
+        {
+            int maHoaDon = 1;
+            string query = string.Empty;
+            query += "SELECT MAX (KQ.MAHOADON) AS MM from (SELECT CONVERT(float, tblHOADON.maHoaDon) AS MAHOADON FROM tblHOADON ) AS KQ";
+
+            using (SqlConnection con = new SqlConnection(@"server=" + Dns.GetHostName() + ";Trusted_Connection=yes;database=QLSB;"))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+                    try
+                    {
+                        con.Open();
+                        SqlDataReader reader = null;
+                        reader = cmd.ExecuteReader();
+                        if (reader.HasRows == true)
+                        {
+                            while (reader.Read())
+                            {
+                                maHoaDon = int.Parse(reader["MM"].ToString()) + 1;
+                            }
+                        }
+
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+
+                    }
+                }
+            }
+            return maHoaDon;
         }
     }
 }

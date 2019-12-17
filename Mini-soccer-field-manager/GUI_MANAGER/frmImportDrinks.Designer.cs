@@ -64,7 +64,7 @@
             // 
             this.pBRevie.Image = ((System.Drawing.Image)(resources.GetObject("pBRevie.Image")));
             this.pBRevie.Location = new System.Drawing.Point(541, 97);
-            this.pBRevie.Name = "pBRevive";
+            this.pBRevie.Name = "pBRevie";
             this.pBRevie.Size = new System.Drawing.Size(235, 216);
             this.pBRevie.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pBRevie.TabIndex = 1;
@@ -78,7 +78,7 @@
             this.lbWater.Location = new System.Drawing.Point(175, 316);
             this.lbWater.Name = "lbWater";
             this.lbWater.Size = new System.Drawing.Size(108, 25);
-            this.lbWater.TabIndex = 2;
+            this.lbWater.TabIndex = 0;
             this.lbWater.Text = "Nước suối";
             // 
             // lbRevie
@@ -88,7 +88,7 @@
             this.lbRevie.Location = new System.Drawing.Point(603, 316);
             this.lbRevie.Name = "lbRevie";
             this.lbRevie.Size = new System.Drawing.Size(126, 25);
-            this.lbRevie.TabIndex = 3;
+            this.lbRevie.TabIndex = 0;
             this.lbRevie.Text = "Nước revive";
             this.lbRevie.Click += new System.EventHandler(this.lbRevive_Click);
             // 
@@ -99,7 +99,7 @@
             this.lbRestOfRevie.Location = new System.Drawing.Point(589, 41);
             this.lbRestOfRevie.Name = "lbRestOfRevie";
             this.lbRestOfRevie.Size = new System.Drawing.Size(151, 25);
-            this.lbRestOfRevie.TabIndex = 5;
+            this.lbRestOfRevie.TabIndex = 0;
             this.lbRestOfRevie.Text = "Số lượng còn lại";
             // 
             // tbRestOfRevive
@@ -111,7 +111,8 @@
             this.tbRestOfRevive.Name = "tbRestOfRevive";
             this.tbRestOfRevive.ReadOnly = true;
             this.tbRestOfRevive.Size = new System.Drawing.Size(124, 21);
-            this.tbRestOfRevive.TabIndex = 7;
+            this.tbRestOfRevive.TabIndex = 0;
+            this.tbRestOfRevive.TabStop = false;
             this.tbRestOfRevive.Text = "12";
             this.tbRestOfRevive.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -124,7 +125,8 @@
             this.tbRestOfWater.Name = "tbRestOfWater";
             this.tbRestOfWater.ReadOnly = true;
             this.tbRestOfWater.Size = new System.Drawing.Size(124, 21);
-            this.tbRestOfWater.TabIndex = 9;
+            this.tbRestOfWater.TabIndex = 0;
+            this.tbRestOfWater.TabStop = false;
             this.tbRestOfWater.Text = "12";
             this.tbRestOfWater.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -135,7 +137,7 @@
             this.lbRestOfWater.Location = new System.Drawing.Point(166, 41);
             this.lbRestOfWater.Name = "lbRestOfWater";
             this.lbRestOfWater.Size = new System.Drawing.Size(151, 25);
-            this.lbRestOfWater.TabIndex = 8;
+            this.lbRestOfWater.TabIndex = 0;
             this.lbRestOfWater.Text = "Số lượng còn lại";
             // 
             // numericUpDown1
@@ -143,7 +145,7 @@
             this.numericUpDown1.Location = new System.Drawing.Point(232, 360);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDown1.TabIndex = 10;
+            this.numericUpDown1.TabIndex = 1;
             this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lbImportNumber
@@ -153,7 +155,7 @@
             this.lbImportNumber.Location = new System.Drawing.Point(1, 362);
             this.lbImportNumber.Name = "lbImportNumber";
             this.lbImportNumber.Size = new System.Drawing.Size(198, 20);
-            this.lbImportNumber.TabIndex = 11;
+            this.lbImportNumber.TabIndex = 0;
             this.lbImportNumber.Text = "Số lượng nước nhập thêm";
             // 
             // numericUpDown2
@@ -161,7 +163,7 @@
             this.numericUpDown2.Location = new System.Drawing.Point(656, 361);
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDown2.TabIndex = 13;
+            this.numericUpDown2.TabIndex = 2;
             this.numericUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label1
@@ -170,8 +172,8 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(415, 363);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(198, 20);
-            this.label1.TabIndex = 14;
+            this.label1.Size = new System.Drawing.Size(206, 20);
+            this.label1.TabIndex = 0;
             this.label1.Text = "Số lượng revive nhập thêm";
             // 
             // btnImportDrinks
@@ -180,7 +182,7 @@
             this.btnImportDrinks.Location = new System.Drawing.Point(325, 413);
             this.btnImportDrinks.Name = "btnImportDrinks";
             this.btnImportDrinks.Size = new System.Drawing.Size(223, 61);
-            this.btnImportDrinks.TabIndex = 15;
+            this.btnImportDrinks.TabIndex = 3;
             this.btnImportDrinks.Text = "Nhập";
             this.btnImportDrinks.UseVisualStyleBackColor = true;
             this.btnImportDrinks.Click += new System.EventHandler(this.BtnImportDrinks_Click);
@@ -191,7 +193,7 @@
             this.lbBack.Location = new System.Drawing.Point(9, 45);
             this.lbBack.Name = "lbBack";
             this.lbBack.Size = new System.Drawing.Size(60, 17);
-            this.lbBack.TabIndex = 16;
+            this.lbBack.TabIndex = 0;
             this.lbBack.Text = "Quay lại";
             // 
             // btnBack
@@ -200,7 +202,8 @@
             this.btnBack.Location = new System.Drawing.Point(12, 12);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(52, 30);
-            this.btnBack.TabIndex = 17;
+            this.btnBack.TabIndex = 0;
+            this.btnBack.TabStop = false;
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 

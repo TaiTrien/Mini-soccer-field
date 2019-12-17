@@ -23,8 +23,8 @@ namespace GUI_MANAGER
         {
             csvcBUS = new csvcBUS();
 
-            cbdselectedvalue();
-            //LoadDataInto_DataGridViewOfCSVC();
+            cbdselectedvalue(); 
+            LoadDataInto_DataGridViewOfCSVC();
             List<csvcDTO> listCSVC = csvcBUS.selectedCSVC();
             cbFacilities.DataSource = listCSVC;
         }
@@ -34,15 +34,15 @@ namespace GUI_MANAGER
             cbFacilities.ValueMember = "tenCSVC";
         }
 
-        /*private void LoadDataInto_DataGridViewOfCSVC()
+        private void LoadDataInto_DataGridViewOfCSVC()
         {
             List<csvcDTO> listCSVC = csvcBUS.selectedCSVC();
             if (listCSVC == null)
             {
                 MessageBox.Show("Chưa có thông tin CSVC");
             }
-        
-            
+
+
             dgvCSVC.Columns.Clear();
             dgvCSVC.DataSource = null;
             dgvCSVC.ReadOnly = true;
@@ -67,7 +67,7 @@ namespace GUI_MANAGER
             clTCVSCStatus.HeaderText = "Tình Trạng CSVC";
             clTCVSCStatus.DataPropertyName = "tinhtrangCSVC";
             dgvCSVC.Columns.Add(clTCVSCStatus);
-        }*/
+        }
         private void LbUpdate_Click(object sender, EventArgs e)
         {
 

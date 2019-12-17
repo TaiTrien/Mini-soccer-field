@@ -244,7 +244,7 @@ namespace DAL_MANAGER
 
         {
             string query = string.Empty;
-            query += "SELECT *";
+            query += "SELECT * ";
             query += "FROM tblCSVC";
 
             List<csvcDTO> lscsvc = new List<csvcDTO>();
