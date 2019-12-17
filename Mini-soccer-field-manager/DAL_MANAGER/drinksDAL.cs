@@ -89,7 +89,7 @@ namespace DAL_MANAGER
             query += "UPDATE tblDOUONG SET soluongconlai = @soluongconlai ";
             query += "WHERE maDoUong = @maDoUong";
 
-            using (SqlConnection con = new SqlConnection(/*@"server=" + Dns.GetHostName() + ";Trusted_Connection=yes;database=QLSB;"*/)) //Init connection to host
+            using (SqlConnection con = new SqlConnection(@"server=" + Dns.GetHostName() + ";Trusted_Connection=yes;database=QLSB;")) //Init connection to host
             {
 
                 using (SqlCommand cmd = new SqlCommand())

@@ -20,7 +20,7 @@ namespace DAL_MANAGER
         public bool datsan(PhieuDatSanDTO pds)
         {
             string query = string.Empty;
-            query += "INSERT INTO [tblPHIEUDATSAN] ([maPhieuDatSan], [maNhanVien],[maKH])";
+            query += "INSERT INTO [tblPHIEUDATSAN] ([maPhieuDatSan], [maNhanVien],[maKH]) ";
             query += "VALUES (@maPhieuDatSan,@maNhanVien,@maKH)";
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
@@ -54,7 +54,7 @@ namespace DAL_MANAGER
         public bool huysan(PhieuDatSanDTO pds)
         {
             string query = string.Empty;
-            query += "delete from [tblPHIEUDATSAN]";
+            query += "delete from [tblPHIEUDATSAN] ";
             query += "where maPhieuDatSan=@maPhieuDatSan";
 
             using (SqlConnection con = new SqlConnection(ConnectionString))
@@ -86,7 +86,7 @@ namespace DAL_MANAGER
         public List<PhieuDatSanDTO> select()
         {
             string query = string.Empty;
-            query += "SELECT [maPhieuDatSan], [maNhanVien],[maKH]";
+            query += "SELECT [maPhieuDatSan], [maNhanVien],[maKH] ";
             query += "FROM [tblPHIEUDATSAN]";
 
             List<PhieuDatSanDTO> lsPhieuDatSan = new List<PhieuDatSanDTO>();

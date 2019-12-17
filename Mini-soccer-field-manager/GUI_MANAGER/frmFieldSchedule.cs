@@ -46,7 +46,7 @@ namespace GUI_MANAGER
         }
         public void loadCusPhone_Combobox()
         {
-            KhachHangDTO KH = khBus.select(frmRingTheBell.SetValueForMaSan);
+            List <KhachHangDTO> KH = khBus.select();
 
             if (KH == null)
             {
@@ -71,8 +71,8 @@ namespace GUI_MANAGER
         {
             List<PhieuDatSanDTO> listpds = pdsBus.select();
             List<ChiTietDatSanDTO> listctds = ctBus.select();
-            /*ist<KhachHangDTO> listkh = khBus.select();*/
-            //loadData_Vao_GridView(listpds, listctds, listkh);
+            List<KhachHangDTO> listkh = khBus.select();
+            loadData_Vao_GridView(listpds, listctds, listkh);
         }
         private void loadData_Vao_GridView(List<PhieuDatSanDTO> listPhieuDatSan, List<ChiTietDatSanDTO> listCTDatSan, List<KhachHangDTO> listKH)
         {
