@@ -22,6 +22,7 @@ INSERT INTO [tblKHACHHANG] ([maKH],[tenKH],[loaiKH],[diaChi],[gioiTinh],[soDT]) 
 INSERT INTO [tblPHIEUDATSAN] ([maPhieuDatSan], [maNhanVien],[maKH]) VALUES (1,2,1)
 /*N'Test bảng SAN'*/
 INSERT INTO [tblSAN] ([maSan], [tinhTrang]) VALUES (1,0)
+INSERT INTO [tblSAN] ([maSan], [tinhTrang]) VALUES (2,0)
 /*N'Test bảng CHITIETDATSAN'*/
 INSERT INTO [tblCHITIETDATSAN] ([maPhieuDatSan],[maSan],[ngayDat],[gioDat],[thoiLuong]) VALUES (1,1,'2019-03-03','20:00','00:30')
 /*N'Test bảng THAMSO'*/

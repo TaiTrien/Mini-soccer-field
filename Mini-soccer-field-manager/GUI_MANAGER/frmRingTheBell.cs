@@ -183,7 +183,6 @@ namespace GUI_MANAGER
         }
         private void loadInfo() // to load information for field including customer name, duration of field, field status
         {
-            //DateTime.Now.ToString("HH:mm") : to get current time 
             List<fieldDTO> lstFields = fieldBUS.selectedFields();
             if (lstFields != null)
             {
