@@ -4,7 +4,7 @@ This app is created to manage the mini soccer field and the stuff. Besides that,
 
 # Why is this app created?
 
-Because we want to know how to make a accomplish software.
+Because we want to know how to accomplish a software frome the beginning.
 # What can we do?
 
 Basically, Mini-soccer-field will help you in the way you manage infrastructure of soccer field, schedule of soccer field and the budget you get from field daily/monthly/yearly, including:
